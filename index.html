@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hines Education Consulting | Global University Placement</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan: #00BEFF;
+            --cyan-dark: #009ACD;
+            --gold: #DBC368;
+            --gold-dark: #c4a83a;
+            --navy: #1C3B7B;
+            --navy-deep: #0a2351;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --border-gray: #E0E6EF;
+            --text-muted: rgba(28, 59, 123, 0.6);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background-color: var(--white);
+            color: var(--navy);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            letter-spacing: -0.1px;
+        }
+
+        .nav-links a:hover { color: var(--cyan); }
+
+        .nav-cta {
+            background-color: var(--navy);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            transition: all 0.2s ease !important;
+            letter-spacing: 0.2px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--cyan) !important;
+            color: var(--white) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--navy);
+            padding: 4px;
+        }
+
+        .menu-toggle svg { display: block; }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: linear-gradient(160deg, #f0f4ff 0%, var(--white) 60%);
+            padding: 72px 0 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg-shape {
+            position: absolute;
+            top: -100px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0,190,255,0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-bg-shape-2 {
+            position: absolute;
+            bottom: -80px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(219,195,104,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-left { padding-bottom: 72px; }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,190,255,0.08);
+            border: 1px solid rgba(0,190,255,0.2);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cyan-dark);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .hero-eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--cyan);
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 54px;
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--navy);
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--cyan);
+            position: relative;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 480px;
+        }
+
+        .service-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 44px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--white);
+            border: 1px solid var(--border-gray);
+            padding: 7px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 0.2px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .badge-icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--navy);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cyan);
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,190,255,0.35);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--navy);
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--border-gray);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border-gray);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .hero-trust-text {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .hero-trust-badges {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-trust-badges span {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            opacity: 0.45;
+            letter-spacing: 0.3px;
+        }
+
+        /* Hero Right — Visual Card Stack */
+        .hero-right {
+            position: relative;
+            height: 560px;
+            align-self: stretch;
+        }
+
+        .hero-visual-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a5276 50%, #00BEFF 100%);
+        }
+
+        .hero-visual-main::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(10,35,81,0.7) 100%);
+        }
+
+        .hero-img-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+            mix-blend-mode: luminosity;
+        }
+
+        .hero-visual-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero-visual-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            margin-bottom: 8px;
+        }
+
+        .hero-visual-stat {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-visual-caption {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Floating cards on hero */
+        .hero-float-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+            z-index: 10;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .hero-float-card-1 {
+            top: 36px;
+            right: -24px;
+            min-width: 180px;
+        }
+
+        .hero-float-card-2 {
+            top: 50%;
+            right: -32px;
+            transform: translateY(-50%);
+            min-width: 160px;
+        }
+
+        .float-card-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .float-card-value {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .float-card-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        .float-card-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 2s infinite;
+        }
+
+        /* Destination flags row */
+        .hero-destinations {
+            position: absolute;
+            bottom: -24px;
+            left: 20px;
+            right: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.14);
+            z-index: 10;
+            border: 1px solid var(--border-gray);
+        }
+
+        .dest-item {
+            text-align: center;
+        }
+
+        .dest-flag {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .dest-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: var(--white);
+            padding: 56px 0 52px;
+            border-bottom: 1px solid var(--border-gray);
+            margin-top: 24px;
+        }
+
+        .trust-bar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .trust-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .trust-header h3 {
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0.55;
+        }
+
+        .trust-header p {
+            font-family: 'Fraunces', serif;
+            color: var(--navy);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .logo-scroll {
+            overflow-x: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--cyan) var(--border-gray);
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+        }
+
+        .logo-scroll::-webkit-scrollbar { height: 3px; }
+        .logo-scroll::-webkit-scrollbar-track { background: var(--border-gray); border-radius: 10px; }
+        .logo-scroll::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 10px; }
+
+        .logo-track {
+            display: inline-flex;
+            gap: 40px;
+            align-items: center;
+            padding: 8px 0;
+            min-width: max-content;
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.65;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo-item:hover { opacity: 1; }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 64px;
+            background: var(--light-gray);
+            border: 1px solid var(--border-gray);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* When you have real logos, drop <img> inside .logo-placeholder */
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .logo-item:hover .logo-placeholder img {
+            filter: grayscale(0%);
+        }
+
+        /* Fallback text (shown when no img) */
+        .logo-placeholder-text {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--navy);
+            opacity: 0.45;
+            letter-spacing: 0.5px;
+            text-align: center;
+            padding: 4px;
+        }
+
+        .logo-country {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* ========== HOW IT WORKS ========== */
+        .how-it-works {
+            background: var(--light-gray);
+            padding: 88px 0;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--cyan-dark);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: 'Fraunces', serif;
+            color: var(--navy);
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 14px;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        .hiw-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .hiw-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-gray);
+            position: relative;
+        }
+
+        .hiw-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,190,255,0.1);
+            border-color: rgba(0,190,255,0.3);
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 900;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .hiw-icon-wrap {
+            width: 52px;
+            height: 52px;
+            background: rgba(0,190,255,0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .hiw-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--cyan-dark);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hiw-card h3 {
+            color: var(--navy);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .hiw-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* ========== SERVICES ========== */
+        .services-section {
+            background: var(--white);
+            padding: 88px 0;
+        }
+
+        .services-card-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 32px 24px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-gray);
+        }
+
+        .service-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0,190,255,0.1);
+        }
+
+        .service-icon-wrap {
+            width: 52px;
+            height: 52px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-icon-wrap svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--navy);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .service-card:hover .service-icon-wrap {
+            background: rgba(0,190,255,0.1);
+        }
+
+        .service-card:hover .service-icon-wrap svg {
+            stroke: var(--cyan-dark);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.65;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--cyan-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.2px;
+            transition: gap 0.2s ease;
+        }
+
+        .service-link:hover { gap: 10px; }
+
+        /* ========== COMPETITION ========== */
+        .competition-section {
+            background: linear-gradient(135deg, var(--gold) 0%, #c4a83a 100%);
+            padding: 72px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .competition-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 320px;
+            height: 320px;
+            border: 60px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .competition-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: 10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .comp-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comp-left {}
+
+        .comp-sponsor {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .competition-section h2 {
+            font-family: 'Fraunces', serif;
+            color: var(--navy);
+            font-size: 38px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .competition-section p {
+            color: var(--navy);
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-bottom: 32px;
+        }
+
+        .comp-btn {
+            background: var(--navy);
+            color: var(--gold) !important;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            display: inline-block;
+            border: 2px solid var(--navy);
+        }
+
+        .comp-btn:hover {
+            background: transparent;
+            color: var(--navy) !important;
+            transform: translateY(-2px);
+        }
+
+        .prize-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .prize-item {
+            background: rgba(255,255,255,0.25);
+            border-radius: 10px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            backdrop-filter: blur(6px);
+        }
+
+        .prize-rank {
+            width: 40px;
+            height: 40px;
+            background: var(--navy);
+            color: var(--gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 18px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .prize-details h4 {
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .prize-details span {
+            font-size: 13px;
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials {
+            background: var(--light-gray);
+            padding: 88px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(0,190,255,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,190,255,0.08);
+        }
+
+        .quote-mark {
+            width: 36px;
+            height: 36px;
+            background: rgba(0,190,255,0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .quote-mark svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--cyan);
+        }
+
+        .testimonial-text {
+            color: var(--navy);
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .student-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--cyan), var(--navy));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .student-details h4 {
+            color: var(--navy);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .student-details p {
+            color: var(--cyan-dark);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .student-details span {
+            color: var(--text-muted);
+            font-size: 12px;
+            display: block;
+            margin-top: 1px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy-deep);
+            padding: 64px 0 32px;
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 52px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .footer-brand-text {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--white);
+        }
+
+        .footer-brand-text span { color: var(--cyan); }
+
+        .footer-about p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .social-link:hover { background: var(--cyan); }
+
+        .social-link svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255,255,255,0.7);
+        }
+
+        .social-link:hover svg { fill: white; }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col ul li { margin-bottom: 10px; }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover { color: var(--cyan); }
+
+        .footer-cta-btn {
+            display: inline-block;
+            background: var(--cyan);
+            color: var(--navy-deep);
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+
+        .footer-cta-btn:hover { background: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover { color: var(--cyan); }
+
+        /* ========== CHATBOT ========== */
+        .chat-launcher {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9000;
+        }
+
+        .chat-launcher-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--navy);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(28,59,123,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chat-launcher-btn:hover {
+            background: var(--cyan);
+            transform: scale(1.08);
+        }
+
+        .chat-launcher-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+
+        .chat-unread-dot {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: blink 2s infinite;
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 360px;
+            max-height: 540px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+            z-index: 9000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-gray);
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .chat-widget.open {
+            display: flex;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .chat-widget-header {
+            background: var(--navy);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-bot-avatar {
+            width: 38px;
+            height: 38px;
+            background: var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chat-bot-avatar svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .chat-header-info { flex: 1; }
+
+        .chat-header-info h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .chat-header-info span {
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+        }
+
+        .chat-online-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 2s infinite;
+        }
+
+        .chat-close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255,255,255,0.6);
+            display: flex;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .chat-close-btn:hover { color: white; }
+
+        .chat-close-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .chat-messages-wrap {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f8fafc;
+        }
+
+        .chat-messages-wrap::-webkit-scrollbar { width: 4px; }
+        .chat-messages-wrap::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages-wrap::-webkit-scrollbar-thumb { background: var(--border-gray); border-radius: 10px; }
+
+        .bot-msg {
+            background: var(--white);
+            padding: 11px 14px;
+            border-radius: 14px;
+            border-top-left-radius: 4px;
+            max-width: 82%;
+            color: var(--navy);
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-gray);
+            align-self: flex-start;
+        }
+
+        .user-msg {
+            background: var(--navy);
+            color: white;
+            padding: 11px 14px;
+            border-radius: 14px;
+            border-top-right-radius: 4px;
+            max-width: 82%;
+            font-size: 14px;
+            line-height: 1.5;
+            align-self: flex-end;
+        }
+
+        .wa-msg {
+            background: #22c55e;
+            color: white;
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wa-msg:hover { background: #16a34a; }
+
+        .wa-msg svg { width: 20px; height: 20px; fill: white; }
+
+        .chat-options-wrap {
+            padding: 12px 16px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: var(--white);
+            border-top: 1px solid var(--border-gray);
+        }
+
+        .chat-opt-btn {
+            background: var(--white);
+            border: 1.5px solid var(--border-gray);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--navy);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .chat-opt-btn:hover {
+            border-color: var(--navy);
+            background: var(--light-gray);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1100px) {
+            .services-card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 { font-size: 44px; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-right { display: none; }
+
+            .hero-left { padding-bottom: 40px; }
+
+            .hiw-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .comp-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border-gray);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-container { padding: 14px 24px; }
+
+            .hero h1 { font-size: 34px; }
+            .section-container, .trust-bar-container, .comp-container, .footer-container { padding: 0 20px; }
+            .hero-container { padding: 0 20px; }
+
+            .services-card-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .chat-widget { width: calc(100vw - 40px); right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .section-header h2 { font-size: 28px; }
+            .competition-section h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">Hines<span>Education</span></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="study-abroad.html">Study Abroad</a>
+            <a href="partners.html">For Partners</a>
+            <a href="competition.html">Competition</a>
+            <a href="partner-schools.html">Partner Schools</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="nav-cta">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <div class="hero-bg-shape"></div>
+    <div class="hero-bg-shape-2"></div>
+    <div class="hero-container">
+        <div class="hero-left">
+            <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot"></span>
+                Accepting applications now
+            </div>
+            <h1>
+                From WAEC &amp; A-Levels to<br>Universities in the<br>
+                <em>UK, US &amp; Canada</em>
+            </h1>
+            <p class="hero-sub">Your trusted pathway to global education. Foundation, undergraduate, postgraduate and doctoral placements — handled end to end.</p>
+            <div class="service-badges">
+                <span class="badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
+                    Foundation
+                </span>
+                <span class="badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                    100 Level
+                </span>
+                <span class="badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                    Masters
+                </span>
+                <span class="badge">
+                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                    PhD
+                </span>
+            </div>
+            <div class="button-group">
+                <a href="#" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    Find Your University
+                </a>
+                <a href="#" class="btn-secondary" id="openChatBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    Chat with Advisor
+                </a>
+            </div>
+            <div class="hero-trust">
+                <span class="hero-trust-text">Accredited by</span>
+                <div class="hero-trust-badges">
+                    <span>UK ENIC</span>
+                    <span>ICEF</span>
+                    <span>British Council</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-right">
+            <div class="hero-visual-main">
+                <!-- Replace src below with a real student photo for best effect -->
+                <img src="images/students-studying-abroad.png" alt="Students studying abroad" class="hero-img-bg" onerror="this.style.display='none'">
+                <div class="hero-visual-overlay">
+                    <div class="hero-visual-label">Student placements</div>
+                    <div class="hero-visual-stat">2,500+</div>
+                    <div class="hero-visual-caption">Students placed across 3 continents</div>
+                </div>
+            </div>
+
+            <!-- Float cards -->
+            <div class="hero-float-card hero-float-card-1">
+                <div class="float-card-label">Success rate</div>
+                <div class="float-card-value">94%</div>
+                <div class="float-card-sub">Offer acceptance rate</div>
+            </div>
+
+            <div class="hero-float-card hero-float-card-2">
+                <div class="float-card-label">Status</div>
+                <div class="float-card-value" style="font-size:16px; display:flex; align-items:center; gap:4px; margin-top:4px;">
+                    <span class="float-card-indicator"></span> Accepting
+                </div>
+                <div class="float-card-sub">Applications open</div>
+            </div>
+
+            <!-- Destinations bar -->
+            <div class="hero-destinations">
+                <div class="dest-item">
+                    <span class="dest-flag">🇬🇧</span>
+                    <span class="dest-label">UK</span>
+                </div>
+                <div class="dest-item">
+                    <span class="dest-flag">🇺🇸</span>
+                    <span class="dest-label">USA</span>
+                </div>
+                <div class="dest-item">
+                    <span class="dest-flag">🇨🇦</span>
+                    <span class="dest-label">Canada</span>
+                </div>
+                <div class="dest-item">
+                    <span class="dest-flag">🇦🇺</span>
+                    <span class="dest-label">Australia</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TRUST / PARTNER LOGOS ========== -->
+<section class="trust-bar">
+    <div class="trust-bar-container">
+        <div class="trust-header">
+            <h3>Partner Universities</h3>
+            <p>Trusted by 50+ institutions worldwide</p>
+        </div>
+        <div class="logo-scroll">
+            <div class="logo-track">
+                <!--
+                    HOW TO ADD REAL LOGOS:
+                    Inside each .logo-placeholder, add:
+                    <img src="path/to/logo.png" alt="University name">
+                    The grayscale filter and hover effect are already handled.
+                -->
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Manchester</span>
+                    </div>
+                    <span class="logo-country">UK</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">UBC</span>
+                    </div>
+                    <span class="logo-country">Canada</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Toronto</span>
+                    </div>
+                    <span class="logo-country">Canada</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Warwick</span>
+                    </div>
+                    <span class="logo-country">UK</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">UCLA</span>
+                    </div>
+                    <span class="logo-country">USA</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Birmingham</span>
+                    </div>
+                    <span class="logo-country">UK</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">McGill University</span>
+                    </div>
+                    <span class="logo-country">Canada</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">New York University</span>
+                    </div>
+                    <span class="logo-country">USA</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Edinburgh</span>
+                    </div>
+                    <span class="logo-country">UK</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">University of Leeds</span>
+                    </div>
+                    <span class="logo-country">UK</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="how-it-works">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-eyebrow">The Process</span>
+            <h2>How It Works</h2>
+            <p>Three simple steps to your global degree</p>
+        </div>
+        <div class="hiw-grid">
+            <div class="hiw-card">
+                <div class="step-number">1</div>
+                <div class="hiw-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
+                </div>
+                <h3>Submit Your Results</h3>
+                <p>Upload your WAEC, A-Levels, IGCSE, or O-Level results online. Our team conducts a free eligibility assessment within 24 hours.</p>
+            </div>
+            <div class="hiw-card">
+                <div class="step-number">2</div>
+                <div class="hiw-icon-wrap">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </div>
+                <h3>Get Matched</h3>
+                <p>Our advisors match you with foundation, direct entry, or postgraduate programs across UK, US, and Canada based on your profile and goals.</p>
+            </div>
+            <div class="hiw-card">
+                <div class="step-number">3</div>
+                <div class="hiw-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.22a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.66a16 16 0 006.29 6.29l.51-.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+                </div>
+                <h3>We Handle the Rest</h3>
+                <p>Applications, visa support, and pre-departure guidance — all managed by your dedicated agent. You focus on your future.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-eyebrow">What We Offer</span>
+            <h2>Our Services</h2>
+            <p>Pathways tailored to your qualifications and goals</p>
+        </div>
+        <div class="services-card-grid">
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <h3>Foundation in UK</h3>
+                <p>For students with WAEC or A-Levels who need a bridge year before undergraduate. Entry: 5 WAEC credits including English and Maths.</p>
+                <a href="#" class="service-link">Learn more &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                </div>
+                <h3>Direct 100 Level Abroad</h3>
+                <p>Direct entry into first year at UK, US, or Canadian universities. WAEC A1–B3 or A-Level CCD minimum. No foundation year needed.</p>
+                <a href="#" class="service-link">Learn more &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
+                </div>
+                <h3>Masters</h3>
+                <p>Postgraduate degrees across all disciplines. We assist with your statement of purpose, recommendation letters, and supervisor matching.</p>
+                <a href="#" class="service-link">Learn more &rarr;</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrap">
+                    <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                </div>
+                <h3>PhD</h3>
+                <p>Doctoral placements with full supervision matching. Research proposal development and scholarship application support included.</p>
+                <a href="#" class="service-link">Learn more &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== COMPETITION ========== -->
+<section class="competition-section">
+    <div class="comp-container">
+        <div class="comp-left">
+            <div class="comp-sponsor">Presented by Shell &amp; Partners</div>
+            <h2>Annual Public Speaking Competition</h2>
+            <p>Speak your way to a global scholarship. Open to all WAEC and A-Level students. Win prizes, meet university representatives, and get noticed by recruiters.</p>
+            <a href="#" class="comp-btn">Learn More &amp; Register &rarr;</a>
+        </div>
+        <div class="prize-list">
+            <div class="prize-item">
+                <div class="prize-rank">1</div>
+                <div class="prize-details">
+                    <h4>&#8358;500,000 + Laptop</h4>
+                    <span>First Place Prize</span>
+                </div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-rank">2</div>
+                <div class="prize-details">
+                    <h4>&#8358;300,000 + Tablet</h4>
+                    <span>Second Place Prize</span>
+                </div>
+            </div>
+            <div class="prize-item">
+                <div class="prize-rank">3</div>
+                <div class="prize-details">
+                    <h4>&#8358;150,000 + Books</h4>
+                    <span>Third Place Prize</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-eyebrow">Success Stories</span>
+            <h2>Real Students, Real Results</h2>
+            <p>From WAEC to world-class universities</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="quote-mark">
+                    <svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                </div>
+                <p class="testimonial-text">Hines Education helped me go from my WAEC results to studying Computer Science at the University of Manchester. The advisor answered my questions instantly and handled everything from application to visa.</p>
+                <div class="student-info">
+                    <div class="student-avatar">A</div>
+                    <div class="student-details">
+                        <h4>Adaeze O.</h4>
+                        <p>University of Manchester</p>
+                        <span>BSc Computer Science &bull; UK</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">
+                    <svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                </div>
+                <p class="testimonial-text">I wasn't sure if my A-Levels qualified me for direct entry. Within minutes of chatting with an advisor, I was matched and placed into my foundation year at UBC. Genuinely life-changing.</p>
+                <div class="student-info">
+                    <div class="student-avatar">M</div>
+                    <div class="student-details">
+                        <h4>Michael A.</h4>
+                        <p>University of British Columbia</p>
+                        <span>Foundation Programme &bull; Canada</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-mark">
+                    <svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+                </div>
+                <p class="testimonial-text">Applied for my Masters through Hines and got into NYU with a partial scholarship. The public speaking competition also helped me build confidence for interviews. Highly recommend.</p>
+                <div class="student-info">
+                    <div class="student-avatar">C</div>
+                    <div class="student-details">
+                        <h4>Chiamaka N.</h4>
+                        <p>New York University</p>
+                        <span>MSc Marketing &bull; USA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Hines Education" class="footer-logo-img" onerror="this.style.display='none'">
+                    <span class="footer-brand-text">Hines<span>Education</span></span>
+                </div>
+                <p>Connecting African students to world-class universities since 2015. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Study Abroad</a></li>
+                    <li><a href="#">For Partners</a></li>
+                    <li><a href="#">Competition</a></li>
+                    <li><a href="#">Partner Schools</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pathways</h4>
+                <ul>
+                    <li><a href="#">Foundation in UK</a></li>
+                    <li><a href="#">Direct 100 Level</a></li>
+                    <li><a href="#">Masters Programmes</a></li>
+                    <li><a href="#">PhD Placements</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
+                    <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
+                </ul>
+                <a href="#" class="footer-cta-btn">Book Free Consultation</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hines Education Consulting. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== FLOATING CHATBOT ========== -->
+<div class="chat-launcher">
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-widget-header">
+            <div class="chat-bot-avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 14a1.5 1.5 0 000 3 1.5 1.5 0 000-3zm9 0a1.5 1.5 0 000 3 1.5 1.5 0 000-3z"/></svg>
+            </div>
+            <div class="chat-header-info">
+                <h4>Hines Admissions</h4>
+                <span><span class="chat-online-dot"></span>Online &bull; Replies instantly</span>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="chat-messages-wrap" id="chatMessages">
+            <div class="bot-msg">Hi there! I can help match you with universities. What is your current qualification?</div>
+        </div>
+        <div class="chat-options-wrap" id="chatOptions">
+            <button class="chat-opt-btn" data-val="WAEC">WAEC</button>
+            <button class="chat-opt-btn" data-val="A-Levels">A-Levels</button>
+            <button class="chat-opt-btn" data-val="Bachelor's Degree">Bachelor's Degree</button>
+            <button class="chat-opt-btn" data-val="Master's Degree">Master's Degree</button>
+        </div>
+    </div>
+
+    <!-- Launcher Button -->
+    <button class="chat-launcher-btn" id="chatLauncherBtn" aria-label="Open chat">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span class="chat-unread-dot" id="chatDot"></span>
+    </button>
+</div>
+
+<script>
+(function () {
+    // ——— Nav toggle ———
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+
+    // ——— Chat launcher ———
+    const widget     = document.getElementById('chatWidget');
+    const launchBtn  = document.getElementById('chatLauncherBtn');
+    const closeBtn   = document.getElementById('chatCloseBtn');
+    const dot        = document.getElementById('chatDot');
+    const openChatBtn  = document.getElementById('openChatBtn');
+    const footerChatBtn = document.getElementById('footerChatBtn');
+
+    function openChat() {
+        widget.style.display = 'flex';
+        requestAnimationFrame(() => widget.classList.add('open'));
+        dot.style.display = 'none';
+    }
+
+    function closeChat() {
+        widget.classList.remove('open');
+        setTimeout(() => { if (!widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
+    }
+
+    launchBtn.addEventListener('click', () => widget.classList.contains('open') ? closeChat() : openChat());
+    closeBtn.addEventListener('click', closeChat);
+    if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+
+    // ——— Chat logic ———
+    const messagesWrap = document.getElementById('chatMessages');
+    const optionsWrap  = document.getElementById('chatOptions');
+
+    const WA_NUMBER = '2348088981691';
+    let step = 0;
+    let userData = { qualification: '', country: '', level: '' };
+
+    function scrollDown() {
+        messagesWrap.scrollTop = messagesWrap.scrollHeight;
+    }
+
+    function addMsg(text, isUser) {
+        const div = document.createElement('div');
+        div.className = isUser ? 'user-msg' : 'bot-msg';
+        div.textContent = text;
+        messagesWrap.appendChild(div);
+        scrollDown();
+    }
+
+    function setOptions(opts) {
+        optionsWrap.innerHTML = '';
+        opts.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'chat-opt-btn';
+            btn.textContent = opt;
+            btn.addEventListener('click', () => handleOption(opt));
+            optionsWrap.appendChild(btn);
+        });
+    }
+
+    function buildWhatsAppMessage() {
+        const msg = [
+            'Hello Hines Education,',
+            '',
+            'I would like to enquire about university placement.',
+            '',
+            `Qualification: ${userData.qualification}`,
+            `Target Country: ${userData.country}`,
+            `Level of Study: ${userData.level}`,
+            '',
+            'Please get in touch with me. Thank you.'
+        ].join('\n');
+        return encodeURIComponent(msg);
+    }
+
+    function showWhatsApp() {
+        optionsWrap.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = 'wa-msg';
+        div.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
+        div.addEventListener('click', () => {
+            window.open(`https://wa.me/${WA_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
+        });
+        messagesWrap.appendChild(div);
+        scrollDown();
+    }
+
+    function handleOption(val) {
+        if (step === 0) {
+            userData.qualification = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg(`Great choice. With ${val}, which country are you targeting?`, false);
+                setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']);
+                step = 1;
+            }, 400);
+
+        } else if (step === 1) {
+            userData.country = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg('What level of study are you applying for?', false);
+                const isPostgrad = userData.qualification === "Bachelor's Degree" || userData.qualification === "Master's Degree";
+                if (userData.qualification === "Bachelor's Degree") {
+                    setOptions(['Masters', 'MBA', 'Postgraduate Diploma']);
+                } else if (userData.qualification === "Master's Degree") {
+                    setOptions(['PhD', 'Postdoctoral Research']);
+                } else {
+                    setOptions(['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice']);
+                }
+                step = 2;
+            }, 400);
+
+        } else if (step === 2) {
+            userData.level = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — I have everything I need. Tap below to connect with an advisor on WhatsApp and they will be with you shortly.`, false);
+                showWhatsApp();
+                step = 3;
+            }, 400);
+        }
+    }
+
+    // Wire up initial option buttons
+    document.querySelectorAll('.chat-opt-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleOption(btn.getAttribute('data-val') || btn.textContent));
+    });
+
+    // Auto-show chat after delay with dot notification
+    setTimeout(() => {
+        if (!widget.classList.contains('open')) {
+            dot.style.display = 'block';
+        }
+    }, 4000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hines Education Consulting | Global University Placement</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           COMPLETE MASTER STYLESHEET
+           Reusable for all pages
+        ======================================== */
+        
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cyan: #00BEFF;
+            --cyan-dark: #009ACD;
+            --gold: #DBC368;
+            --gold-dark: #c4a83a;
+            --navy: #1C3B7B;
+            --navy-deep: #0a2351;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --border-gray: #E0E6EF;
+            --text-muted: rgba(28, 59, 123, 0.6);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background-color: var(--white);
+            color: var(--navy);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            letter-spacing: -0.1px;
+        }
+
+        .nav-links a:hover { color: var(--cyan); }
+
+        .nav-cta {
+            background-color: var(--navy);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            transition: all 0.2s ease !important;
+            letter-spacing: 0.2px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--cyan) !important;
+            color: var(--white) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--navy);
+            padding: 4px;
+        }
+
+        .menu-toggle svg { display: block; }
+
+        /* ========== PAGE CONTAINER (for main content) ========== */
+        .page-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            min-height: 60vh;
+        }
+
+        /* Page Header Styles */
+        .page-header {
+            margin-bottom: 48px;
+        }
+
+        .page-header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--navy);
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* Section Container (reusable) */
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy-deep);
+            padding: 64px 0 32px;
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 52px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .footer-brand-text {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--white);
+        }
+
+        .footer-brand-text span { color: var(--cyan); }
+
+        .footer-about p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .social-link:hover { background: var(--cyan); }
+
+        .social-link svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255,255,255,0.7);
+        }
+
+        .social-link:hover svg { fill: white; }
+
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col ul li { margin-bottom: 10px; }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover { color: var(--cyan); }
+
+        .footer-cta-btn {
+            display: inline-block;
+            background: var(--cyan);
+            color: var(--navy-deep);
+            padding: 11px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+
+        .footer-cta-btn:hover { background: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover { color: var(--cyan); }
+
+        /* ========== CHATBOT ========== */
+        .chat-launcher {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9000;
+        }
+
+        .chat-launcher-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--navy);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 24px rgba(28,59,123,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chat-launcher-btn:hover {
+            background: var(--cyan);
+            transform: scale(1.08);
+        }
+
+        .chat-launcher-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
+        }
+
+        .chat-unread-dot {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 14px;
+            height: 14px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: blink 2s infinite;
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 360px;
+            max-height: 540px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+            z-index: 9000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-gray);
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .chat-widget.open {
+            display: flex;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .chat-widget-header {
+            background: var(--navy);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-bot-avatar {
+            width: 38px;
+            height: 38px;
+            background: var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chat-bot-avatar svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .chat-header-info { flex: 1; }
+
+        .chat-header-info h4 {
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .chat-header-info span {
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+        }
+
+        .chat-online-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 2s infinite;
+        }
+
+        .chat-close-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: rgba(255,255,255,0.6);
+            display: flex;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .chat-close-btn:hover { color: white; }
+
+        .chat-close-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .chat-messages-wrap {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f8fafc;
+        }
+
+        .chat-messages-wrap::-webkit-scrollbar { width: 4px; }
+        .chat-messages-wrap::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages-wrap::-webkit-scrollbar-thumb { background: var(--border-gray); border-radius: 10px; }
+
+        .bot-msg {
+            background: var(--white);
+            padding: 11px 14px;
+            border-radius: 14px;
+            border-top-left-radius: 4px;
+            max-width: 82%;
+            color: var(--navy);
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-gray);
+            align-self: flex-start;
+        }
+
+        .user-msg {
+            background: var(--navy);
+            color: white;
+            padding: 11px 14px;
+            border-radius: 14px;
+            border-top-right-radius: 4px;
+            max-width: 82%;
+            font-size: 14px;
+            line-height: 1.5;
+            align-self: flex-end;
+        }
+
+        .wa-msg {
+            background: #22c55e;
+            color: white;
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wa-msg:hover { background: #16a34a; }
+
+        .wa-msg svg { width: 20px; height: 20px; fill: white; }
+
+        .chat-options-wrap {
+            padding: 12px 16px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: var(--white);
+            border-top: 1px solid var(--border-gray);
+        }
+
+        .chat-opt-btn {
+            background: var(--white);
+            border: 1.5px solid var(--border-gray);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--navy);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .chat-opt-btn:hover {
+            border-color: var(--navy);
+            background: var(--light-gray);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--border-gray);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-container { padding: 14px 24px; }
+
+            .page-container {
+                padding: 40px 20px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .section-container, .footer-container {
+                padding: 0 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .chat-widget {
+                width: calc(100vw - 40px);
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVBAR (Reusable - Keep as is for all pages)
+     ======================================== -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">Hines<span>Education</span></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="study-abroad.html">Study Abroad</a>
+            <a href="partners.html">For Partners</a>
+            <a href="competition.html">Competition</a>
+            <a href="schools.html">Partner Schools</a>
+            <a href="contact.html">Contact</a>
+            <a href="get-started.html" class="nav-cta">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<section class="comp-hero">
+    <style>
+        .comp-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0a2351 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .comp-hero::before {
+            content: '🎤';
+            position: absolute;
+            font-size: 350px;
+            opacity: 0.05;
+            bottom: -80px;
+            right: -50px;
+            pointer-events: none;
+        }
+        .comp-hero::after {
+            content: '🏆';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+        }
+        .comp-hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .comp-hero h1 {
+            color: var(--white);
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        .comp-hero h1 span {
+            color: var(--gold);
+        }
+        .comp-hero p {
+            color: rgba(255,255,255,0.8);
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        .prize-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .prize-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px 30px;
+            text-align: center;
+            min-width: 150px;
+        }
+        .prize-emoji {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .prize-item h3 {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .prize-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            margin: 0;
+        }
+        .register-btn-hero {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 16px 48px;
+            border-radius: 48px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        .register-btn-hero:hover {
+            background: var(--cyan);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .comp-hero h1 {
+                font-size: 36px;
+            }
+            .comp-hero p {
+                font-size: 18px;
+            }
+            .comp-hero-container {
+                padding: 0 20px;
+            }
+            .prize-item {
+                padding: 15px 20px;
+                min-width: 120px;
+            }
+            .prize-emoji {
+                font-size: 36px;
+            }
+        }
+    </style>
+    <div class="comp-hero-container">
+        <h1>Speak Your Way to a <span>Global Scholarship</span></h1>
+        <p>The biggest public speaking competition for WAEC & A-Level students across Africa. Win amazing prizes, meet university reps, and launch your study abroad journey.</p>
+        <div class="prize-showcase">
+            <div class="prize-item">
+                <span class="prize-emoji">💻</span>
+                <h3>MacBook Air</h3>
+                <p>+ ₦500,000</p>
+            </div>
+            <div class="prize-item">
+                <span class="prize-emoji">🏆</span>
+                <h3>Champions Trophy</h3>
+                <p>+ Certificate</p>
+            </div>
+            <div class="prize-item">
+                <span class="prize-emoji">🎓</span>
+                <h3>Scholarship Waiver</h3>
+                <p>Partial sponsorship</p>
+            </div>
+        </div>
+        <a href="#comp-registration" class="register-btn-hero">🎤 Register Now →</a>
+    </div>
+</section><section class="sponsor-banner">
+    <style>
+        .sponsor-banner {
+            background: linear-gradient(135deg, var(--gold) 0%, #c4a83a 100%);
+            padding: 30px 0;
+        }
+        .sponsor-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            text-align: center;
+        }
+        .sponsor-container h3 {
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .sponsor-logo {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 18px;
+        }
+        .sponsor-logo.shell {
+            background: rgba(255,255,255,0.9);
+            color: #e30a17;
+        }
+        .sponsor-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        @media (max-width: 768px) {
+            .sponsor-logos {
+                gap: 20px;
+            }
+            .sponsor-logo {
+                padding: 8px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <div class="sponsor-container">
+        <h3>PRESENTED BY</h3>
+        <div class="sponsor-logos">
+            <div class="sponsor-logo shell">🛢️ SHELL</div>
+            <div class="sponsor-logo">🏦 First Bank</div>
+            <div class="sponsor-logo">✈️ British Airways</div>
+        </div>
+        <div style="margin-top: 15px;">
+            <span class="sponsor-badge">🥇 Gold Sponsor</span>
+            <span class="sponsor-badge">🥈 Silver Sponsor</span>
+            <span class="sponsor-badge">🥉 Bronze Sponsor</span>
+        </div>
+    </div>
+</section>
+<section class="why-compete">
+    <style>
+        .why-compete {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        .why-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .why-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .why-header h2 {
+            color: var(--navy);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .why-header h2 span {
+            color: var(--cyan);
+        }
+        .why-header p {
+            color: var(--navy);
+            opacity: 0.7;
+            font-size: 18px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 32px;
+            background: var(--light-gray);
+            border-radius: 24px;
+            transition: all 0.3s;
+            border: 1px solid var(--border-gray);
+        }
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+            background: var(--white);
+        }
+        .why-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        .why-card h3 {
+            color: var(--navy);
+            font-size: 22px;
+            margin-bottom: 16px;
+        }
+        .why-card p {
+            color: var(--navy);
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+        @media (max-width: 1024px) {
+            .why-grid {
+                gap: 25px;
+            }
+        }
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-header h2 {
+                font-size: 28px;
+            }
+            .why-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <div class="why-container">
+        <div class="why-header">
+            <h2>Why <span>Compete?</span></h2>
+            <p>Three reasons to step onto the stage</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Meet University Reps</h3>
+                <p>Network directly with admissions officers from UK, US, and Canadian universities. Get real-time feedback on your profile.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>Win Amazing Prizes</h3>
+                <p>MacBooks, cash prizes, trophies, and scholarship waivers. Every finalist walks away with something valuable.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">👀</div>
+                <h3>Get Noticed by Recruiters</h3>
+                <p>Top performers are flagged to our partner institutions. Past winners have received direct admission offers.</p>
+            </div>
+        </div>
+    </div>
+</section><section class="how-it-works-comp">
+    <style>
+        .how-it-works-comp {
+            background: linear-gradient(135deg, rgba(0, 190, 255, 0.05) 0%, rgba(219, 195, 104, 0.05) 100%);
+            padding: 80px 0;
+        }
+        .hiw-comp-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .hiw-comp-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .hiw-comp-header h2 {
+            color: var(--navy);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .hiw-comp-header p {
+            color: var(--navy);
+            opacity: 0.7;
+            font-size: 18px;
+        }
+        .steps-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .steps-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            right: 80px;
+            height: 3px;
+            background: var(--cyan);
+            z-index: 0;
+        }
+        .step-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            margin: 0 10px;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .step-number-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--cyan);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+        .step-item h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .step-item p {
+            color: var(--navy);
+            opacity: 0.6;
+            font-size: 13px;
+        }
+        @media (max-width: 1024px) {
+            .steps-timeline::before {
+                display: none;
+            }
+            .step-item {
+                margin: 10px;
+                min-width: 200px;
+            }
+        }
+        @media (max-width: 768px) {
+            .steps-timeline {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hiw-comp-header h2 {
+                font-size: 28px;
+            }
+            .hiw-comp-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <div class="hiw-comp-container">
+        <div class="hiw-comp-header">
+            <h2>How It Works</h2>
+            <p>Four steps to becoming a champion</p>
+        </div>
+        <div class="steps-timeline">
+            <div class="step-item">
+                <div class="step-number-circle">1</div>
+                <h3>Register Online</h3>
+                <p>Fill out the registration form with your details and school</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number-circle">2</div>
+                <h3>Topic Announced</h3>
+                <p>Receive your speech topic via email/WhatsApp</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number-circle">3</div>
+                <h3>Preliminary Rounds</h3>
+                <p>Virtual or in-person heats at designated centers</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number-circle">4</div>
+                <h3>Finals at Our Fair</h3>
+                <p>Grand finale at the International Education Fair</p>
+            </div>
+        </div>
+    </div>
+</section><section class="prizes-section">
+    <style>
+        .prizes-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+        .prizes-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .prizes-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .prizes-header h2 {
+            color: var(--navy);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .prizes-header p {
+            color: var(--navy);
+            opacity: 0.7;
+            font-size: 18px;
+        }
+        .prizes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .prize-card {
+            border-radius: 28px;
+            padding: 40px 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .prize-card.gold {
+            background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+            transform: scale(1.02);
+        }
+        .prize-card.silver {
+            background: linear-gradient(135deg, #C0C0C0 0%, #A8A8A8 100%);
+        }
+        .prize-card.bronze {
+            background: linear-gradient(135deg, #CD7F32 0%, #B87333 100%);
+        }
+        .prize-card:hover {
+            transform: translateY(-10px);
+        }
+        .prize-card.gold:hover {
+            transform: scale(1.03) translateY(-5px);
+        }
+        .prize-medal {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        .prize-card h3 {
+            color: var(--navy);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .prize-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .prize-list li {
+            padding: 8px 0;
+            color: var(--navy);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .prize-list li:last-child {
+            border-bottom: none;
+        }
+        .prize-value {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 20px;
+            color: var(--navy);
+        }
+        @media (max-width: 1024px) {
+            .prizes-grid {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .prizes-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .prizes-header h2 {
+                font-size: 28px;
+            }
+            .prizes-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <div class="prizes-container">
+        <div class="prizes-header">
+            <h2>🏆 What You Can Win</h2>
+            <p>Incredible prizes for our top speakers</p>
+        </div>
+        <div class="prizes-grid">
+            <div class="prize-card gold">
+                <div class="prize-medal">🥇</div>
+                <h3>Gold Champion</h3>
+                <ul class="prize-list">
+                    <li>💻 MacBook Air M2</li>
+                    <li>💰 ₦500,000 Cash</li>
+                    <li>🏆 Championship Trophy</li>
+                    <li>🎓 Scholarship Waiver (Partial)</li>
+                    <li>📜 Certificate of Excellence</li>
+                </ul>
+                <div class="prize-value">Total Value: ₦2.5M+</div>
+            </div>
+            <div class="prize-card silver">
+                <div class="prize-medal">🥈</div>
+                <h3>Silver Runner-Up</h3>
+                <ul class="prize-list">
+                    <li>💻 High-Performance Laptop</li>
+                    <li>💰 ₦300,000 Cash</li>
+                    <li>🏅 Silver Medal</li>
+                    <li>📜 Certificate of Merit</li>
+                </ul>
+                <div class="prize-value">Total Value: ₦1.2M+</div>
+            </div>
+            <div class="prize-card bronze">
+                <div class="prize-medal">🥉</div>
+                <h3>Bronze Finalist</h3>
+                <ul class="prize-list">
+                    <li>📱 Tablet + Accessories</li>
+                    <li>💰 ₦150,000 Cash</li>
+                    <li>🥉 Bronze Medal</li>
+                    <li>📜 Certificate of Participation</li>
+                </ul>
+                <div class="prize-value">Total Value: ₦500K+</div>
+            </div>
+        </div>
+    </div>
+</section><section class="sponsor-packages">
+    <style>
+        .sponsor-packages {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+        .packages-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .packages-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .packages-header h2 {
+            color: var(--navy);
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .packages-header p {
+            color: var(--navy);
+            opacity: 0.7;
+            font-size: 18px;
+        }
+        .packages-table {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .package-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        .package-row.header {
+            background: var(--navy);
+            color: white;
+            font-weight: 700;
+        }
+        .package-cell {
+            padding: 20px 16px;
+            display: flex;
+            align-items: center;
+        }
+        .package-row.header .package-cell {
+            color: white;
+            font-weight: 700;
+        }
+        .package-row:not(.header):hover {
+            background: rgba(0, 190, 255, 0.03);
+        }
+        .package-title {
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 18px;
+        }
+        .package-price {
+            font-weight: 800;
+            color: var(--cyan);
+            font-size: 20px;
+        }
+        .check {
+            color: green;
+            font-size: 20px;
+        }
+        .sponsor-cta-small {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            display: inline-block;
+        }
+        @media (max-width: 1024px) {
+            .package-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 15px;
+            }
+            .package-cell {
+                justify-content: space-between;
+            }
+            .package-row.header {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .packages-container {
+                padding: 0 20px;
+            }
+            .packages-header h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <div class="packages-container">
+        <div class="packages-header">
+            <h2>Sponsor the Competition</h2>
+            <p>Get in front of 500+ students and 50+ university reps</p>
+        </div>
+        <div class="packages-table">
+            <div class="package-row header">
+                <div class="package-cell">Benefits</div>
+                <div class="package-cell">Gold ($5,000)</div>
+                <div class="package-cell">Silver ($2,500)</div>
+                <div class="package-cell">Bronze ($1,000)</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Logo on all marketing materials</div>
+                <div class="package-cell">✅ Largest placement</div>
+                <div class="package-cell">✅ Medium placement</div>
+                <div class="package-cell">✅ Small placement</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Booth at finals</div>
+                <div class="package-cell">✅ Premium location</div>
+                <div class="package-cell">✅ Standard location</div>
+                <div class="package-cell">❌</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Stage mention (opening/closing)</div>
+                <div class="package-cell">✅ Multiple times</div>
+                <div class="package-cell">✅ Once</div>
+                <div class="package-cell">❌</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Social media promotion</div>
+                <div class="package-cell">✅ 10+ posts</div>
+                <div class="package-cell">✅ 5+ posts</div>
+                <div class="package-cell">✅ 2+ posts</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Logo on winner's trophy</div>
+                <div class="package-cell">✅</div>
+                <div class="package-cell">❌</div>
+                <div class="package-cell">❌</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Keynote speaking slot (5 min)</div>
+                <div class="package-cell">✅</div>
+                <div class="package-cell">❌</div>
+                <div class="package-cell">❌</div>
+            </div>
+            <div class="package-row">
+                <div class="package-cell">Student leads database</div>
+                <div class="package-cell">✅ Full access</div>
+                <div class="package-cell">✅ Limited (100)</div>
+                <div class="package-cell">❌</div>
+            </div>
+        </div>
+    </div>
+</section><section class="comp-registration" id="comp-registration">
+    <style>
+        .comp-registration {
+            background: linear-gradient(135deg, rgba(0, 190, 255, 0.08) 0%, rgba(219, 195, 104, 0.05) 100%);
+            padding: 80px 0;
+        }
+        .reg-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .reg-card {
+            background: var(--white);
+            border-radius: 32px;
+            padding: 48px;
+            border: 1px solid var(--border-gray);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        .reg-card h2 {
+            color: var(--navy);
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .reg-card p {
+            color: var(--navy);
+            opacity: 0.7;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group label {
+            display: block;
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px rgba(0, 190, 255, 0.1);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .register-submit {
+            background: var(--gold);
+            color: var(--navy);
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 48px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 16px;
+        }
+        .register-submit:hover {
+            background: var(--cyan);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--navy);
+            opacity: 0.5;
+        }
+        @media (max-width: 768px) {
+            .reg-card {
+                padding: 32px 24px;
+            }
+            .reg-card h2 {
+                font-size: 26px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .reg-container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <div class="reg-container">
+        <div class="reg-card">
+            <h2>🎤 Register for the Competition</h2>
+            <p>Deadline: March 30, 2025 | Limited slots available</p>
+            <form id="compRegisterForm" onsubmit="event.preventDefault(); alert('Registration submitted! Check your WhatsApp for confirmation within 48 hours.');">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>School Name *</label>
+                        <input type="text" placeholder="Your school/university" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>WhatsApp Number *</label>
+                        <input type="tel" placeholder="+234 800 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Current Qualification *</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>WAEC (awaiting result)</option>
+                            <option>WAEC (completed)</option>
+                            <option>A-Levels</option>
+                            <option>IGCSE</option>
+                            <option>Bachelor's Degree</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Topic Category *</label>
+                        <select required>
+                            <option value="">Select</option>
+                            <option>Education & Technology</option>
+                            <option>Climate Change</option>
+                            <option>Leadership & Youth</option>
+                            <option>Study Abroad Experiences</option>
+                            <option>Open Category (any topic)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Why do you want to compete? (Optional)</label>
+                    <textarea rows="3" placeholder="Tell us a little about yourself..."></textarea>
+                </div>
+                <button type="submit" class="register-submit">🎤 Register Now →</button>
+                <div class="form-note">Free registration. Selected participants will receive topic and venue details via WhatsApp.</div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- ========================================
+     FOOTER (Reusable - Keep as is for all pages)
+     ======================================== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Hines Education" class="footer-logo-img" onerror="this.style.display='none'">
+                    <span class="footer-brand-text">Hines<span>Education</span></span>
+                </div>
+                <p>Connecting African students to world-class universities since 2015. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter/X">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="study-abroad.html">Study Abroad</a></li>
+                    <li><a href="partners.html">For Partners</a></li>
+                    <li><a href="competition.html">Competition</a></li>
+                    <li><a href="schools.html">Partner Schools</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Pathways</h4>
+                <ul>
+                    <li><a href="foundation.html">Foundation in UK</a></li>
+                    <li><a href="direct-entry.html">Direct 100 Level</a></li>
+                    <li><a href="masters.html">Masters Programmes</a></li>
+                    <li><a href="phd.html">PhD Placements</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Started</h4>
+                <ul>
+                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
+                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
+                    <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
+                </ul>
+                <a href="consultation.html" class="footer-cta-btn">Book Free Consultation</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hines Education Consulting. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========================================
+     CHATBOT WIDGET (Reusable - Keep as is)
+     ======================================== -->
+<div class="chat-launcher">
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-widget-header">
+            <div class="chat-bot-avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2zM7.5 14a1.5 1.5 0 000 3 1.5 1.5 0 000-3zm9 0a1.5 1.5 0 000 3 1.5 1.5 0 000-3z"/></svg>
+            </div>
+            <div class="chat-header-info">
+                <h4>Hines Admissions</h4>
+                <span><span class="chat-online-dot"></span>Online &bull; Replies instantly</span>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="chat-messages-wrap" id="chatMessages">
+            <div class="bot-msg">Hi there! I can help match you with universities. What is your current qualification?</div>
+        </div>
+        <div class="chat-options-wrap" id="chatOptions">
+            <button class="chat-opt-btn" data-val="WAEC">WAEC</button>
+            <button class="chat-opt-btn" data-val="A-Levels">A-Levels</button>
+            <button class="chat-opt-btn" data-val="Bachelor's Degree">Bachelor's Degree</button>
+            <button class="chat-opt-btn" data-val="Master's Degree">Master's Degree</button>
+        </div>
+    </div>
+    <button class="chat-launcher-btn" id="chatLauncherBtn" aria-label="Open chat">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span class="chat-unread-dot" id="chatDot"></span>
+    </button>
+</div>
+
+<!-- ========================================
+     MASTER JAVASCRIPT (Navbar + Chatbot)
+     ======================================== -->
+<script>
+(function() {
+    // ========== NAVBAR TOGGLE ==========
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+    }
+
+    // ========== CHATBOT LOGIC ==========
+    const widget = document.getElementById('chatWidget');
+    const launchBtn = document.getElementById('chatLauncherBtn');
+    const closeBtn = document.getElementById('chatCloseBtn');
+    const dot = document.getElementById('chatDot');
+    const openChatBtn = document.getElementById('openChatBtn');
+    const footerChatBtn = document.getElementById('footerChatBtn');
+    const messagesWrap = document.getElementById('chatMessages');
+    const optionsWrap = document.getElementById('chatOptions');
+
+    // CHANGE THIS TO YOUR WHATSAPP NUMBER (format: countrycode + number, no plus sign)
+    const WA_NUMBER = '2348088981691';
+    
+    let step = 0;
+    let userData = { qualification: '', country: '', level: '' };
+
+    function openChat() {
+        if (!widget) return;
+        widget.style.display = 'flex';
+        requestAnimationFrame(() => widget.classList.add('open'));
+        if (dot) dot.style.display = 'none';
+    }
+
+    function closeChat() {
+        if (!widget) return;
+        widget.classList.remove('open');
+        setTimeout(() => { if (widget && !widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
+    }
+
+    if (launchBtn) launchBtn.addEventListener('click', () => widget && widget.classList.contains('open') ? closeChat() : openChat());
+    if (closeBtn) closeBtn.addEventListener('click', closeChat);
+    if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+
+    function scrollDown() {
+        if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight;
+    }
+
+    function addMsg(text, isUser) {
+        if (!messagesWrap) return;
+        const div = document.createElement('div');
+        div.className = isUser ? 'user-msg' : 'bot-msg';
+        div.textContent = text;
+        messagesWrap.appendChild(div);
+        scrollDown();
+    }
+
+    function setOptions(opts) {
+        if (!optionsWrap) return;
+        optionsWrap.innerHTML = '';
+        opts.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'chat-opt-btn';
+            btn.textContent = opt;
+            btn.addEventListener('click', () => handleOption(opt));
+            optionsWrap.appendChild(btn);
+        });
+    }
+
+    function buildWhatsAppMessage() {
+        const msg = [
+            'Hello Hines Education,',
+            '',
+            'I would like to enquire about university placement.',
+            '',
+            `Qualification: ${userData.qualification}`,
+            `Target Country: ${userData.country}`,
+            `Level of Study: ${userData.level}`,
+            '',
+            'Please get in touch with me. Thank you.'
+        ].join('\n');
+        return encodeURIComponent(msg);
+    }
+
+    function showWhatsApp() {
+        if (!optionsWrap) return;
+        optionsWrap.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = 'wa-msg';
+        div.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
+        div.addEventListener('click', () => {
+            window.open(`https://wa.me/${WA_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
+        });
+        if (messagesWrap) messagesWrap.appendChild(div);
+        scrollDown();
+    }
+
+    function handleOption(val) {
+        if (step === 0) {
+            userData.qualification = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg(`Great choice. With ${val}, which country are you targeting?`, false);
+                setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']);
+                step = 1;
+            }, 400);
+        } else if (step === 1) {
+            userData.country = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg('What level of study are you applying for?', false);
+                if (userData.qualification === "Bachelor's Degree") {
+                    setOptions(['Masters', 'MBA', 'Postgraduate Diploma']);
+                } else if (userData.qualification === "Master's Degree") {
+                    setOptions(['PhD', 'Postdoctoral Research']);
+                } else {
+                    setOptions(['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice']);
+                }
+                step = 2;
+            }, 400);
+        } else if (step === 2) {
+            userData.level = val;
+            addMsg(val, true);
+            setTimeout(() => {
+                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — I have everything I need. Tap below to connect with an advisor on WhatsApp and they will be with you shortly.`, false);
+                showWhatsApp();
+                step = 3;
+            }, 400);
+        }
+    }
+
+    // Wire up initial option buttons
+    document.querySelectorAll('.chat-opt-btn').forEach(btn => {
+        btn.addEventListener('click', () => handleOption(btn.getAttribute('data-val') || btn.textContent));
+    });
+
+    // Auto-show dot notification after delay
+    setTimeout(() => {
+        if (widget && !widget.classList.contains('open') && dot) {
+            dot.style.display = 'block';
+        }
+    }, 4000);
+})();
+</script>
+</body>
+</html>
