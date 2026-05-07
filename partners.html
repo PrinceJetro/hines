@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hines Education Consulting | Global University Placement</title>
+    <title>For Partners | Hines Education Consulting</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ========================================
-           COMPLETE MASTER STYLESHEET
-           Reusable for all pages
+           MASTER STYLESHEET — Hines Education
         ======================================== */
-        
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --cyan: #00BEFF;
@@ -34,579 +28,399 @@
         }
 
         html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--white); color: var(--navy); line-height: 1.5; overflow-x: hidden; }
 
-        body {
-            font-family: 'DM Sans', -apple-system, sans-serif;
-            background-color: var(--white);
-            color: var(--navy);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ========== ANIMATIONS ========== */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        /* ========== NAVBAR ========== */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.96);
-            border-bottom: 1px solid var(--border-gray);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 40px;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Fraunces', serif;
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-
-        .logo-text span {
-            color: var(--cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s ease;
-            letter-spacing: -0.1px;
-        }
-
+        /* ===== NAVBAR ===== */
+        .navbar { background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border-gray); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(16px); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; max-width: 1440px; margin: 0 auto; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-img { width: 38px; height: 38px; object-fit: contain; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; line-height: 1; }
+        .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 15px; transition: color 0.2s; }
         .nav-links a:hover { color: var(--cyan); }
+        .nav-cta { background: var(--navy) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: background 0.2s !important; }
+        .nav-cta:hover { background: var(--cyan) !important; }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); padding: 4px; }
 
-        .nav-cta {
-            background-color: var(--navy);
-            color: var(--white) !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            transition: all 0.2s ease !important;
-            letter-spacing: 0.2px;
-        }
-
-        .nav-cta:hover {
-            background-color: var(--cyan) !important;
-            color: var(--white) !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--navy);
-            padding: 4px;
-        }
-
-        .menu-toggle svg { display: block; }
-
-        /* ========== PAGE CONTAINER (for main content) ========== */
-        .page-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            min-height: 60vh;
-        }
-
-        /* Page Header Styles */
-        .page-header {
-            margin-bottom: 48px;
-        }
-
-        .page-header h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -1.5px;
-            margin-bottom: 16px;
-        }
-
-        .page-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            max-width: 700px;
-        }
-
-        /* Section Container (reusable) */
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* ========== FOOTER ========== */
-        .footer {
+        /* ===== HERO ===== */
+        .partners-hero {
             background: var(--navy-deep);
-            padding: 64px 0 32px;
-            color: white;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 48px;
-            margin-bottom: 52px;
-        }
-
-        .footer-brand {
+            min-height: 560px;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 18px;
         }
-
-        .footer-logo-img {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
+        .hero-bg-pattern {
+            position: absolute; inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(0,190,255,0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(219,195,104,0.08) 0%, transparent 40%);
         }
-
-        .footer-brand-text {
+        .hero-grid-lines {
+            position: absolute; inset: 0; opacity: 0.04;
+            background-image: linear-gradient(var(--white) 1px, transparent 1px), linear-gradient(90deg, var(--white) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero-content-wrap {
+            max-width: 1280px; margin: 0 auto; padding: 80px 40px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center;
+            position: relative; z-index: 2; width: 100%;
+        }
+        .hero-left { animation: fadeUp 0.7s ease both; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,190,255,0.15);
+            border: 1px solid rgba(0,190,255,0.3);
+            border-radius: 40px; padding: 6px 16px;
+            font-size: 12px; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            color: var(--cyan); margin-bottom: 24px;
+        }
+        .hero-badge span { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; display: inline-block; }
+        .partners-hero h1 {
             font-family: 'Fraunces', serif;
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--white);
+            font-size: 54px; font-weight: 900;
+            color: var(--white); line-height: 1.08;
+            letter-spacing: -2px; margin-bottom: 24px;
+        }
+        .partners-hero h1 em { color: var(--cyan); font-style: normal; }
+        .partners-hero h1 .gold { color: var(--gold); }
+        .partners-hero > .hero-content-wrap .hero-left p {
+            color: rgba(255,255,255,0.75); font-size: 18px;
+            line-height: 1.65; max-width: 480px; margin-bottom: 36px;
+        }
+        .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--cyan); color: var(--navy-deep);
+            padding: 14px 32px; border-radius: 8px;
+            text-decoration: none; font-weight: 700; font-size: 15px;
+            transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.08); color: var(--white);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 14px 28px; border-radius: 8px;
+            text-decoration: none; font-weight: 600; font-size: 15px;
+            transition: all 0.25s;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.14); }
+        .hero-stats-row {
+            display: flex; gap: 32px; margin-top: 44px;
+            padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat .num { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 900; color: var(--cyan); line-height: 1; }
+        .hero-stat .lbl { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+        /* Hero Right — Student Illustration */
+        .hero-right { animation: fadeUp 0.7s 0.15s ease both; position: relative; }
+        .hero-visual {
+            background: linear-gradient(145deg, rgba(0,190,255,0.12), rgba(219,195,104,0.08));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px; padding: 32px;
+            position: relative; overflow: hidden;
+        }
+        .hero-visual-inner {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        }
+        .student-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px;
+        }
+        .student-card.highlight { background: rgba(0,190,255,0.12); border-color: rgba(0,190,255,0.25); }
+        .s-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Fraunces', serif; font-size: 16px; font-weight: 900; color: white;
+        }
+        .s-name { font-size: 13px; font-weight: 700; color: white; }
+        .s-detail { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.4; }
+        .s-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+        }
+        .s-tag.uk { background: rgba(0,190,255,0.2); color: var(--cyan); }
+        .s-tag.us { background: rgba(219,195,104,0.2); color: var(--gold); }
+        .s-tag.ca { background: rgba(220,50,50,0.15); color: #ff8080; }
+        .hero-visual-footer {
+            margin-top: 16px; padding: 16px;
+            background: rgba(255,255,255,0.05); border-radius: 12px;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .hv-icon { width: 36px; height: 36px; background: var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .hv-icon svg { width: 18px; height: 18px; fill: var(--navy-deep); }
+        .hv-text { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.4; }
+        .hv-text strong { color: white; }
+
+        @media (max-width: 900px) {
+            .hero-content-wrap { grid-template-columns: 1fr; }
+            .hero-right { display: none; }
+            .partners-hero h1 { font-size: 40px; }
         }
 
+        /* ===== PROBLEM STATEMENT ===== */
+        .problem-statement { background: var(--white); padding: 80px 0; }
+        .problem-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .problem-card {
+            background: linear-gradient(135deg, rgba(219,195,104,0.07) 0%, rgba(0,190,255,0.04) 100%);
+            border-radius: 28px; padding: 56px; text-align: center;
+            border: 1px solid var(--border-gray); position: relative; overflow: hidden;
+        }
+        .problem-icon-wrap {
+            width: 72px; height: 72px; background: linear-gradient(135deg, var(--navy), #2a52a5);
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 28px;
+        }
+        .problem-icon-wrap svg { width: 36px; height: 36px; fill: var(--cyan); }
+        .problem-statement h2 { color: var(--navy); font-family: 'Fraunces', serif; font-size: 34px; font-weight: 900; margin-bottom: 16px; letter-spacing: -1px; }
+        .problem-statement h2 span { color: var(--gold); }
+        .problem-statement p { color: var(--navy); opacity: 0.75; font-size: 18px; line-height: 1.7; max-width: 800px; margin: 0 auto; }
+        .stats-row { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+        .stat-badge {
+            background: var(--white); padding: 14px 22px; border-radius: 50px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            display: inline-flex; align-items: center; gap: 10px;
+            border: 1px solid var(--border-gray);
+        }
+        .stat-badge svg { width: 20px; height: 20px; fill: var(--cyan); flex-shrink: 0; }
+        .stat-badge .text { font-weight: 600; color: var(--navy); font-size: 14px; }
+
+        /* ===== SOLUTION ===== */
+        .our-solution { background: var(--light-gray); padding: 80px 0; }
+        .solution-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; display: block; }
+        .section-header h2 { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 900; color: var(--navy); letter-spacing: -1px; margin-bottom: 12px; }
+        .section-header h2 span { color: var(--cyan); }
+        .section-header p { color: var(--text-muted); font-size: 18px; }
+        .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .solution-card {
+            background: var(--white); border-radius: 20px; padding: 36px 28px;
+            text-align: center; transition: all 0.3s; border: 1px solid var(--border-gray);
+        }
+        .solution-card:hover { transform: translateY(-6px); border-color: var(--cyan); box-shadow: 0 20px 40px rgba(0,190,255,0.08); }
+        .solution-icon {
+            width: 72px; height: 72px;
+            background: linear-gradient(135deg, rgba(0,190,255,0.1), rgba(219,195,104,0.05));
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .solution-icon svg { width: 34px; height: 34px; fill: var(--navy); }
+        .solution-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .solution-card p { color: var(--text-muted); line-height: 1.65; font-size: 14px; }
+        .solution-highlight { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-gray); font-weight: 600; color: var(--cyan); font-size: 13px; }
+
+        /* ===== EXHIBITIONS ===== */
+        .exhibition-section { background: var(--white); padding: 80px 0; }
+        .exhibition-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .fair-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+        .calendar-box, .photos-box { background: var(--light-gray); border-radius: 20px; padding: 32px; border: 1px solid var(--border-gray); }
+        .box-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; color: var(--navy); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+        .box-title svg { width: 22px; height: 22px; fill: var(--cyan); flex-shrink: 0; }
+        .fair-list { display: flex; flex-direction: column; gap: 14px; }
+        .fair-item {
+            display: flex; align-items: center; gap: 16px; padding: 14px 16px;
+            background: var(--white); border-radius: 14px; transition: all 0.25s;
+        }
+        .fair-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .fair-date { min-width: 72px; text-align: center; }
+        .fair-date .month { background: var(--cyan); color: white; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; display: inline-block; letter-spacing: 0.5px; }
+        .fair-date .day { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 900; color: var(--navy); display: block; margin-top: 6px; line-height: 1; }
+        .fair-info h4 { color: var(--navy); font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+        .fair-info p { color: var(--text-muted); font-size: 12px; }
+        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+        .photo-placeholder {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--border-gray), var(--light-gray));
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            transition: transform 0.25s;
+        }
+        .photo-placeholder:hover { transform: scale(1.03); }
+        .photo-placeholder svg { width: 32px; height: 32px; fill: rgba(28,59,123,0.25); }
+        .exhibit-btn { display: block; background: var(--cyan); color: var(--white); padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; text-align: center; transition: all 0.25s; }
+        .exhibit-btn:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); }
+
+        /* ===== COMPETITION RECRUITMENT ===== */
+        .competition-recruitment { background: linear-gradient(135deg, rgba(219,195,104,0.08), rgba(0,190,255,0.04)); padding: 80px 0; }
+        .comp-rec-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .comp-rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .comp-rec-text h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 900; color: var(--navy); margin-bottom: 16px; letter-spacing: -1px; }
+        .comp-rec-text h2 span { color: var(--gold); }
+        .comp-rec-text p { color: var(--text-muted); font-size: 17px; line-height: 1.7; margin-bottom: 24px; }
+        .comp-stats { display: flex; gap: 30px; margin: 28px 0; }
+        .comp-stat .number { font-family: 'Fraunces', serif; font-size: 44px; font-weight: 900; color: var(--cyan); line-height: 1; }
+        .comp-stat .label { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+        .comp-btn { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; font-size: 15px; }
+        .comp-btn:hover { background: var(--cyan); color: var(--white); transform: translateY(-2px); }
+        .comp-rec-visual {
+            background: linear-gradient(145deg, var(--navy), #1a4a9a);
+            border-radius: 24px; padding: 40px; text-align: center;
+            border: 1px solid rgba(0,190,255,0.2); position: relative; overflow: hidden;
+        }
+        .comp-rec-visual::before {
+            content: ''; position: absolute; top: -60px; right: -60px;
+            width: 200px; height: 200px;
+            background: radial-gradient(circle, rgba(0,190,255,0.15), transparent);
+            border-radius: 50%;
+        }
+        .comp-trophy-icon { width: 80px; height: 80px; background: var(--gold); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        .comp-trophy-icon svg { width: 44px; height: 44px; fill: var(--navy-deep); }
+        .comp-rec-visual h3 { color: white; font-family: 'Fraunces', serif; font-size: 26px; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .comp-rec-visual p { color: rgba(255,255,255,0.7); font-size: 15px; line-height: 1.6; }
+        .sponsor-tag { background: rgba(255,255,255,0.1); display: inline-block; padding: 8px 18px; border-radius: 40px; margin-top: 20px; font-size: 13px; color: var(--gold); font-weight: 600; border: 1px solid rgba(219,195,104,0.3); }
+
+        /* ===== BENEFITS ===== */
+        .partner-benefits { background: var(--white); padding: 80px 0; }
+        .benefits-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .benefit-card { background: var(--light-gray); border-radius: 20px; padding: 32px; text-align: center; transition: all 0.3s; border: 1px solid var(--border-gray); }
+        .benefit-card:hover { transform: translateY(-5px); border-color: var(--cyan); background: var(--white); }
+        .benefit-icon { width: 68px; height: 68px; background: linear-gradient(135deg, rgba(0,190,255,0.1), rgba(219,195,104,0.05)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+        .benefit-icon svg { width: 32px; height: 32px; fill: var(--navy); }
+        .benefit-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+        .benefit-list { list-style: none; text-align: left; }
+        .benefit-list li { padding: 9px 0; color: var(--navy); opacity: 0.8; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px dashed var(--border-gray); }
+        .benefit-list li:last-child { border-bottom: none; }
+        .benefit-list li::before { content: ''; width: 16px; height: 16px; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%2300BEFF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E") center/contain no-repeat; flex-shrink: 0; margin-top: 1px; }
+
+        /* ===== TRUSTED / INSTITUTION LOGOS ===== */
+        .trusted-section { background: var(--light-gray); padding: 64px 0; }
+        .trusted-inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .trusted-label { text-align: center; margin-bottom: 44px; }
+        .trusted-label p { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+        .trusted-label h3 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
+        .trusted-label h3 span { color: var(--cyan); }
+        .inst-logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; align-items: stretch; }
+        .inst-logo-card {
+            background: var(--white); border: 1px solid var(--border-gray);
+            border-radius: 14px; padding: 18px 10px;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; gap: 8px;
+            transition: all 0.25s; text-align: center; min-height: 108px;
+        }
+        .inst-logo-card:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,190,255,0.1); }
+        .inst-logo-img { width: 64px; height: 36px; object-fit: contain; }
+        .inst-logo-abbr {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, var(--navy), #2a52a5);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-family: 'Fraunces', serif; font-size: 12px; font-weight: 900; color: white;
+        }
+        .inst-logo-card p { font-size: 10px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+        .inst-logo-card .ctag { font-size: 9px; font-weight: 600; padding: 2px 7px; border-radius: 8px; }
+        .ctag.uk { background: rgba(0,190,255,0.12); color: var(--cyan-dark); }
+        .ctag.us { background: rgba(219,195,104,0.2); color: #8a6800; }
+        .ctag.ca { background: rgba(200,50,50,0.1); color: #b82020; }
+
+        /* ===== PARTNER INQUIRY FORM ===== */
+        .partner-inquiry { background: var(--white); padding: 80px 0; }
+        .inquiry-container { max-width: 800px; margin: 0 auto; padding: 0 40px; }
+        .inquiry-card { background: linear-gradient(135deg, var(--light-gray), var(--white)); border-radius: 24px; padding: 48px; border: 1px solid var(--border-gray); box-shadow: 0 16px 40px rgba(0,0,0,0.05); }
+        .inquiry-card h2 { font-family: 'Fraunces', serif; color: var(--navy); font-size: 30px; font-weight: 900; text-align: center; margin-bottom: 8px; letter-spacing: -0.8px; }
+        .inquiry-card > p { color: var(--text-muted); text-align: center; margin-bottom: 32px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; color: var(--navy); font-weight: 600; margin-bottom: 7px; font-size: 13px; }
+        .form-group input, .form-group select { width: 100%; padding: 13px 15px; border: 1.5px solid var(--border-gray); border-radius: 10px; font-size: 15px; font-family: inherit; transition: all 0.25s; background: var(--white); color: var(--navy); }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,190,255,0.1); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .submit-btn { background: var(--gold); color: var(--navy); width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 14px; font-family: inherit; }
+        .submit-btn:hover { background: var(--cyan); color: var(--white); transform: translateY(-2px); }
+        .form-note { text-align: center; margin-top: 16px; font-size: 12px; color: var(--text-muted); }
+
+        /* ===== FOOTER ===== */
+        .footer { background: var(--navy-deep); padding: 64px 0 32px; color: white; }
+        .footer-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 52px; }
+        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .footer-logo-img { width: 34px; height: 34px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
+        .footer-brand-text { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 900; color: var(--white); }
         .footer-brand-text span { color: var(--cyan); }
-
-        .footer-about p {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
-
+        .footer-about p { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 9px; }
+        .social-link { width: 34px; height: 34px; background: rgba(255,255,255,0.07); border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; text-decoration: none; }
         .social-link:hover { background: var(--cyan); }
-
-        .social-link svg {
-            width: 16px;
-            height: 16px;
-            fill: rgba(255,255,255,0.7);
-        }
-
+        .social-link svg { width: 15px; height: 15px; fill: rgba(255,255,255,0.7); }
         .social-link:hover svg { fill: white; }
-
-        .footer-col h4 {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.5);
-        }
-
+        .footer-col h4 { font-size: 10px; font-weight: 700; margin-bottom: 18px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); }
         .footer-col ul { list-style: none; }
-
         .footer-col ul li { margin-bottom: 10px; }
-
-        .footer-col ul li a {
-            color: rgba(255,255,255,0.65);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
+        .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .footer-col ul li a:hover { color: var(--cyan); }
-
-        .footer-cta-btn {
-            display: inline-block;
-            background: var(--cyan);
-            color: var(--navy-deep);
-            padding: 11px 22px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            text-decoration: none;
-            margin-top: 8px;
-            transition: background 0.2s;
-        }
-
+        .footer-cta-btn { display: inline-block; background: var(--cyan); color: var(--navy-deep); padding: 10px 20px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; margin-top: 8px; transition: background 0.2s; }
         .footer-cta-btn:hover { background: var(--gold); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom p {
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-bottom-links a {
-            font-size: 12px;
-            color: rgba(255,255,255,0.35);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
         .footer-bottom-links a:hover { color: var(--cyan); }
 
-        /* ========== CHATBOT ========== */
-        .chat-launcher {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 9000;
-        }
-
-        .chat-launcher-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--navy);
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 24px rgba(28,59,123,0.4);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .chat-launcher-btn:hover {
-            background: var(--cyan);
-            transform: scale(1.08);
-        }
-
-        .chat-launcher-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-        }
-
-        .chat-unread-dot {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            width: 14px;
-            height: 14px;
-            background: #ef4444;
-            border-radius: 50%;
-            border: 2px solid white;
-            animation: blink 2s infinite;
-        }
-
-        .chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            width: 360px;
-            max-height: 540px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
-            z-index: 9000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--border-gray);
-            transform: translateY(20px) scale(0.95);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .chat-widget.open {
-            display: flex;
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-
-        .chat-widget-header {
-            background: var(--navy);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .chat-bot-avatar {
-            width: 38px;
-            height: 38px;
-            background: var(--cyan);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .chat-bot-avatar svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
+        /* ===== CHATBOT ===== */
+        .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+        .chat-launcher-btn { width: 58px; height: 58px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 28px rgba(28,59,123,0.45); transition: all 0.3s; position: relative; }
+        .chat-launcher-btn:hover { background: var(--cyan); transform: scale(1.06); }
+        .chat-launcher-btn svg { width: 24px; height: 24px; fill: white; }
+        .chat-unread-dot { position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ef4444; border-radius: 50%; border: 2px solid white; animation: blink 2s infinite; }
+        .chat-widget { position: fixed; bottom: 98px; right: 28px; width: 360px; max-height: 540px; background: var(--white); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,0.18); z-index: 9000; display: none; flex-direction: column; overflow: hidden; border: 1px solid var(--border-gray); transform: translateY(20px) scale(0.95); opacity: 0; transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+        .chat-widget.open { display: flex; transform: translateY(0) scale(1); opacity: 1; }
+        .chat-widget-header { background: var(--navy); padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+        .chat-bot-avatar { width: 38px; height: 38px; background: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .chat-bot-avatar svg { width: 20px; height: 20px; fill: white; }
         .chat-header-info { flex: 1; }
-
-        .chat-header-info h4 {
-            color: white;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .chat-header-info span {
-            color: rgba(255,255,255,0.6);
-            font-size: 12px;
-        }
-
-        .chat-online-dot {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background: #22c55e;
-            border-radius: 50%;
-            margin-right: 5px;
-            animation: blink 2s infinite;
-        }
-
-        .chat-close-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: rgba(255,255,255,0.6);
-            display: flex;
-            padding: 4px;
-            transition: color 0.2s;
-        }
-
+        .chat-header-info h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .chat-header-info span { color: rgba(255,255,255,0.6); font-size: 12px; }
+        .chat-online-dot { display: inline-block; width: 7px; height: 7px; background: #22c55e; border-radius: 50%; margin-right: 5px; animation: blink 2s infinite; }
+        .chat-close-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.6); display: flex; padding: 4px; transition: color 0.2s; }
         .chat-close-btn:hover { color: white; }
-
-        .chat-close-btn svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .chat-messages-wrap {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background: #f8fafc;
-        }
-
+        .chat-close-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .chat-messages-wrap { flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
         .chat-messages-wrap::-webkit-scrollbar { width: 4px; }
-        .chat-messages-wrap::-webkit-scrollbar-track { background: transparent; }
         .chat-messages-wrap::-webkit-scrollbar-thumb { background: var(--border-gray); border-radius: 10px; }
+        .bot-msg { background: var(--white); padding: 11px 14px; border-radius: 14px; border-top-left-radius: 4px; max-width: 82%; color: var(--navy); font-size: 14px; line-height: 1.5; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid var(--border-gray); align-self: flex-start; }
+        .user-msg { background: var(--navy); color: white; padding: 11px 14px; border-radius: 14px; border-top-right-radius: 4px; max-width: 82%; font-size: 14px; align-self: flex-end; }
+        .wa-msg { background: #25D366; color: white; padding: 13px 18px; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s; align-self: center; display: flex; align-items: center; gap: 8px; border: none; font-family: inherit; }
+        .wa-msg:hover { background: #1da851; }
+        .wa-msg svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+        .chat-options-wrap { padding: 12px 16px 16px; display: flex; flex-wrap: wrap; gap: 8px; background: var(--white); border-top: 1px solid var(--border-gray); }
+        .chat-opt-btn { background: var(--white); border: 1.5px solid var(--border-gray); padding: 7px 15px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.2s; color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; }
+        .chat-opt-btn:hover { border-color: var(--navy); background: var(--light-gray); }
 
-        .bot-msg {
-            background: var(--white);
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-left-radius: 4px;
-            max-width: 82%;
-            color: var(--navy);
-            font-size: 14px;
-            line-height: 1.5;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-gray);
-            align-self: flex-start;
-        }
-
-        .user-msg {
-            background: var(--navy);
-            color: white;
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-right-radius: 4px;
-            max-width: 82%;
-            font-size: 14px;
-            line-height: 1.5;
-            align-self: flex-end;
-        }
-
-        .wa-msg {
-            background: #22c55e;
-            color: white;
-            padding: 14px 16px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-            align-self: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .wa-msg:hover { background: #16a34a; }
-
-        .wa-msg svg { width: 20px; height: 20px; fill: white; }
-
-        .chat-options-wrap {
-            padding: 12px 16px 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            background: var(--white);
-            border-top: 1px solid var(--border-gray);
-        }
-
-        .chat-opt-btn {
-            background: var(--white);
-            border: 1.5px solid var(--border-gray);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--navy);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-        }
-
-        .chat-opt-btn:hover {
-            border-color: var(--navy);
-            background: var(--light-gray);
-        }
-
-        /* ========== RESPONSIVE ========== */
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1100px) { .inst-logo-grid { grid-template-columns: repeat(4, 1fr); } }
         @media (max-width: 900px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .inst-logo-grid { grid-template-columns: repeat(3, 1fr); }
+            .fair-grid, .comp-rec-grid { grid-template-columns: 1fr; }
+            .solution-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 68px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px 24px;
-                gap: 16px;
-                border-bottom: 1px solid var(--border-gray);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            }
-
+            .nav-links { display: none; position: absolute; top: 66px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border-gray); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
             .nav-links.active { display: flex; }
-            .nav-container { padding: 14px 24px; }
-
-            .page-container {
-                padding: 40px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 32px;
-            }
-
-            .section-container, .footer-container {
-                padding: 0 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .chat-widget {
-                width: calc(100vw - 40px);
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .page-header h1 {
-                font-size: 28px;
-            }
+            .nav-container { padding: 12px 20px; }
+            .problem-container, .solution-container, .exhibition-container, .comp-rec-container, .benefits-container, .trusted-inner { padding: 0 20px; }
+            .footer-container { padding: 0 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .inst-logo-grid { grid-template-columns: repeat(2, 1fr); }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .inquiry-container { padding: 0 20px; }
+            .inquiry-card { padding: 32px 24px; }
+            .chat-widget { width: calc(100vw - 40px); right: 20px; }
+            .hero-content-wrap { padding: 60px 20px; }
+            .comp-stats { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
 
-<!-- ========================================
-     NAVBAR (Reusable - Keep as is for all pages)
-     ======================================== -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -614,7 +428,7 @@
             <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <line x1="3" y1="12" x2="21" y2="12"/>
                 <line x1="3" y1="18" x2="21" y2="18"/>
@@ -631,883 +445,236 @@
     </div>
 </nav>
 
-
+<!-- HERO -->
 <section class="partners-hero">
-    <style>
-        .partners-hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #0a2351 100%);
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .partners-hero::before {
-            content: '🤝';
-            position: absolute;
-            font-size: 300px;
-            opacity: 0.05;
-            bottom: -50px;
-            right: -50px;
-            pointer-events: none;
-        }
-        .partners-hero::after {
-            content: '🌍';
-            position: absolute;
-            font-size: 200px;
-            opacity: 0.05;
-            top: -30px;
-            left: -30px;
-            pointer-events: none;
-        }
-        .partners-hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        .partners-hero h1 {
-            color: var(--white);
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-        .partners-hero h1 span {
-            color: var(--cyan);
-        }
-        .partners-hero p {
-            color: rgba(255,255,255,0.8);
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-        }
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 42px;
-            font-weight: 800;
-            color: var(--cyan);
-            display: block;
-        }
-        .stat-label {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            margin-top: 8px;
-        }
-        .partner-cta-btn {
-            background: var(--cyan);
-            color: var(--navy);
-            padding: 14px 42px;
-            border-radius: 48px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-        }
-        .partner-cta-btn:hover {
-            background: var(--gold);
-            transform: translateY(-3px);
-        }
-        @media (max-width: 768px) {
-            .partners-hero h1 {
-                font-size: 36px;
-            }
-            .partners-hero p {
-                font-size: 18px;
-            }
-            .partners-hero-container {
-                padding: 0 20px;
-            }
-            .stat-number {
-                font-size: 32px;
-            }
-            .hero-stats {
-                gap: 30px;
-            }
-        }
-    </style>
-    <div class="partners-hero-container">
-        <h1>Expand Your <span>Market Share</span><br>We Bring You African Students</h1>
-        <p>Partner with Hines Education to recruit qualified WAEC and A-Level graduates from across Africa. No upfront costs — only pay for successful enrollments.</p>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-number">50+</span>
-                <span class="stat-label">Partner Institutions</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">5,000+</span>
-                <span class="stat-label">Students Placed</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">African Countries</span>
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content-wrap">
+        <div class="hero-left">
+            <h1>Expand Your <em> <span class="gold">Market</span> Share</em> </h1>
+            <p>Hines Education provides stategic recruitment solutions that build sustainable pipelines, optimize conversion performance, and deliver measurable enrolment growth in a competitive education market.</p>
+            <div class="hero-cta-row">
+                <a href="#partnerForm" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Become a Partner
+                </a>
+                <a href="#" data-open-chat class="btn-secondary">Chat with Us</a>
             </div>
         </div>
-        <a href="#" class="partner-cta-btn">📋 Become a Partner →</a>
+        <div class="hero-right">
+            <div class="hero-visual">
+                <div class="hero-visual-inner">
+                    <div class="student-card highlight">
+                        <div class="s-avatar" style="background:linear-gradient(135deg,#00BEFF,#0077aa)">A</div>
+                        <div class="s-name">Amara O.</div>
+                        <div class="s-detail">WAEC — 7 A's &amp; B's<br>Computer Science</div>
+                        <div class="s-tag uk">University of Manchester</div>
+                    </div>
+                    <div class="student-card">
+                        <div class="s-avatar" style="background:linear-gradient(135deg,#DBC368,#a07c00)">K</div>
+                        <div class="s-name">Kwame A.</div>
+                        <div class="s-detail">A-Levels — AAB<br>Business &amp; Finance</div>
+                        <div class="s-tag us">New York University</div>
+                    </div>
+                    <div class="student-card">
+                        <div class="s-avatar" style="background:linear-gradient(135deg,#1C3B7B,#3a6bc9)">C</div>
+                        <div class="s-name">Chisom E.</div>
+                        <div class="s-detail">Bachelor's — First Class<br>Engineering</div>
+                        <div class="s-tag ca">University of Toronto</div>
+                    </div>
+                    <div class="student-card highlight">
+                        <div class="s-avatar" style="background:linear-gradient(135deg,#22c55e,#16a34a)">F</div>
+                        <div class="s-name">Fatima B.</div>
+                        <div class="s-detail">WAEC — 9 subjects<br>Medicine</div>
+                        <div class="s-tag uk">University of Edinburgh</div>
+                    </div>
+                </div>
+                <div class="hero-visual-footer">
+                    <div class="hv-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div class="hv-text"><strong>15+ African countries</strong> represented — from Nigeria and Ghana to Kenya and South Africa.</div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- PROBLEM STATEMENT -->
 <section class="problem-statement">
-    <style>
-        .problem-statement {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .problem-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .problem-card {
-            background: linear-gradient(135deg, rgba(219, 195, 104, 0.08) 0%, rgba(0, 190, 255, 0.05) 100%);
-            border-radius: 32px;
-            padding: 50px;
-            text-align: center;
-            border: 1px solid var(--border-gray);
-            position: relative;
-            overflow: hidden;
-        }
-        .problem-icon {
-            font-size: 64px;
-            margin-bottom: 24px;
-        }
-        .problem-statement h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .problem-statement h2 span {
-            color: var(--gold);
-        }
-        .problem-statement p {
-            color: var(--navy);
-            opacity: 0.8;
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        .stat-badge {
-            background: var(--white);
-            padding: 16px 24px;
-            border-radius: 60px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .stat-badge .emoji {
-            font-size: 24px;
-        }
-        .stat-badge .text {
-            font-weight: 600;
-            color: var(--navy);
-        }
-        @media (max-width: 768px) {
-            .problem-card {
-                padding: 30px 20px;
-            }
-            .problem-statement h2 {
-                font-size: 28px;
-            }
-            .problem-statement p {
-                font-size: 16px;
-            }
-            .problem-container {
-                padding: 0 20px;
-            }
-            .stat-badge {
-                padding: 10px 18px;
-            }
-        }
-    </style>
     <div class="problem-container">
         <div class="problem-card">
-            <div class="problem-icon">😫</div>
-            <h2>Struggling to reach <span>qualified</span> WAEC/A-Level graduates?</h2>
-            <p>You know there's incredible talent in Africa. But traditional recruitment channels are expensive, inefficient, and don't reach the students who need you most. Many institutions miss out on hundreds of qualified applicants every year simply because of the awareness gap.</p>
+            <div class="problem-icon-wrap">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            </div>
+            <h2>Struggling to <span>connect with </span> top student prospects?</h2>
+            <p>Incredible talent exists across Africa. But traditional recruitment channels are expensive, inefficient, and don't reach the students who need you most. Many institutions miss hundreds of qualified applicants each year — simply due to the awareness gap. We are here to help you bridge that gap!!</p>
             <div class="stats-row">
                 <div class="stat-badge">
-                    <span class="emoji">🌍</span>
-                    <span class="text">1.5M+ WAEC candidates annually</span>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    <span class="text">Increase Visibility</span>
                 </div>
                 <div class="stat-badge">
-                    <span class="emoji">🎓</span>
-                    <span class="text">Only 15% study abroad</span>
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                    <span class="text">Connect with Quality Students</span>
                 </div>
                 <div class="stat-badge">
-                    <span class="emoji">💰</span>
-                    <span class="text">$0 cost per inquiry</span>
+                    <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                    <span class="text">Enhanced Conversion Outcomes</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- OUR SOLUTION -->
 <section class="our-solution">
-    <style>
-        .our-solution {
-            background: var(--light-gray);
-            padding: 80px 0;
-        }
-        .solution-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .solution-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .solution-header h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .solution-header h2 span {
-            color: var(--cyan);
-        }
-        .solution-header p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-        }
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        .solution-card {
-            background: var(--white);
-            border-radius: 28px;
-            padding: 40px 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-        .solution-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--cyan);
-            box-shadow: 0 20px 40px rgba(0, 190, 255, 0.1);
-        }
-        .solution-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(0, 190, 255, 0.1) 0%, rgba(219, 195, 104, 0.05) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 52px;
-        }
-        .solution-card h3 {
-            color: var(--navy);
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .solution-card p {
-            color: var(--navy);
-            opacity: 0.7;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-        .solution-highlight {
-            margin-top: 20px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-gray);
-            font-weight: 600;
-            color: var(--cyan);
-            font-size: 14px;
-        }
-        @media (max-width: 1024px) {
-            .solution-grid {
-                gap: 25px;
-            }
-            .solution-card {
-                padding: 30px 24px;
-            }
-        }
-        @media (max-width: 768px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .solution-header h2 {
-                font-size: 28px;
-            }
-            .solution-container {
-                padding: 0 20px;
-            }
-            .our-solution {
-                padding: 60px 0;
-            }
-        }
-    </style>
     <div class="solution-container">
-        <div class="solution-header">
+        <div class="section-header">
+            <span class="section-label">How it works</span>
             <h2>Our <span>Solution</span></h2>
             <p>We bridge the gap between African students and global institutions</p>
         </div>
         <div class="solution-grid">
-            <!-- Card 1: Exhibitions/Fairs -->
             <div class="solution-card">
-                <div class="solution-icon">🌍</div>
-                <h3>Independent Exhibitions & Fairs Worldwide</h3>
-                <p>We organize high-impact recruitment fairs across Africa and globally. Meet hundreds of pre-qualified students face-to-face. No middlemen — you connect directly with applicants.</p>
-                <div class="solution-highlight">📍 15+ events annually | 500+ students per fair</div>
+                <div class="solution-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <h3>Independent Exhibitions &amp; Fairs</h3>
+                <p>We organise high-impact recruitment fairs across Africa, connecting institutions directly with hundreds of pre-qualifed students through meaningful face to face engagement. By eliminating intermediaries, we enable genuine connections that drive stronger conversion outcomes. leveraging our strong social media reach through partners and network of over 100 partner schools across West Africa, with guaranteed direct access to high quatity prospective students.</p>
+                <div class="solution-highlight">Increased Institutional Visibility &nbsp;|&nbsp; Meet 500+ Students</div>
             </div>
-            
-            <!-- Card 2: 6+ Forms per Student -->
             <div class="solution-card">
-                <div class="solution-icon">📋</div>
-                <h3>We Collect & Verify 6+ Forms Per Student</h3>
-                <p>Each student submits up to 6 college applications through our platform. We verify WAEC/A-Level results, transcripts, and documents before sending them to you — saving your admissions team hours of work.</p>
-                <div class="solution-highlight">✅ Pre-verified documents | 100% digital</div>
+                <div class="solution-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h3>Student Recruitment Consulting</h3>
+                <p>Through a structured data driven diagnostic analysis and strategic implementation approach tailored to the needs of each institution, Hines Education helps local and international education institutions, including sixth-form college and international schools reduce students leakage, strenghten positioning and achieve measurable enrollment growth .</p>
+                <div class="solution-highlight">Data-Driven Strategy &nbsp;|&nbsp; Measurable Results</div>
             </div>
-            
-            <!-- Card 3: Direct Placement -->
             <div class="solution-card">
-                <div class="solution-icon">🎯</div>
-                <h3>Direct Placement Into Your Programs</h3>
-                <p>We don't just generate leads — we place students. Our advisors guide applicants from initial interest through to enrollment. You receive fully qualified, ready-to-enroll students.</p>
-                <div class="solution-highlight">📈 Pay only for successful enrollments</div>
+                <div class="solution-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                </div>
+                <h3>Annual Public Speaking Competition</h3>
+                <p>We invite forward thinking organizations to sponsor our annual speaking competition, a high impact platform where student engage with life-focused topics that develop confidence, communication skills and critical thinking, gaining brand visibility, youth engagement and meaningful social impact. </p>
+                <div class="solution-highlight">Positive Brand Association &nbsp;|&nbsp; Marketing & Youth Engagement Opportunities </div>
             </div>
         </div>
     </div>
-</section><section class="exhibition-section">
-    <style>
-        .exhibition-section {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .exhibition-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .exhibition-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .exhibition-header h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .exhibition-header h2 span {
-            color: var(--cyan);
-        }
-        .exhibition-header p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-        }
-        .fair-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .calendar-box {
-            background: var(--light-gray);
-            border-radius: 24px;
-            padding: 32px;
-            border: 1px solid var(--border-gray);
-        }
-        .calendar-box h3 {
-            color: var(--navy);
-            font-size: 24px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .fair-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .fair-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px;
-            background: var(--white);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-        .fair-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .fair-date {
-            min-width: 80px;
-            text-align: center;
-        }
-        .fair-date .month {
-            background: var(--cyan);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-block;
-        }
-        .fair-date .day {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--navy);
-            display: block;
-            margin-top: 8px;
-        }
-        .fair-info h4 {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .fair-info p {
-            color: var(--navy);
-            opacity: 0.6;
-            font-size: 13px;
-        }
-        .photos-box {
-            background: var(--light-gray);
-            border-radius: 24px;
-            padding: 32px;
-            border: 1px solid var(--border-gray);
-        }
-        .photos-box h3 {
-            color: var(--navy);
-            font-size: 24px;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-        .photo-placeholder {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--border-gray) 0%, var(--light-gray) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            transition: all 0.3s ease;
-        }
-        .photo-placeholder:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .exhibit-btn {
-            background: var(--cyan);
-            color: var(--white);
-            padding: 14px 36px;
-            border-radius: 48px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 24px;
-            transition: all 0.3s;
-            text-align: center;
-        }
-        .exhibit-btn:hover {
-            background: var(--gold);
-            color: var(--navy);
-            transform: translateY(-2px);
-        }
-        @media (max-width: 1024px) {
-            .fair-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-        @media (max-width: 768px) {
-            .exhibition-header h2 {
-                font-size: 28px;
-            }
-            .exhibition-container {
-                padding: 0 20px;
-            }
-            .photo-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .fair-item {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+</section>
+
+<!-- EXHIBITIONS -->
+<section class="exhibition-section">
     <div class="exhibition-container">
-        <div class="exhibition-header">
-            <h2>Upcoming <span>Exhibitions & Fairs</span></h2>
+        <div class="section-header">
+            <span class="section-label">Events</span>
+            <h2>Upcoming <span>Exhibitions &amp; Fairs</span></h2>
             <p>Meet qualified students face-to-face at our global recruitment events</p>
         </div>
         <div class="fair-grid">
-            <!-- Calendar -->
             <div class="calendar-box">
-                <h3>📅 2025 Event Calendar</h3>
+                <div class="box-title">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    2025 Event Calendar
+                </div>
                 <div class="fair-list">
                     <div class="fair-item">
-                        <div class="fair-date">
-                            <span class="month">MAR</span>
-                            <span class="day">15</span>
-                        </div>
-                        <div class="fair-info">
-                            <h4>Lagos International Education Fair</h4>
-                            <p>📍 Lagos, Nigeria | 500+ expected students</p>
-                        </div>
+                        <div class="fair-date"><span class="month">MAR</span><span class="day">15</span></div>
+                        <div class="fair-info"><h4>Lagos International Education Fair</h4><p>Lagos, Nigeria &mdash; 500+ expected students</p></div>
                     </div>
                     <div class="fair-item">
-                        <div class="fair-date">
-                            <span class="month">APR</span>
-                            <span class="day">22</span>
-                        </div>
-                        <div class="fair-info">
-                            <h4>Accra Study Abroad Expo</h4>
-                            <p>📍 Accra, Ghana | 300+ expected students</p>
-                        </div>
+                        <div class="fair-date"><span class="month">APR</span><span class="day">22</span></div>
+                        <div class="fair-info"><h4>Accra Study Abroad Expo</h4><p>Accra, Ghana &mdash; 300+ expected students</p></div>
                     </div>
                     <div class="fair-item">
-                        <div class="fair-date">
-                            <span class="month">JUN</span>
-                            <span class="day">10</span>
-                        </div>
-                        <div class="fair-info">
-                            <h4>Nairobi Global Education Summit</h4>
-                            <p>📍 Nairobi, Kenya | 400+ expected students</p>
-                        </div>
+                        <div class="fair-date"><span class="month">JUN</span><span class="day">10</span></div>
+                        <div class="fair-info"><h4>Nairobi Global Education Summit</h4><p>Nairobi, Kenya &mdash; 400+ expected students</p></div>
                     </div>
                     <div class="fair-item">
-                        <div class="fair-date">
-                            <span class="month">SEP</span>
-                            <span class="day">18</span>
-                        </div>
-                        <div class="fair-info">
-                            <h4>Cairo International Student Fair</h4>
-                            <p>📍 Cairo, Egypt | 350+ expected students</p>
-                        </div>
+                        <div class="fair-date"><span class="month">SEP</span><span class="day">18</span></div>
+                        <div class="fair-info"><h4>Cairo International Student Fair</h4><p>Cairo, Egypt &mdash; 350+ expected students</p></div>
                     </div>
                     <div class="fair-item">
-                        <div class="fair-date">
-                            <span class="month">NOV</span>
-                            <span class="day">5</span>
-                        </div>
-                        <div class="fair-info">
-                            <h4>Johannesburg University Expo</h4>
-                            <p>📍 Johannesburg, SA | 450+ expected students</p>
-                        </div>
+                        <div class="fair-date"><span class="month">NOV</span><span class="day">5</span></div>
+                        <div class="fair-info"><h4>Johannesburg University Expo</h4><p>Johannesburg, SA &mdash; 450+ expected students</p></div>
                     </div>
                 </div>
             </div>
-            <!-- Photos -->
             <div class="photos-box">
-                <h3>📸 Past Events</h3>
-                <div class="photo-grid">
-                    <div class="photo-placeholder">🎓</div>
-                    <div class="photo-placeholder">🤝</div>
-                    <div class="photo-placeholder">📸</div>
-                    <div class="photo-placeholder">🌍</div>
-                    <div class="photo-placeholder">🎤</div>
-                    <div class="photo-placeholder">📋</div>
+                <div class="box-title">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Past Events
                 </div>
-                <a href="#" class="exhibit-btn" style="display: block; text-align: center;">🤝 Partner with us to exhibit →</a>
+                <div class="photo-grid">
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    </div>
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+                    </div>
+                </div>
+                <a href="#partnerForm" class="exhibit-btn">Partner with us to exhibit &rarr;</a>
             </div>
         </div>
     </div>
 </section>
+
+<!-- COMPETITION RECRUITMENT -->
 <section class="competition-recruitment">
-    <style>
-        .competition-recruitment {
-            background: linear-gradient(135deg, rgba(219, 195, 104, 0.1) 0%, rgba(0, 190, 255, 0.05) 100%);
-            padding: 80px 0;
-        }
-        .comp-rec-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .comp-rec-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .comp-rec-text h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .comp-rec-text h2 span {
-            color: var(--gold);
-        }
-        .comp-rec-text p {
-            color: var(--navy);
-            opacity: 0.8;
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-        .comp-stats {
-            display: flex;
-            gap: 30px;
-            margin: 30px 0;
-        }
-        .comp-stat {
-            text-align: center;
-        }
-        .comp-stat .number {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--cyan);
-        }
-        .comp-stat .label {
-            color: var(--navy);
-            opacity: 0.6;
-            font-size: 14px;
-        }
-        .comp-btn {
-            background: var(--gold);
-            color: var(--navy);
-            padding: 14px 32px;
-            border-radius: 48px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        .comp-btn:hover {
-            background: var(--cyan);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-        .comp-rec-image {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--cyan) 100%);
-            border-radius: 32px;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .comp-rec-image::before {
-            content: '🎤';
-            position: absolute;
-            font-size: 150px;
-            opacity: 0.1;
-            bottom: -20px;
-            right: -20px;
-        }
-        .comp-rec-image .emoji-big {
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-        .comp-rec-image h3 {
-            color: var(--white);
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-        .comp-rec-image p {
-            color: rgba(255,255,255,0.8);
-            font-size: 16px;
-        }
-        .sponsor-tag {
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            margin-top: 20px;
-            font-size: 14px;
-            color: var(--gold);
-        }
-        @media (max-width: 1024px) {
-            .comp-rec-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-        @media (max-width: 768px) {
-            .comp-rec-text h2 {
-                font-size: 28px;
-            }
-            .comp-rec-container {
-                padding: 0 20px;
-            }
-            .comp-stats {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
     <div class="comp-rec-container">
         <div class="comp-rec-grid">
             <div class="comp-rec-text">
+                <span class="section-label">Annual Event</span>
                 <h2>Our Public Speaking Competition Brings <span>500+ Students</span></h2>
-                <p>Meet them face-to-face — while they showcase their talents. The annual Hines Public Speaking Competition attracts top WAEC and A-Level students from across Africa. It's not just a competition — it's your recruitment pipeline.</p>
+                <p>Meet them face-to-face while they showcase their talents. The annual Hines Public Speaking Competition attracts top WAEC and A-Level students from across Africa. It is not just a competition — it is your recruitment pipeline.</p>
                 <div class="comp-stats">
-                    <div class="comp-stat">
-                        <div class="number">500+</div>
-                        <div class="label">Student Participants</div>
-                    </div>
-                    <div class="comp-stat">
-                        <div class="number">50+</div>
-                        <div class="label">Schools Represented</div>
-                    </div>
-                    <div class="comp-stat">
-                        <div class="number">15+</div>
-                        <div class="label">Countries</div>
-                    </div>
+                    <div class="comp-stat"><div class="number">500+</div><div class="label">Student Participants</div></div>
+                    <div class="comp-stat"><div class="number">50+</div><div class="label">Schools Represented</div></div>
+                    <div class="comp-stat"><div class="number">15+</div><div class="label">Countries</div></div>
                 </div>
-                <a href="#" class="comp-btn">🎤 Sponsor or Exhibit at Competition →</a>
+                <a href="competition.html" class="comp-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    Sponsor or Exhibit at Competition
+                </a>
             </div>
-            <div class="comp-rec-image">
-                <div class="emoji-big">🏆</div>
-                <h3>Presented by Shell & Partners</h3>
+            <div class="comp-rec-visual">
+                <div class="comp-trophy-icon">
+                    <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+                </div>
+                <h3>Presented by Shell &amp; Partners</h3>
                 <p>Past winners have gone on to study at Cambridge, UBC, and NYU — many with full scholarships. Your institution can be part of this prestigious event.</p>
-                <div class="sponsor-tag">✨ Sponsorship packages available</div>
+                <div class="sponsor-tag">Sponsorship packages available</div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- PARTNER BENEFITS -->
 <section class="partner-benefits">
-    <style>
-        .partner-benefits {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .benefits-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .benefits-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .benefits-header h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .benefits-header h2 span {
-            color: var(--cyan);
-        }
-        .benefits-header p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-        }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .benefit-card {
-            background: var(--light-gray);
-            border-radius: 24px;
-            padding: 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--cyan);
-            background: var(--white);
-        }
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(0, 190, 255, 0.1) 0%, rgba(219, 195, 104, 0.05) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 40px;
-        }
-        .benefit-card h3 {
-            color: var(--navy);
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .benefit-list {
-            list-style: none;
-            text-align: left;
-        }
-        .benefit-list li {
-            padding: 10px 0;
-            color: var(--navy);
-            opacity: 0.8;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px dashed var(--border-gray);
-        }
-        .benefit-list li:last-child {
-            border-bottom: none;
-        }
-        .benefit-list li::before {
-            content: '✓';
-            color: var(--cyan);
-            font-weight: bold;
-            font-size: 16px;
-        }
-        @media (max-width: 1024px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            .benefits-header h2 {
-                font-size: 28px;
-            }
-            .benefits-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
     <div class="benefits-container">
-        <div class="benefits-header">
+        <div class="section-header">
+            <span class="section-label">Why choose us</span>
             <h2>Why Partner With <span>Hines Education?</span></h2>
             <p>We make international student recruitment simple, effective, and risk-free</p>
         </div>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                </div>
                 <h3>Increased Enrollment</h3>
                 <ul class="benefit-list">
                     <li>Access to 5,000+ pre-qualified students</li>
@@ -1517,7 +684,9 @@
                 </ul>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                </div>
                 <h3>No Upfront Cost</h3>
                 <ul class="benefit-list">
                     <li>Performance-based model — pay only for enrollments</li>
@@ -1527,7 +696,9 @@
                 </ul>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">✅</div>
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                </div>
                 <h3>Verified WAEC Results</h3>
                 <ul class="benefit-list">
                     <li>All results verified before you receive applications</li>
@@ -1539,250 +710,96 @@
         </div>
     </div>
 </section>
-<section class="partner-logos-section">
-    <style>
-        .partner-logos-section {
-            background: var(--light-gray);
-            padding: 60px 0;
-        }
-        .logos-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-            text-align: center;
-        }
-        .logos-container h3 {
-            color: var(--navy);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-        .logos-container h3 span {
-            color: var(--cyan);
-        }
-        .logos-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 30px;
-            align-items: center;
-        }
-        .logo-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-        .logo-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--cyan);
-            box-shadow: 0 8px 20px rgba(0, 190, 255, 0.1);
-        }
-        .logo-placeholder {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-        .logo-card p {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-top: 8px;
-        }
-        .logo-card span {
-            font-size: 10px;
-            color: var(--navy);
-            opacity: 0.5;
-            display: block;
-        }
-        @media (max-width: 1024px) {
-            .logos-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-            }
-        }
-        @media (max-width: 768px) {
-            .logos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .logos-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
-    <div class="logos-container">
-        <h3>Current <span>Partners Include:</span></h3>
-        <div class="logos-grid">
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>University of Manchester</p>
-                <span>UK</span>
+
+<!-- TRUSTED INSTITUTIONS -->
+<section class="trusted-section">
+    <div class="trusted-inner">
+        <div class="trusted-label">
+            <p>Trusted by institutions worldwide</p>
+            <h3>50+ Partner <span>Universities &amp; Colleges</span></h3>
+        </div>
+        <div class="inst-logo-grid">
+            <div class="inst-logo-card">
+                <img src="images/partners/flemming.png" alt="Flemming College" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">Flemming</div>
+                <p>Flemming College</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>UBC</p>
-                <span>Canada</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/algoma.png" alt="Algoma University" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">Algoma</div>
+                <p>Algoma University</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>NYU</p>
-                <span>USA</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/manchester.png" alt="University of Manchester" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UoM</div>
+                <p>Univ. of Manchester</p><span class="ctag uk">UK</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>University of Toronto</p>
-                <span>Canada</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/ubc.png" alt="UBC" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UBC</div>
+                <p>Univ. of British Columbia</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>Warwick University</p>
-                <span>UK</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/nyu.png" alt="NYU" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">NYU</div>
+                <p>New York University</p><span class="ctag us">USA</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>UCLA</p>
-                <span>USA</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/toronto.png" alt="University of Toronto" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UofT</div>
+                <p>Univ. of Toronto</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏫</div>
-                <p>Seneca College</p>
-                <span>Canada</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/warwick.png" alt="Warwick University" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">Warwick</div>
+                <p>Warwick University</p><span class="ctag uk">UK</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>University of Birmingham</p>
-                <span>UK</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/ucla.png" alt="UCLA" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UCLA</div>
+                <p>UCLA</p><span class="ctag us">USA</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>McGill University</p>
-                <span>Canada</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/seneca.png" alt="Seneca College" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">Seneca</div>
+                <p>Seneca College</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>University of Edinburgh</p>
-                <span>UK</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/birmingham.png" alt="University of Birmingham" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UoB</div>
+                <p>Univ. of Birmingham</p><span class="ctag uk">UK</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏛️</div>
-                <p>Boston University</p>
-                <span>USA</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/mcgill.png" alt="McGill University" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">McGill</div>
+                <p>McGill University</p><span class="ctag ca">Canada</span>
             </div>
-            <div class="logo-card">
-                <div class="logo-placeholder">🏫</div>
-                <p>Centennial College</p>
-                <span>Canada</span>
+            <div class="inst-logo-card">
+                <img src="images/partners/edinburgh.png" alt="University of Edinburgh" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">UoE</div>
+                <p>Univ. of Edinburgh</p><span class="ctag uk">UK</span>
+            </div>
+            <div class="inst-logo-card">
+                <img src="images/partners/boston.png" alt="Boston University" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">BU</div>
+                <p>Boston University</p><span class="ctag us">USA</span>
+            </div>
+            <div class="inst-logo-card">
+                <img src="images/partners/centennial.png" alt="Centennial College" class="inst-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="inst-logo-abbr" style="display:none">Centennial</div>
+                <p>Centennial College</p><span class="ctag ca">Canada</span>
             </div>
         </div>
     </div>
 </section>
-<section class="partner-inquiry">
-    <style>
-        .partner-inquiry {
-            background: var(--white);
-            padding: 80px 0;
-        }
-        .inquiry-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .inquiry-card {
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-            border-radius: 32px;
-            padding: 48px;
-            border: 1px solid var(--border-gray);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-        .inquiry-card h2 {
-            color: var(--navy);
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        .inquiry-card p {
-            color: var(--navy);
-            opacity: 0.7;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-        .form-group {
-            margin-bottom: 24px;
-        }
-        .form-group label {
-            display: block;
-            color: var(--navy);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid var(--border-gray);
-            border-radius: 12px;
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s;
-            background: var(--white);
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--cyan);
-            box-shadow: 0 0 0 3px rgba(0, 190, 255, 0.1);
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .submit-btn {
-            background: var(--gold);
-            color: var(--navy);
-            width: 100%;
-            padding: 16px;
-            border: none;
-            border-radius: 48px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 16px;
-        }
-        .submit-btn:hover {
-            background: var(--cyan);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-        .form-note {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: var(--navy);
-            opacity: 0.5;
-        }
-        @media (max-width: 768px) {
-            .inquiry-card {
-                padding: 32px 24px;
-            }
-            .inquiry-card h2 {
-                font-size: 26px;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            .inquiry-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
+
+<!-- PARTNER INQUIRY FORM -->
+<section class="partner-inquiry" id="partnerForm">
     <div class="inquiry-container">
         <div class="inquiry-card">
-            <h2>📋 Ready to Partner With Us?</h2>
-            <p>Fill out the form below and we'll send you our partnership deck within 24 hours</p>
-            <form id="partnerForm" onsubmit="event.preventDefault(); alert('Thank you! We\'ll send the partnership deck to your email shortly.');">
+            <h2>Ready to Partner With Us?</h2>
+            <p>Fill out the form below and we will send you our partnership deck within 24 hours</p>
+            <form onsubmit="event.preventDefault(); alert('Thank you! We will send the partnership deck to your email shortly.');">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Full Name *</label>
@@ -1790,7 +807,7 @@
                     </div>
                     <div class="form-group">
                         <label>Institution Name *</label>
-                        <input type="text" placeholder="University/College name" required>
+                        <input type="text" placeholder="University / College name" required>
                     </div>
                 </div>
                 <div class="form-row">
@@ -1811,18 +828,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Position/Title</label>
+                    <label>Position / Title</label>
                     <input type="text" placeholder="e.g., International Admissions Director">
                 </div>
-                <button type="submit" class="submit-btn">📩 Send Me Partnership Deck (Gold)</button>
-                <div class="form-note">We'll never share your information. Partnership deck includes pricing, event calendar, and ROI projections.</div>
+                <button type="submit" class="submit-btn">Send Me the Partnership Deck</button>
+                <div class="form-note">We will never share your information. Partnership deck includes pricing, event calendar, and ROI projections.</div>
             </form>
         </div>
     </div>
 </section>
-<!-- ========================================
-     FOOTER (Reusable - Keep as is for all pages)
-     ======================================== -->
+
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-grid">
@@ -1831,20 +847,12 @@
                     <img src="images/logo.png" alt="Hines Education" class="footer-logo-img" onerror="this.style.display='none'">
                     <span class="footer-brand-text">Hines<span>Education</span></span>
                 </div>
-                <p>Connecting African students to world-class universities since 2015. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
+                <p>Connecting African students to world-class universities. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1869,11 +877,11 @@
             <div class="footer-col">
                 <h4>Get Started</h4>
                 <ul>
-                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
-                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
-                    <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
+                    <li><a href="tel:+2348088981691">+234 808 898 1691</a></li>
+                    <li><a href="mailto:info@hineseducation.com">info@hineseducation.com</a></li>
+                    <li><a href="#" data-open-chat>Chat with an Advisor</a></li>
                 </ul>
-                <a href="consultation.html" class="footer-cta-btn">Book Free Consultation</a>
+                <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1886,9 +894,7 @@
     </div>
 </footer>
 
-<!-- ========================================
-     CHATBOT WIDGET (Reusable - Keep as is)
-     ======================================== -->
+<!-- CHATBOT WIDGET -->
 <div class="chat-launcher">
     <div class="chat-widget" id="chatWidget">
         <div class="chat-widget-header">
@@ -1904,7 +910,7 @@
             </button>
         </div>
         <div class="chat-messages-wrap" id="chatMessages">
-            <div class="bot-msg">Hi there! I can help match you with universities. What is your current qualification?</div>
+            <div class="bot-msg">Hi there! I can help match you with the right university pathway. What is your current qualification?</div>
         </div>
         <div class="chat-options-wrap" id="chatOptions">
             <button class="chat-opt-btn" data-val="WAEC">WAEC</button>
@@ -1913,39 +919,28 @@
             <button class="chat-opt-btn" data-val="Master's Degree">Master's Degree</button>
         </div>
     </div>
-    <button class="chat-launcher-btn" id="chatLauncherBtn" aria-label="Open chat">
+    <button class="chat-launcher-btn" id="chatLauncherBtn" aria-label="Open chat assistant">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        <span class="chat-unread-dot" id="chatDot"></span>
+        <span class="chat-unread-dot" id="chatDot" style="display:none"></span>
     </button>
 </div>
 
-<!-- ========================================
-     MASTER JAVASCRIPT (Navbar + Chatbot)
-     ======================================== -->
 <script>
 (function() {
-    // ========== NAVBAR TOGGLE ==========
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
         document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
     }
 
-    // ========== CHATBOT LOGIC ==========
     const widget = document.getElementById('chatWidget');
     const launchBtn = document.getElementById('chatLauncherBtn');
     const closeBtn = document.getElementById('chatCloseBtn');
     const dot = document.getElementById('chatDot');
-    const openChatBtn = document.getElementById('openChatBtn');
-    const footerChatBtn = document.getElementById('footerChatBtn');
     const messagesWrap = document.getElementById('chatMessages');
     const optionsWrap = document.getElementById('chatOptions');
-
-    // CHANGE THIS TO YOUR WHATSAPP NUMBER (format: countrycode + number, no plus sign)
     const WA_NUMBER = '2348088981691';
-    
     let step = 0;
     let userData = { qualification: '', country: '', level: '' };
 
@@ -1955,21 +950,18 @@
         requestAnimationFrame(() => widget.classList.add('open'));
         if (dot) dot.style.display = 'none';
     }
-
     function closeChat() {
         if (!widget) return;
         widget.classList.remove('open');
-        setTimeout(() => { if (widget && !widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
+        setTimeout(() => { if (!widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
     }
-
-    if (launchBtn) launchBtn.addEventListener('click', () => widget && widget.classList.contains('open') ? closeChat() : openChat());
+    if (launchBtn) launchBtn.addEventListener('click', () => widget.classList.contains('open') ? closeChat() : openChat());
     if (closeBtn) closeBtn.addEventListener('click', closeChat);
-    if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
-    if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    const footerConsultationBtn = document.getElementById('footerConsultationBtn');
+    if (footerConsultationBtn) footerConsultationBtn.addEventListener('click', e => { e.preventDefault(); openChat(); });
+    document.querySelectorAll('[data-open-chat]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openChat(); }));
 
-    function scrollDown() {
-        if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight;
-    }
+    function scrollDown() { if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight; }
 
     function addMsg(text, isUser) {
         if (!messagesWrap) return;
@@ -1992,31 +984,24 @@
         });
     }
 
-    function buildWhatsAppMessage() {
-        const msg = [
-            'Hello Hines Education,',
-            '',
-            'I would like to enquire about university placement.',
-            '',
-            `Qualification: ${userData.qualification}`,
-            `Target Country: ${userData.country}`,
-            `Level of Study: ${userData.level}`,
-            '',
+    function buildWAMsg() {
+        return encodeURIComponent(
+            'Hello Hines Education,\n\nI would like to enquire about university placement.\n\n' +
+            'Qualification: ' + userData.qualification + '\n' +
+            'Target Country: ' + userData.country + '\n' +
+            'Level of Study: ' + userData.level + '\n\n' +
             'Please get in touch with me. Thank you.'
-        ].join('\n');
-        return encodeURIComponent(msg);
+        );
     }
 
     function showWhatsApp() {
         if (!optionsWrap) return;
         optionsWrap.innerHTML = '';
-        const div = document.createElement('div');
-        div.className = 'wa-msg';
-        div.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
-        div.addEventListener('click', () => {
-            window.open(`https://wa.me/${WA_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
-        });
-        if (messagesWrap) messagesWrap.appendChild(div);
+        const btn = document.createElement('button');
+        btn.className = 'wa-msg';
+        btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp';
+        btn.addEventListener('click', () => window.open('https://wa.me/' + WA_NUMBER + '?text=' + buildWAMsg(), '_blank'));
+        if (messagesWrap) messagesWrap.appendChild(btn);
         scrollDown();
     }
 
@@ -2024,47 +1009,30 @@
         if (step === 0) {
             userData.qualification = val;
             addMsg(val, true);
-            setTimeout(() => {
-                addMsg(`Great choice. With ${val}, which country are you targeting?`, false);
-                setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']);
-                step = 1;
-            }, 400);
+            setTimeout(() => { addMsg('Which country are you targeting for studies?', false); setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']); step = 1; }, 400);
         } else if (step === 1) {
             userData.country = val;
             addMsg(val, true);
             setTimeout(() => {
                 addMsg('What level of study are you applying for?', false);
-                if (userData.qualification === "Bachelor's Degree") {
-                    setOptions(['Masters', 'MBA', 'Postgraduate Diploma']);
-                } else if (userData.qualification === "Master's Degree") {
-                    setOptions(['PhD', 'Postdoctoral Research']);
-                } else {
-                    setOptions(['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice']);
-                }
-                step = 2;
+                const opts = userData.qualification === "Bachelor's Degree" ? ['Masters', 'MBA', 'Postgraduate Diploma'] : userData.qualification === "Master's Degree" ? ['PhD', 'Postdoctoral Research'] : ['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice'];
+                setOptions(opts); step = 2;
             }, 400);
         } else if (step === 2) {
             userData.level = val;
             addMsg(val, true);
             setTimeout(() => {
-                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — I have everything I need. Tap below to connect with an advisor on WhatsApp and they will be with you shortly.`, false);
-                showWhatsApp();
-                step = 3;
+                addMsg('Perfect. Tap below to connect with an advisor on WhatsApp — they will respond within minutes.', false);
+                showWhatsApp(); step = 3;
             }, 400);
         }
     }
 
-    // Wire up initial option buttons
     document.querySelectorAll('.chat-opt-btn').forEach(btn => {
         btn.addEventListener('click', () => handleOption(btn.getAttribute('data-val') || btn.textContent));
     });
 
-    // Auto-show dot notification after delay
-    setTimeout(() => {
-        if (widget && !widget.classList.contains('open') && dot) {
-            dot.style.display = 'block';
-        }
-    }, 4000);
+    setTimeout(() => { if (dot && !widget.classList.contains('open')) dot.style.display = 'block'; }, 3000);
 })();
 </script>
 </body>

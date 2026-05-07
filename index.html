@@ -720,6 +720,11 @@
             line-height: 1.7;
             font-size: 14px;
         }
+        .hiw-card ul {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 14px;
+        }
 
         /* ========== SERVICES ========== */
         .services-section {
@@ -862,6 +867,21 @@
             margin-bottom: 20px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
+        }
+
+        .comp-closed-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
 
         .competition-section h2 {
@@ -1511,7 +1531,7 @@
             <a href="study-abroad.html">Study Abroad</a>
             <a href="partners.html">For Partners</a>
             <a href="competition.html">Competition</a>
-            <a href="partner-schools.html">Partner Schools</a>
+            <a href="schools.html">Partner Schools</a>
             <a href="contact.html">Contact</a>
             <a href="#" class="nav-cta">Get Started</a>
         </div>
@@ -1526,11 +1546,11 @@
         <div class="hero-left">
             <div class="hero-eyebrow">
                 <span class="hero-eyebrow-dot"></span>
-                Accepting applications now
+                Processing applications now
             </div>
             <h1>
-                From WAEC &amp; A-Levels to<br>Universities in the<br>
-                <em>UK, US &amp; Canada</em>
+                From Academic Qualifications to 
+                <em>Global Universities Opportunities</em>
             </h1>
             <p class="hero-sub">Your trusted pathway to global education. Foundation, undergraduate, postgraduate and doctoral placements — handled end to end.</p>
             <div class="service-badges">
@@ -1540,7 +1560,7 @@
                 </span>
                 <span class="badge">
                     <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-                    100 Level
+                    Undergraduate
                 </span>
                 <span class="badge">
                     <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -1552,7 +1572,7 @@
                 </span>
             </div>
             <div class="button-group">
-                <a href="#" class="btn-primary">
+                <a href="schools.html" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                     Find Your University
                 </a>
@@ -1560,14 +1580,6 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                     Chat with Advisor
                 </a>
-            </div>
-            <div class="hero-trust">
-                <span class="hero-trust-text">Accredited by</span>
-                <div class="hero-trust-badges">
-                    <span>UK ENIC</span>
-                    <span>ICEF</span>
-                    <span>British Council</span>
-                </div>
             </div>
         </div>
 
@@ -1586,7 +1598,7 @@
             <!-- Float cards -->
             <div class="hero-float-card hero-float-card-1">
                 <div class="float-card-label">Success rate</div>
-                <div class="float-card-value">94%</div>
+                <div class="float-card-value">98%</div>
                 <div class="float-card-sub">Offer acceptance rate</div>
             </div>
 
@@ -1636,6 +1648,18 @@
                     <img src="path/to/logo.png" alt="University name">
                     The grayscale filter and hover effect are already handled.
                 -->
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">Flemming College</span>
+                    </div>
+                    <span class="logo-country">Canada</span>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">
+                        <span class="logo-placeholder-text">Algoma University</span>
+                    </div>
+                    <span class="logo-country">Canada</span>
+                </div>
                 <div class="logo-item">
                     <div class="logo-placeholder">
                         <span class="logo-placeholder-text">University of Manchester</span>
@@ -1716,7 +1740,12 @@
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
                 </div>
                 <h3>Submit Your Results</h3>
-                <p>Upload your WAEC, A-Levels, IGCSE, or O-Level results online. Our team conducts a free eligibility assessment within 24 hours.</p>
+                <ul>
+                    <li>Foundation: WAEC / IGCSE</li>
+                    <li>Undergraduate: A Levels / IB / Foundation</li>
+                    <li>Masters: First Degree Certificate and Transcript</li>
+                </ul>
+                <p>Send your documents via email highlighting your course of interest, location and budget. Our team conducts a free eligibility assessment within 24 hours.</p>
             </div>
             <div class="hiw-card">
                 <div class="step-number">2</div>
@@ -1724,7 +1753,7 @@
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </div>
                 <h3>Get Matched</h3>
-                <p>Our advisors match you with foundation, direct entry, or postgraduate programs across UK, US, and Canada based on your profile and goals.</p>
+                <p>Our advisors carefully connect you with Universities that are the best fit for your academic profile, personal preferences and long term ambitions.</p>
             </div>
             <div class="hiw-card">
                 <div class="step-number">3</div>
@@ -1732,7 +1761,7 @@
                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.22a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.66a16 16 0 006.29 6.29l.51-.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
                 </div>
                 <h3>We Handle the Rest</h3>
-                <p>Applications, visa support, and pre-departure guidance — all managed by your dedicated agent. You focus on your future.</p>
+                <p>Applications, visa support, and pre-departure guidance — all managed by our dedicated team.</p>
             </div>
         </div>
     </div>
@@ -1752,32 +1781,32 @@
                     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                 </div>
                 <h3>Foundation in UK</h3>
-                <p>For students with WAEC or A-Levels who need a bridge year before undergraduate. Entry: 5 WAEC credits including English and Maths.</p>
-                <a href="#" class="service-link">Learn more &rarr;</a>
+                <p>For students with WAEC or IGCSE who need a bridge year before undergraduate. Entry: 5 WAEC credits including English and Maths.</p>
+                <a href="study-abroad.html" class="service-link">Learn more &rarr;</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
                 </div>
-                <h3>Direct 100 Level Abroad</h3>
-                <p>Direct entry into first year at UK, US, or Canadian universities. WAEC A1–B3 or A-Level CCD minimum. No foundation year needed.</p>
-                <a href="#" class="service-link">Learn more &rarr;</a>
+                <h3>Undergraduate Programme</h3>
+                <p>Direct entry into first year at UK, US, or Canadian universities. WAEC A1–B3 or A-Level / IB / Foundation required. </p>
+                <a href="study-abroad.html" class="service-link">Learn more &rarr;</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
                 </div>
                 <h3>Masters</h3>
-                <p>Postgraduate degrees across all disciplines. We assist with your statement of purpose, recommendation letters, and supervisor matching.</p>
-                <a href="#" class="service-link">Learn more &rarr;</a>
+                <p>Postgraduate degrees across all disciplines. Student must have completed a degree programme or Higher National Diploma</p>
+                <a href="study-abroad.html" class="service-link">Learn more &rarr;</a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
                 </div>
                 <h3>PhD</h3>
-                <p>Doctoral placements with full supervision matching. Research proposal development and scholarship application support included.</p>
-                <a href="#" class="service-link">Learn more &rarr;</a>
+                <p>Doctoral placements with full supervision matching. Research proposal guidance and Scholarship application support included.</p>
+                <a href="study-abroad.html" class="service-link">Learn more &rarr;</a>
             </div>
         </div>
     </div>
@@ -1787,30 +1816,30 @@
 <section class="competition-section">
     <div class="comp-container">
         <div class="comp-left">
-            <div class="comp-sponsor">Presented by Shell &amp; Partners</div>
+            <div class="comp-closed-tag">2026 Registration Closed</div>
             <h2>Annual Public Speaking Competition</h2>
-            <p>Speak your way to a global scholarship. Open to all WAEC and A-Level students. Win prizes, meet university representatives, and get noticed by recruiters.</p>
-            <a href="#" class="comp-btn">Learn More &amp; Register &rarr;</a>
+            <p>Speak your way to a global recognition. Open to all secondary schools and sixth-form college students. Win prizes, meet university representatives, and get noticed by recruiters.</p>
+            <a href="competition.html" class="comp-btn" style="background: rgba(28, 59, 123, 0.1); color: var(--navy) !important; border-color: transparent;">Closed for 2026 &bull; Opens Jan 2027</a>
         </div>
         <div class="prize-list">
             <div class="prize-item">
                 <div class="prize-rank">1</div>
                 <div class="prize-details">
-                    <h4>&#8358;500,000 + Laptop</h4>
+                    <!-- <h4>&#8358;500,000 + Laptop</h4> -->
                     <span>First Place Prize</span>
                 </div>
             </div>
             <div class="prize-item">
                 <div class="prize-rank">2</div>
                 <div class="prize-details">
-                    <h4>&#8358;300,000 + Tablet</h4>
+                    <!-- <h4>&#8358;300,000 + Tablet</h4> -->
                     <span>Second Place Prize</span>
                 </div>
             </div>
             <div class="prize-item">
                 <div class="prize-rank">3</div>
                 <div class="prize-details">
-                    <h4>&#8358;150,000 + Books</h4>
+                    <!-- <h4>&#8358;150,000 + Books</h4> -->
                     <span>Third Place Prize</span>
                 </div>
             </div>
@@ -1912,7 +1941,7 @@
                 <h4>Pathways</h4>
                 <ul>
                     <li><a href="#">Foundation in UK</a></li>
-                    <li><a href="#">Direct 100 Level</a></li>
+                    <li><a href="#">Undergraduate Programmes</a></li>
                     <li><a href="#">Masters Programmes</a></li>
                     <li><a href="#">PhD Placements</a></li>
                 </ul>
@@ -1920,11 +1949,11 @@
             <div class="footer-col">
                 <h4>Get Started</h4>
                 <ul>
-                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
-                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
+                    <li><a href="tel:+2348001234567">+234 913 449 6620</a></li>
+                    <li><a href="mailto:educationhines@gmail.com">educationhines@gmail.com</a></li>
                     <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
                 </ul>
-                <a href="#" class="footer-cta-btn">Book Free Consultation</a>
+                <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1986,6 +2015,7 @@
     const dot        = document.getElementById('chatDot');
     const openChatBtn  = document.getElementById('openChatBtn');
     const footerChatBtn = document.getElementById('footerChatBtn');
+    const footerConsultationBtn = document.getElementById('footerConsultationBtn');
 
     function openChat() {
         widget.style.display = 'flex';
@@ -2002,6 +2032,7 @@
     closeBtn.addEventListener('click', closeChat);
     if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
     if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    if (footerConsultationBtn) footerConsultationBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
 
     // ——— Chat logic ———
     const messagesWrap = document.getElementById('chatMessages');

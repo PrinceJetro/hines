@@ -3,22 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hines Education Consulting | Global University Placement</title>
+    <title>Partner Schools | Hines Education Consulting</title>
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ========================================
-           COMPLETE MASTER STYLESHEET
-           Reusable for all pages
-        ======================================== */
-        
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --cyan: #00BEFF;
@@ -37,576 +28,440 @@
 
         body {
             font-family: 'DM Sans', -apple-system, sans-serif;
-            background-color: var(--white);
+            background: var(--white);
             color: var(--navy);
             line-height: 1.5;
             overflow-x: hidden;
         }
 
-        /* ========== ANIMATIONS ========== */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes shimmer { 0%{background-position:200% center} 100%{background-position:-200% center} }
 
         /* ========== NAVBAR ========== */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.96);
+            background: rgba(255,255,255,0.96);
             border-bottom: 1px solid var(--border-gray);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
             backdrop-filter: blur(12px);
         }
-
         .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 40px;
-            max-width: 1440px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 40px; max-width: 1440px; margin: 0 auto;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Fraunces', serif;
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-
-        .logo-text span {
-            color: var(--cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s ease;
-            letter-spacing: -0.1px;
-        }
-
-        .nav-links a:hover { color: var(--cyan); }
-
-        .nav-cta {
-            background-color: var(--navy);
-            color: var(--white) !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            transition: all 0.2s ease !important;
-            letter-spacing: 0.2px;
-        }
-
-        .nav-cta:hover {
-            background-color: var(--cyan) !important;
-            color: var(--white) !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--navy);
-            padding: 4px;
-        }
-
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: -.5px; line-height: 1; }
+        .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 15px; transition: color .2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+        .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: all .2s !important; }
+        .nav-cta:hover { background: var(--cyan) !important; }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); padding: 4px; }
         .menu-toggle svg { display: block; }
 
-        /* ========== PAGE CONTAINER (for main content) ========== */
-        .page-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            min-height: 60vh;
+        /* ========== HERO ========== */
+        .ps-hero {
+            background: var(--navy-deep);
+            min-height: 72vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
-        /* Page Header Styles */
-        .page-header {
-            margin-bottom: 48px;
+        .hero-geo { position: absolute; inset: 0; pointer-events: none; }
+        .geo-circle-1 {
+            position: absolute; width: 800px; height: 800px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,190,255,0.1) 0%, transparent 65%);
+            top: -300px; right: -200px;
+        }
+        .geo-circle-2 {
+            position: absolute; width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(219,195,104,0.08) 0%, transparent 70%);
+            bottom: -120px; left: 0;
+        }
+        .hero-grid-tex {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+        .hero-geo-line {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 1px; background: linear-gradient(90deg, transparent, rgba(0,190,255,.25), transparent);
         }
 
-        .page-header h1 {
+        .ps-hero-inner {
+            max-width: 1280px; margin: 0 auto; padding: 80px 40px 100px;
+            position: relative; z-index: 2; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+        }
+
+        .ps-hero-left { animation: fadeUp .6s ease both; }
+
+        .ps-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,190,255,0.1); border: 1px solid rgba(0,190,255,0.2);
+            padding: 6px 14px; border-radius: 4px;
+            font-size: 11px; font-weight: 700; color: var(--cyan);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px;
+        }
+        .ps-eyebrow-dot { width: 6px; height: 6px; background: var(--cyan); border-radius: 50%; animation: blink 1.5s infinite; }
+
+        .ps-hero h1 {
             font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -1.5px;
-            margin-bottom: 16px;
+            font-size: 50px; font-weight: 900; line-height: 1.08;
+            color: var(--white); letter-spacing: -1.5px; margin-bottom: 20px;
+        }
+        .ps-hero h1 em { font-style: italic; color: var(--cyan); }
+        .ps-hero h1 .gold-text { color: var(--gold); }
+
+        .ps-hero-sub {
+            font-size: 17px; color: rgba(255,255,255,.62);
+            line-height: 1.72; margin-bottom: 36px; max-width: 460px;
         }
 
-        .page-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            max-width: 700px;
+        /* Country filter pills — hero version */
+        .hero-filters {
+            display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px;
+        }
+        .hero-filter-btn {
+            display: flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12);
+            padding: 9px 18px; border-radius: 6px; cursor: pointer;
+            font-size: 14px; font-weight: 600; color: rgba(255,255,255,.7);
+            font-family: 'DM Sans', sans-serif;
+            transition: all .2s ease;
+        }
+        .hero-filter-btn:hover { border-color: rgba(0,190,255,.5); color: white; background: rgba(0,190,255,.08); }
+        .hero-filter-btn.active { background: var(--cyan); border-color: var(--cyan); color: var(--navy-deep); }
+
+        .ps-hero-search {
+            position: relative;
+        }
+        .ps-hero-search input {
+            width: 100%; padding: 14px 18px 14px 46px;
+            background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15);
+            border-radius: 8px; font-size: 15px; font-family: 'DM Sans', sans-serif;
+            color: white; transition: all .2s;
+        }
+        .ps-hero-search input::placeholder { color: rgba(255,255,255,.4); }
+        .ps-hero-search input:focus { outline: none; border-color: var(--cyan); background: rgba(255,255,255,0.12); }
+        .ps-hero-search-icon {
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+            width: 18px; height: 18px; stroke: rgba(255,255,255,.4); fill: none; stroke-width: 2; stroke-linecap: round;
+            transition: stroke .2s;
+        }
+        .ps-hero-search input:focus ~ .ps-hero-search-icon { stroke: var(--cyan); }
+
+        /* Hero Right — country breakdown cards */
+        .ps-hero-right {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+            animation: fadeUp .6s ease .15s both;
         }
 
-        /* Section Container (reusable) */
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
+        .country-stat-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px; padding: 22px 20px; transition: all .3s;
+            cursor: pointer;
+        }
+        .country-stat-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(0,190,255,.3); }
+        .country-stat-card.full-width { grid-column: span 2; display: flex; align-items: center; gap: 20px; }
+
+        .csc-flag { font-size: 28px; display: block; margin-bottom: 10px; }
+        .csc-count {
+            font-family: 'Fraunces', serif; font-size: 32px; font-weight: 900;
+            color: white; line-height: 1; margin-bottom: 3px;
+        }
+        .csc-label { font-size: 12px; color: rgba(255,255,255,.5); font-weight: 500; }
+        .csc-bar {
+            height: 3px; background: rgba(255,255,255,.1); border-radius: 10px; margin-top: 12px; overflow: hidden;
+        }
+        .csc-bar-fill { height: 100%; border-radius: 10px; background: var(--cyan); }
+
+        .country-stat-card.full-width .csc-flag { margin-bottom: 0; font-size: 36px; }
+        .country-stat-card.full-width .csc-count { font-size: 40px; }
+        .results-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,.3);
+            padding: 5px 12px; border-radius: 4px; margin-top: 6px;
+        }
+        .results-badge-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: blink 2s infinite; }
+        .results-badge-text { font-size: 11px; color: #22c55e; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* ========== SECTION SHELL ========== */
+        .section-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .section-eyebrow { display: block; font-size: 11px; font-weight: 700; color: var(--cyan-dark); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 12px; }
+        .section-header { text-align: center; margin-bottom: 52px; }
+        .section-header h2 { font-family: 'Fraunces', serif; color: var(--navy); font-size: 36px; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
+        .section-header p { color: var(--text-muted); font-size: 16px; }
+
+        /* ========== RESULTS BAR ========== */
+        .results-bar {
+            background: var(--light-gray);
+            border-bottom: 1px solid var(--border-gray);
+            padding: 14px 0;
+        }
+        .results-bar-inner {
+            max-width: 1280px; margin: 0 auto; padding: 0 40px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+        }
+        .results-count-text { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+        .results-count-text span { color: var(--navy); }
+
+        /* ========== UNIVERSITY GRID ========== */
+        .ugrid-section { background: var(--white); padding: 40px 0 72px; }
+
+        .universities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .uni-card {
+            background: var(--white); border: 1px solid var(--border-gray);
+            border-radius: 16px; padding: 24px 22px;
+            transition: all .3s ease; display: flex; flex-direction: column;
+        }
+        .uni-card:hover {
+            transform: translateY(-5px); border-color: var(--cyan);
+            box-shadow: 0 12px 32px rgba(0,190,255,.1);
+        }
+
+        .uni-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+        .uni-icon {
+            width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+            background: var(--light-gray);
+            display: flex; align-items: center; justify-content: center;
+            transition: background .3s;
+        }
+        .uni-card:hover .uni-icon { background: rgba(0,190,255,0.08); }
+        .uni-icon svg { width: 26px; height: 26px; stroke: var(--navy); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke .3s; }
+        .uni-card:hover .uni-icon svg { stroke: var(--cyan-dark); }
+
+        .uni-title-wrap { flex: 1; }
+        .uni-title-wrap h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+
+        .uni-country-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 11px; font-weight: 700; padding: 3px 10px;
+            border-radius: 4px; letter-spacing: 0.3px;
+        }
+        .uni-country-badge.uk { background: rgba(0,190,255,0.1); color: var(--cyan-dark); }
+        .uni-country-badge.us { background: rgba(219,195,104,0.15); color: var(--gold-dark); }
+        .uni-country-badge.canada { background: rgba(239,68,68,0.1); color: #dc2626; }
+
+        .uni-requirements {
+            background: var(--light-gray); border-radius: 10px; padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        .uni-requirements h4 {
+            font-size: 10px; font-weight: 700; color: var(--text-muted);
+            letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;
+        }
+        .uni-req-row { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+        .uni-req-row:last-child { margin-bottom: 0; }
+        .req-dot { width: 5px; height: 5px; background: var(--cyan); border-radius: 50%; flex-shrink: 0; }
+        .uni-req-row span { font-size: 12px; color: var(--navy); font-weight: 500; }
+
+        .uni-scholarship {
+            display: flex; align-items: center; gap: 7px;
+            padding: 9px 12px; border-radius: 8px;
+            background: rgba(219,195,104,0.1); margin-bottom: 16px;
+        }
+        .uni-scholarship-icon { width: 16px; height: 16px; flex-shrink: 0; }
+        .uni-scholarship-icon svg { width: 14px; height: 14px; stroke: var(--gold-dark); fill: none; stroke-width: 2; stroke-linecap: round; }
+        .uni-scholarship span { font-size: 12px; font-weight: 600; color: var(--gold-dark); line-height: 1.4; }
+
+        .apply-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--cyan-dark); text-decoration: none; font-weight: 700; font-size: 13px;
+            margin-top: auto; transition: gap .2s;
+        }
+        .apply-link:hover { gap: 10px; }
+
+        .no-results {
+            grid-column: span 3; text-align: center; padding: 80px 20px;
+            color: var(--text-muted); font-size: 16px;
+        }
+        .no-results svg { width: 48px; height: 48px; stroke: var(--border-gray); fill: none; stroke-width: 1.5; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+
+        /* ========== FEATURED PARTNERS ========== */
+        .featured-section { background: var(--light-gray); padding: 80px 0; }
+
+        .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+        .featured-card {
+            background: var(--white); border-radius: 16px; overflow: hidden;
+            display: flex; border: 1px solid var(--border-gray); transition: all .3s;
+        }
+        .featured-card:hover { transform: translateY(-4px); border-color: var(--cyan); box-shadow: 0 16px 40px rgba(0,190,255,.1); }
+
+        .featured-accent {
+            width: 100px; background: var(--navy); flex-shrink: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+            position: relative; overflow: hidden;
+        }
+        .featured-accent::before {
+            content: ''; position: absolute; top: -30px; left: -30px;
+            width: 120px; height: 120px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,190,255,0.2) 0%, transparent 70%);
+        }
+        .featured-accent-icon {
+            width: 44px; height: 44px; background: rgba(255,255,255,0.1); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
+        }
+        .featured-accent-icon svg { width: 22px; height: 22px; stroke: var(--cyan); fill: none; stroke-width: 1.8; stroke-linecap: round; }
+        .featured-accent-flag { font-size: 24px; position: relative; z-index: 1; }
+
+        .featured-body { flex: 1; padding: 24px 24px 24px 20px; }
+        .featured-body h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+
+        .featured-country {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 11px; font-weight: 700; padding: 3px 10px;
+            border-radius: 4px; margin-bottom: 12px;
+        }
+        .featured-country.uk { background: rgba(0,190,255,0.1); color: var(--cyan-dark); }
+        .featured-country.us { background: rgba(219,195,104,0.15); color: var(--gold-dark); }
+        .featured-country.canada { background: rgba(239,68,68,0.1); color: #dc2626; }
+
+        .featured-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+
+        .scholarship-box {
+            display: flex; align-items: flex-start; gap: 8px;
+            background: rgba(219,195,104,0.08); border-left: 3px solid var(--gold);
+            padding: 10px 12px; border-radius: 0 8px 8px 0; margin-bottom: 16px;
+        }
+        .scholarship-box svg { width: 14px; height: 14px; stroke: var(--gold-dark); fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; margin-top: 1px; }
+        .scholarship-box span { font-size: 13px; font-weight: 600; color: var(--gold-dark); line-height: 1.5; }
+
+        .featured-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--cyan-dark); text-decoration: none; font-weight: 700; font-size: 13px;
+            transition: gap .2s;
+        }
+        .featured-link:hover { gap: 10px; }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section { background: var(--white); padding: 72px 0; }
+        .cta-card {
+            max-width: 760px; margin: 0 auto;
+            background: var(--navy-deep); border-radius: 20px; padding: 52px 48px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .cta-card::before {
+            content: ''; position: absolute; top: -60px; right: -60px;
+            width: 280px; height: 280px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,190,255,0.12) 0%, transparent 70%);
+        }
+        .cta-card-inner { position: relative; z-index: 1; }
+        .cta-card h3 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 900; color: white; letter-spacing: -.5px; margin-bottom: 12px; }
+        .cta-card h3 em { font-style: italic; color: var(--cyan); }
+        .cta-card p { font-size: 16px; color: rgba(255,255,255,.65); line-height: 1.65; margin-bottom: 32px; max-width: 520px; margin-left: auto; margin-right: auto; }
+        .cta-card-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--cyan); color: var(--navy-deep); padding: 14px 32px;
+            border-radius: 6px; font-weight: 700; font-size: 15px; text-decoration: none;
+            transition: all .25s;
+        }
+        .cta-card-btn:hover { background: white; transform: translateY(-2px); }
+        .cta-card-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+        .cta-disclaimer {
+            margin-top: 24px; font-size: 12px; color: rgba(255,255,255,.3); line-height: 1.6;
         }
 
         /* ========== FOOTER ========== */
-        .footer {
-            background: var(--navy-deep);
-            padding: 64px 0 32px;
-            color: white;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 48px;
-            margin-bottom: 52px;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .footer-logo-img {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-        }
-
-        .footer-brand-text {
-            font-family: 'Fraunces', serif;
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--white);
-        }
-
+        .footer { background: var(--navy-deep); padding: 64px 0 32px; color: white; }
+        .footer-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 52px; }
+        .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .footer-logo-img { width: 36px; height: 36px; object-fit: contain; filter: brightness(0) invert(1); opacity: .9; }
+        .footer-brand-text { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 900; color: var(--white); }
         .footer-brand-text span { color: var(--cyan); }
-
-        .footer-about p {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
-
+        .footer-about p { color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 10px; }
+        .social-link { width: 36px; height: 36px; background: rgba(255,255,255,.08); border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: background .2s; text-decoration: none; }
         .social-link:hover { background: var(--cyan); }
-
-        .social-link svg {
-            width: 16px;
-            height: 16px;
-            fill: rgba(255,255,255,0.7);
-        }
-
+        .social-link svg { width: 16px; height: 16px; fill: rgba(255,255,255,.7); }
         .social-link:hover svg { fill: white; }
-
-        .footer-col h4 {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.5);
-        }
-
+        .footer-col h4 { font-size: 13px; font-weight: 700; margin-bottom: 20px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); }
         .footer-col ul { list-style: none; }
-
         .footer-col ul li { margin-bottom: 10px; }
-
-        .footer-col ul li a {
-            color: rgba(255,255,255,0.65);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
+        .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 14px; transition: color .2s; }
         .footer-col ul li a:hover { color: var(--cyan); }
-
-        .footer-cta-btn {
-            display: inline-block;
-            background: var(--cyan);
-            color: var(--navy-deep);
-            padding: 11px 22px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            text-decoration: none;
-            margin-top: 8px;
-            transition: background 0.2s;
-        }
-
+        .footer-cta-btn { display: inline-block; background: var(--cyan); color: var(--navy-deep); padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; margin-top: 8px; transition: background .2s; }
         .footer-cta-btn:hover { background: var(--gold); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom p {
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-bottom-links a {
-            font-size: 12px;
-            color: rgba(255,255,255,0.35);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,.4); }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { font-size: 12px; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
         .footer-bottom-links a:hover { color: var(--cyan); }
 
         /* ========== CHATBOT ========== */
-        .chat-launcher {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 9000;
-        }
-
-        .chat-launcher-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--navy);
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 24px rgba(28,59,123,0.4);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .chat-launcher-btn:hover {
-            background: var(--cyan);
-            transform: scale(1.08);
-        }
-
-        .chat-launcher-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-        }
-
-        .chat-unread-dot {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            width: 14px;
-            height: 14px;
-            background: #ef4444;
-            border-radius: 50%;
-            border: 2px solid white;
-            animation: blink 2s infinite;
-        }
-
-        .chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            width: 360px;
-            max-height: 540px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
-            z-index: 9000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--border-gray);
-            transform: translateY(20px) scale(0.95);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .chat-widget.open {
-            display: flex;
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-
-        .chat-widget-header {
-            background: var(--navy);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .chat-bot-avatar {
-            width: 38px;
-            height: 38px;
-            background: var(--cyan);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .chat-bot-avatar svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
+        .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+        .chat-launcher-btn { width: 60px; height: 60px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(28,59,123,.4); transition: all .3s; position: relative; }
+        .chat-launcher-btn:hover { background: var(--cyan); transform: scale(1.08); }
+        .chat-launcher-btn svg { width: 26px; height: 26px; fill: white; }
+        .chat-unread-dot { position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ef4444; border-radius: 50%; border: 2px solid white; animation: blink 2s infinite; display: none; }
+        .chat-widget { position: fixed; bottom: 100px; right: 28px; width: 360px; max-height: 540px; background: var(--white); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.2); z-index: 9000; display: none; flex-direction: column; overflow: hidden; border: 1px solid var(--border-gray); transform: translateY(20px) scale(.95); opacity: 0; transition: all .3s cubic-bezier(.34,1.56,.64,1); }
+        .chat-widget.open { display: flex; transform: translateY(0) scale(1); opacity: 1; }
+        .chat-widget-header { background: var(--navy); padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+        .chat-bot-avatar { width: 38px; height: 38px; background: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .chat-bot-avatar svg { width: 20px; height: 20px; fill: white; }
         .chat-header-info { flex: 1; }
-
-        .chat-header-info h4 {
-            color: white;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .chat-header-info span {
-            color: rgba(255,255,255,0.6);
-            font-size: 12px;
-        }
-
-        .chat-online-dot {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background: #22c55e;
-            border-radius: 50%;
-            margin-right: 5px;
-            animation: blink 2s infinite;
-        }
-
-        .chat-close-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: rgba(255,255,255,0.6);
-            display: flex;
-            padding: 4px;
-            transition: color 0.2s;
-        }
-
+        .chat-header-info h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .chat-header-info span { color: rgba(255,255,255,.6); font-size: 12px; }
+        .chat-online-dot { display: inline-block; width: 7px; height: 7px; background: #22c55e; border-radius: 50%; margin-right: 5px; animation: blink 2s infinite; }
+        .chat-close-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,.6); display: flex; padding: 4px; transition: color .2s; }
         .chat-close-btn:hover { color: white; }
-
-        .chat-close-btn svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .chat-messages-wrap {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background: #f8fafc;
-        }
-
+        .chat-close-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .chat-messages-wrap { flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
         .chat-messages-wrap::-webkit-scrollbar { width: 4px; }
-        .chat-messages-wrap::-webkit-scrollbar-track { background: transparent; }
         .chat-messages-wrap::-webkit-scrollbar-thumb { background: var(--border-gray); border-radius: 10px; }
-
-        .bot-msg {
-            background: var(--white);
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-left-radius: 4px;
-            max-width: 82%;
-            color: var(--navy);
-            font-size: 14px;
-            line-height: 1.5;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-gray);
-            align-self: flex-start;
-        }
-
-        .user-msg {
-            background: var(--navy);
-            color: white;
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-right-radius: 4px;
-            max-width: 82%;
-            font-size: 14px;
-            line-height: 1.5;
-            align-self: flex-end;
-        }
-
-        .wa-msg {
-            background: #22c55e;
-            color: white;
-            padding: 14px 16px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-            align-self: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .bot-msg { background: var(--white); padding: 11px 14px; border-radius: 14px; border-top-left-radius: 4px; max-width: 82%; color: var(--navy); font-size: 14px; line-height: 1.5; box-shadow: 0 1px 4px rgba(0,0,0,.06); border: 1px solid var(--border-gray); align-self: flex-start; }
+        .user-msg { background: var(--navy); color: white; padding: 11px 14px; border-radius: 14px; border-top-right-radius: 4px; max-width: 82%; font-size: 14px; align-self: flex-end; }
+        .wa-msg { background: #22c55e; color: white; padding: 14px 16px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 14px; cursor: pointer; transition: background .2s; align-self: center; display: flex; align-items: center; gap: 8px; }
         .wa-msg:hover { background: #16a34a; }
-
         .wa-msg svg { width: 20px; height: 20px; fill: white; }
-
-        .chat-options-wrap {
-            padding: 12px 16px 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            background: var(--white);
-            border-top: 1px solid var(--border-gray);
-        }
-
-        .chat-opt-btn {
-            background: var(--white);
-            border: 1.5px solid var(--border-gray);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--navy);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-        }
-
-        .chat-opt-btn:hover {
-            border-color: var(--navy);
-            background: var(--light-gray);
-        }
+        .chat-options-wrap { padding: 12px 16px 16px; display: flex; flex-wrap: wrap; gap: 8px; background: var(--white); border-top: 1px solid var(--border-gray); }
+        .chat-opt-btn { background: var(--white); border: 1.5px solid var(--border-gray); padding: 8px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all .2s; color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; }
+        .chat-opt-btn:hover { border-color: var(--navy); background: var(--light-gray); }
 
         /* ========== RESPONSIVE ========== */
-        @media (max-width: 900px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        @media (max-width: 1100px) {
+            .universities-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-grid { grid-template-columns: 1fr; }
         }
-
+        @media (max-width: 900px) {
+            .ps-hero-inner { grid-template-columns: 1fr; }
+            .ps-hero-right { display: none; }
+            .footer-grid { grid-template-columns: repeat(2,1fr); }
+        }
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 68px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px 24px;
-                gap: 16px;
-                border-bottom: 1px solid var(--border-gray);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            }
-
+            .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border-gray); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
             .nav-links.active { display: flex; }
             .nav-container { padding: 14px 24px; }
-
-            .page-container {
-                padding: 40px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 32px;
-            }
-
-            .section-container, .footer-container {
-                padding: 0 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .chat-widget {
-                width: calc(100vw - 40px);
-                right: 20px;
-            }
+            .ps-hero h1 { font-size: 34px; }
+            .ps-hero-inner, .section-container, .footer-container, .results-bar-inner { padding-left: 20px; padding-right: 20px; }
+            .universities-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .chat-widget { width: calc(100vw - 40px); right: 20px; }
+            .cta-card { padding: 36px 24px; }
+            .featured-card { flex-direction: column; }
+            .featured-accent { width: 100%; min-height: 80px; flex-direction: row; gap: 12px; padding: 16px 20px; }
+            .no-results { grid-column: span 1; }
         }
-
         @media (max-width: 480px) {
-            .page-header h1 {
-                font-size: 28px;
-            }
+            .ps-hero h1 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
-<!-- ========================================
-     NAVBAR (Reusable - Keep as is for all pages)
-     ======================================== -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -615,643 +470,176 @@
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
             </svg>
         </button>
         <div class="nav-links" id="navLinks">
             <a href="study-abroad.html">Study Abroad</a>
             <a href="partners.html">For Partners</a>
             <a href="competition.html">Competition</a>
-            <a href="schools.html">Partner Schools</a>
+            <a href="schools.html" class="active">Partner Schools</a>
             <a href="contact.html">Contact</a>
             <a href="get-started.html" class="nav-cta">Get Started</a>
         </div>
     </div>
 </nav>
 
-<section class="partner-schools-hero">
-    <style>
-        .partner-schools-hero {
-            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
-            padding: 80px 0 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        .partner-schools-hero::before {
-            content: '🏛️';
-            position: absolute;
-            font-size: 250px;
-            opacity: 0.03;
-            bottom: -50px;
-            right: -50px;
-            pointer-events: none;
-        }
-        .ps-hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        .ps-hero-container h1 {
-            color: var(--navy);
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-        .ps-hero-container h1 span {
-            color: var(--cyan);
-        }
-        .ps-hero-container p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .filter-btn {
-            background: var(--white);
-            border: 2px solid var(--border-gray);
-            padding: 12px 32px;
-            border-radius: 48px;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--navy);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .filter-btn:hover {
-            border-color: var(--cyan);
-            color: var(--cyan);
-        }
-        .filter-btn.active {
-            background: var(--cyan);
-            border-color: var(--cyan);
-            color: var(--white);
-        }
-        .results-count {
-            margin-top: 20px;
-            color: var(--navy);
-            opacity: 0.6;
-            font-size: 14px;
-        }
-        @media (max-width: 768px) {
-            .ps-hero-container h1 {
-                font-size: 32px;
-            }
-            .ps-hero-container p {
-                font-size: 16px;
-            }
-            .ps-hero-container {
-                padding: 0 20px;
-            }
-            .filter-btn {
-                padding: 8px 20px;
-                font-size: 14px;
-            }
-        }
-    </style>
-    <div class="ps-hero-container">
-        <h1>Where Our Students Have Been <span>Placed</span></h1>
-        <p>We partner with 50+ universities across the UK, US, and Canada. Here are some of the institutions our students now call home.</p>
-        <div class="filter-buttons" id="filterButtons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="uk">🇬🇧 United Kingdom</button>
-            <button class="filter-btn" data-filter="us">🇺🇸 United States</button>
-            <button class="filter-btn" data-filter="canada">🇨🇦 Canada</button>
+<!-- HERO -->
+<section class="ps-hero">
+    <div class="hero-geo">
+        <div class="geo-circle-1"></div>
+        <div class="geo-circle-2"></div>
+        <div class="hero-grid-tex"></div>
+        <div class="hero-geo-line"></div>
+    </div>
+    <div class="ps-hero-inner">
+        <div class="ps-hero-left">
+            <div class="ps-eyebrow">
+                <span class="ps-eyebrow-dot"></span>
+                Official partner institutions
+            </div>
+            <h1>
+                Where Our Students<br>
+                Have Been <em>Placed</em>
+            </h1>
+            <p class="ps-hero-sub">We partner with 50+ universities across the UK, US, and Canada. Browse our full network, filter by country, and find the institution where you belong.</p>
+
+            <div class="hero-filters" id="heroFilters">
+                <button class="hero-filter-btn active" data-filter="all">All Countries</button>
+                <button class="hero-filter-btn" data-filter="uk">
+                    <span>🇬🇧</span> United Kingdom
+                </button>
+                <button class="hero-filter-btn" data-filter="us">
+                    <span>🇺🇸</span> United States
+                </button>
+                <button class="hero-filter-btn" data-filter="canada">
+                    <span>🇨🇦</span> Canada
+                </button>
+            </div>
+
+            <div class="ps-hero-search">
+                <svg class="ps-hero-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input type="text" id="universitySearch" placeholder="Search by university name...">
+            </div>
         </div>
-        <div class="results-count" id="resultsCount">Showing all partner universities</div>
+
+        <!-- Right: Country breakdown stats -->
+        <div class="ps-hero-right">
+            <div class="country-stat-card full-width">
+                <div>
+                    <div class="csc-flag">🌍</div>
+                    <div class="csc-count">50+</div>
+                    <div class="csc-label">Total partner universities</div>
+                    <div class="results-badge" style="margin-top:10px;">
+                        <span class="results-badge-dot"></span>
+                        <span class="results-badge-text">Accepting applications</span>
+                    </div>
+                </div>
+            </div>
+            <div class="country-stat-card">
+                <div class="csc-flag">🇬🇧</div>
+                <div class="csc-count">6</div>
+                <div class="csc-label">UK universities listed</div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+            </div>
+            <div class="country-stat-card">
+                <div class="csc-flag">🇺🇸</div>
+                <div class="csc-count">6</div>
+                <div class="csc-label">US universities listed</div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+            </div>
+            <div class="country-stat-card">
+                <div class="csc-flag">🇨🇦</div>
+                <div class="csc-count">6</div>
+                <div class="csc-label">Canadian universities listed</div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+            </div>
+        </div>
     </div>
 </section>
-<section class="search-section">
-    <style>
-        .search-section {
-            background: var(--white);
-            padding: 0 0 40px 0;
-        }
-        .search-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .search-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .search-icon {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: var(--navy);
-            opacity: 0.5;
-        }
-        #universitySearch {
-            width: 100%;
-            padding: 16px 20px 16px 50px;
-            border: 2px solid var(--border-gray);
-            border-radius: 60px;
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-        #universitySearch:focus {
-            outline: none;
-            border-color: var(--cyan);
-            box-shadow: 0 0 0 3px rgba(0, 190, 255, 0.1);
-        }
-        @media (max-width: 768px) {
-            .search-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
-    <div class="search-container">
-        <div class="search-wrapper">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="universitySearch" placeholder="Search by university name or country...">
-        </div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+    <div class="results-bar-inner">
+        <span class="results-count-text">Showing <span id="resultsCount">18</span> partner universities</span>
     </div>
-</section><section class="university-grid-section">
-    <style>
-        .university-grid-section {
-            background: var(--white);
-            padding: 20px 0 60px;
-        }
-        .ugrid-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .universities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .uni-card {
-            background: var(--white);
-            border: 1px solid var(--border-gray);
-            border-radius: 20px;
-            padding: 24px;
-            transition: all 0.3s;
-        }
-        .uni-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--cyan);
-            box-shadow: 0 10px 25px rgba(0, 190, 255, 0.1);
-        }
-        .uni-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-        .uni-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--border-gray) 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-        }
-        .uni-info h3 {
-            color: var(--navy);
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .uni-country {
-            display: inline-block;
-            font-size: 12px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-        .uni-country.uk {
-            background: rgba(0, 190, 255, 0.1);
-            color: var(--cyan);
-        }
-        .uni-country.us {
-            background: rgba(219, 195, 104, 0.15);
-            color: #b8860b;
-        }
-        .uni-country.canada {
-            background: rgba(255, 99, 71, 0.1);
-            color: #e63946;
-        }
-        .requirements {
-            margin: 16px 0;
-            padding: 12px 0;
-            border-top: 1px solid var(--border-gray);
-            border-bottom: 1px solid var(--border-gray);
-        }
-        .requirements p {
-            font-size: 13px;
-            color: var(--navy);
-            margin-bottom: 6px;
-        }
-        .requirements strong {
-            color: var(--cyan);
-        }
-        .scholarship-note {
-            font-size: 12px;
-            color: var(--gold);
-            font-weight: 600;
-            margin: 12px 0;
-        }
-        .apply-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--cyan);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            margin-top: 12px;
-        }
-        .apply-link:hover {
-            gap: 12px;
-        }
-        .no-results {
-            text-align: center;
-            padding: 60px;
-            color: var(--navy);
-            opacity: 0.6;
-            font-size: 18px;
-        }
-        @media (max-width: 1024px) {
-            .universities-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-        @media (max-width: 768px) {
-            .universities-grid {
-                grid-template-columns: 1fr;
-            }
-            .ugrid-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
-    <div class="ugrid-container">
+</div>
+
+<!-- UNIVERSITY GRID -->
+<section class="ugrid-section">
+    <div class="section-container">
         <div class="universities-grid" id="universitiesGrid"></div>
     </div>
-    <script>
-        const universities = [
-            { name: "University of Cambridge", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1-A2 | A-Levels: A*AA", scholarship: "Limited scholarships available", applyLink: "#" },
-            { name: "University of Oxford", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1 | A-Levels: AAA", scholarship: "Rhodes Scholarship eligible", applyLink: "#" },
-            { name: "University College London (UCL)", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1-B2 | A-Levels: AAB", scholarship: "Scholarships up to £5k", applyLink: "#" },
-            { name: "University of Manchester", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1-B3 | A-Levels: ABB", scholarship: "Global Excellence Scholarship", applyLink: "#" },
-            { name: "University of Warwick", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1-B3 | A-Levels: ABB", scholarship: "Scholarships available", applyLink: "#" },
-            { name: "University of Edinburgh", country: "uk", countryName: "UK", icon: "🏛️", requirements: "WAEC: A1-B2 | A-Levels: AAA-ABB", scholarship: "Robertson Scholarship", applyLink: "#" },
-            { name: "Harvard University", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: A1 | SAT: 1500+", scholarship: "Need-based full aid", applyLink: "#" },
-            { name: "Stanford University", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: A1 | SAT: 1480+", scholarship: "Full scholarships available", applyLink: "#" },
-            { name: "Massachusetts Institute of Technology (MIT)", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: A1 | SAT: 1520+", scholarship: "Need-blind admission", applyLink: "#" },
-            { name: "New York University (NYU)", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: A1-B2 | SAT: 1350+", scholarship: "Scholarships up to $30k", applyLink: "#" },
-            { name: "University of California, Los Angeles (UCLA)", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: A1-B2 | SAT: 1300+", scholarship: "Regents Scholarship", applyLink: "#" },
-            { name: "Boston University", country: "us", countryName: "USA", icon: "🏛️", requirements: "WAEC: B2-C4 | SAT: 1250+", scholarship: "Presidential Scholarship", applyLink: "#" },
-            { name: "University of British Columbia (UBC)", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: A1-B2 | IELTS: 6.5", scholarship: "International Major Scholarship", applyLink: "#" },
-            { name: "University of Toronto", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: A1-B2 | IELTS: 6.5", scholarship: "Lester B. Pearson Scholarship", applyLink: "#" },
-            { name: "McGill University", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: A1-B3 | IELTS: 6.5", scholarship: "Scholarships available", applyLink: "#" },
-            { name: "University of Alberta", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: B2-C4 | IELTS: 6.0", scholarship: "International Scholarship", applyLink: "#" },
-            { name: "University of Waterloo", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: B2-C4 | IELTS: 6.5", scholarship: "President's Scholarship", applyLink: "#" },
-            { name: "York University", country: "canada", countryName: "Canada", icon: "🏛️", requirements: "WAEC: C4-C6 | IELTS: 6.0", scholarship: "Global Leader Award", applyLink: "#" }
-        ];
+</section>
 
-        function renderUniversities(filter = "all", search = "") {
-            const grid = document.getElementById("universitiesGrid");
-            let filtered = universities;
-            
-            if (filter !== "all") {
-                filtered = filtered.filter(u => u.country === filter);
-            }
-            
-            if (search.trim() !== "") {
-                const searchLower = search.toLowerCase();
-                filtered = filtered.filter(u => 
-                    u.name.toLowerCase().includes(searchLower) || 
-                    u.countryName.toLowerCase().includes(searchLower)
-                );
-            }
-            
-            if (filtered.length === 0) {
-                grid.innerHTML = '<div class="no-results">No universities found. Try a different search or filter.</div>';
-                document.getElementById("resultsCount").innerText = `No results found`;
-                return;
-            }
-            
-            document.getElementById("resultsCount").innerText = `Showing ${filtered.length} partner ${filtered.length === 1 ? 'university' : 'universities'}`;
-            
-            grid.innerHTML = filtered.map(uni => `
-                <div class="uni-card" data-country="${uni.country}">
-                    <div class="uni-header">
-                        <div class="uni-icon">${uni.icon}</div>
-                        <div class="uni-info">
-                            <h3>${uni.name}</h3>
-                            <span class="uni-country ${uni.country}">${uni.countryName}</span>
-                        </div>
-                    </div>
-                    <div class="requirements">
-                        <p><strong>📋 Entry Requirements:</strong></p>
-                        <p>${uni.requirements}</p>
-                    </div>
-                    <div class="scholarship-note">💰 ${uni.scholarship}</div>
-                    <a href="${uni.applyLink}" class="apply-link">Apply via us →</a>
-                </div>
-            `).join("");
-        }
-        
-        let currentFilter = "all";
-        let currentSearch = "";
-        
-        document.querySelectorAll(".filter-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
-                currentFilter = btn.getAttribute("data-filter");
-                renderUniversities(currentFilter, currentSearch);
-            });
-        });
-        
-        const searchInput = document.getElementById("universitySearch");
-        searchInput.addEventListener("input", (e) => {
-            currentSearch = e.target.value;
-            renderUniversities(currentFilter, currentSearch);
-        });
-        
-        renderUniversities("all", "");
-    </script>
-</section><section class="featured-partners">
-    <style>
-        .featured-partners {
-            background: var(--light-gray);
-            padding: 80px 0;
-        }
-        .featured-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-        .featured-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-        .featured-header h2 {
-            color: var(--navy);
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .featured-header h2 span {
-            color: var(--gold);
-        }
-        .featured-header p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-        }
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-        .featured-card {
-            background: var(--white);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            transition: all 0.3s;
-            border: 1px solid var(--border-gray);
-        }
-        .featured-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--cyan);
-            box-shadow: 0 15px 30px rgba(0, 190, 255, 0.1);
-        }
-        .featured-icon {
-            width: 120px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--cyan) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 56px;
-        }
-        .featured-content {
-            flex: 1;
-            padding: 24px;
-        }
-        .featured-content h3 {
-            color: var(--navy);
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .featured-country {
-            display: inline-block;
-            font-size: 12px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            background: rgba(0, 190, 255, 0.1);
-            color: var(--cyan);
-            margin-bottom: 12px;
-        }
-        .featured-desc {
-            color: var(--navy);
-            opacity: 0.8;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        .scholarship-highlight {
-            background: rgba(219, 195, 104, 0.15);
-            padding: 10px 12px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--gold-dark);
-            margin: 12px 0;
-        }
-        .featured-link {
-            color: var(--cyan);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        @media (max-width: 1024px) {
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 768px) {
-            .featured-card {
-                flex-direction: column;
-            }
-            .featured-icon {
-                width: 100%;
-                padding: 30px;
-            }
-            .featured-header h2 {
-                font-size: 28px;
-            }
-            .featured-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
-    <div class="featured-container">
-        <div class="featured-header">
-            <h2>🌟 Featured <span>Partner Universities</span></h2>
-            <p>Our closest partners with exclusive scholarship opportunities for African students</p>
+<!-- FEATURED PARTNERS -->
+<section class="featured-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-eyebrow">Highlighted Partnerships</span>
+            <h2>Featured Partner Universities</h2>
+            <p>Our closest institutional partners with exclusive opportunities for African students</p>
         </div>
         <div class="featured-grid">
             <div class="featured-card">
-                <div class="featured-icon">🏛️</div>
-                <div class="featured-content">
-                    <h3>University of British Columbia (UBC)</h3>
-                    <span class="featured-country">🇨🇦 Canada</span>
-                    <p class="featured-desc">One of Canada's top research universities, located in beautiful Vancouver. UBC offers generous scholarships for African students through the International Major Entrance Scholarship program.</p>
-                    <div class="scholarship-highlight">💰 Scholarship: Up to CAD $60,000 for high-achieving WAEC/A-Level students</div>
-                    <a href="#" class="featured-link">Learn more about UBC partnership →</a>
+                <div class="featured-accent">
+                    <div class="featured-accent-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
+                    </div>
+                    <span class="featured-accent-flag">🇨🇦</span>
+                </div>
+                <div class="featured-body">
+                    <h3>Flemming College</h3>
+                    <span class="featured-country canada">Canada &bull; Ontario</span>
+                    <p class="featured-desc">Flemming College offers a wide range of applied arts and technology programmes with strong industry links and excellent post-graduate work permit eligibility.</p>
+                    <div class="scholarship-box">
+                        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+                        <span>International Student Scholarship — entrance awards for eligible students</span>
+                    </div>
+                    <a href="#" class="featured-link">Learn about Flemming partnership &rarr;</a>
                 </div>
             </div>
+
             <div class="featured-card">
-                <div class="featured-icon">🏛️</div>
-                <div class="featured-content">
-                    <h3>University of Manchester</h3>
-                    <span class="featured-country">🇬🇧 United Kingdom</span>
-                    <p class="featured-desc">A Russell Group university with strong ties to African institutions. Known for engineering, business, and computer science programs with excellent graduate employability.</p>
-                    <div class="scholarship-highlight">💰 Scholarship: Global Excellence Scholarship — £5,000-£10,000 for WAEC/A-Level high achievers</div>
-                    <a href="#" class="featured-link">Learn more about Manchester partnership →</a>
+                <div class="featured-accent">
+                    <div class="featured-accent-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
+                    </div>
+                    <span class="featured-accent-flag">🇨🇦</span>
+                </div>
+                <div class="featured-body">
+                    <h3>Algoma University</h3>
+                    <span class="featured-country canada">Canada &bull; Ontario</span>
+                    <p class="featured-desc">Algoma University provides a small, personal learning environment with campuses in Sault Ste. Marie and Brampton, offering high-quality undergraduate degrees.</p>
+                    <div class="scholarship-box">
+                        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+                        <span>Chancellor's Award — up to $5,000 for international students with high averages</span>
+                    </div>
+                    <a href="#" class="featured-link">Learn about Algoma partnership &rarr;</a>
                 </div>
             </div>
-            <div class="featured-card">
-                <div class="featured-icon">🏛️</div>
-                <div class="featured-content">
-                    <h3>New York University (NYU)</h3>
-                    <span class="featured-country">🇺🇸 United States</span>
-                    <p class="featured-desc">Located in the heart of Manhattan, NYU offers world-class programs across arts, sciences, and business. Strong need-based financial aid for international students.</p>
-                    <div class="scholarship-highlight">💰 Scholarship: NYU Wagner Scholarship — Up to $30,000 per year based on merit</div>
-                    <a href="#" class="featured-link">Learn more about NYU partnership →</a>
-                </div>
-            </div>
-            <div class="featured-card">
-                <div class="featured-icon">🏛️</div>
-                <div class="featured-content">
-                    <h3>University of Toronto</h3>
-                    <span class="featured-country">🇨🇦 Canada</span>
-                    <p class="featured-desc">Canada's #1 university, known for research excellence. The Lester B. Pearson International Scholarship is one of the most prestigious fully-funded scholarships available.</p>
-                    <div class="scholarship-highlight">💰 Scholarship: Lester B. Pearson — Full tuition + living expenses (4 years)</div>
-                    <a href="#" class="featured-link">Learn more about U of T partnership →</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><section class="partner-cta">
-    <style>
-        .partner-cta {
-            background: linear-gradient(135deg, rgba(0, 190, 255, 0.05) 0%, rgba(219, 195, 104, 0.05) 100%);
-            padding: 60px 0;
-        }
-        .cta-schools-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 32px;
-            text-align: center;
-        }
-        .cta-card {
-            background: var(--white);
-            border-radius: 32px;
-            padding: 48px;
-            border: 1px solid var(--border-gray);
-        }
-        .cta-card h3 {
-            color: var(--navy);
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-        .cta-card p {
-            color: var(--navy);
-            opacity: 0.7;
-            font-size: 18px;
-            margin-bottom: 32px;
-        }
-        .cta-chat-btn {
-            background: var(--cyan);
-            color: var(--white);
-            padding: 14px 36px;
-            border-radius: 48px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-        .cta-chat-btn:hover {
-            background: var(--gold);
-            color: var(--navy);
-            transform: translateY(-2px);
-        }
-        .footer-note {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-gray);
-            font-size: 13px;
-            color: var(--navy);
-            opacity: 0.5;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        @media (max-width: 768px) {
-            .cta-card {
-                padding: 32px 24px;
-            }
-            .cta-card h3 {
-                font-size: 24px;
-            }
-            .cta-card p {
-                font-size: 16px;
-            }
-            .cta-schools-container {
-                padding: 0 20px;
-            }
-        }
-    </style>
-    <div class="cta-schools-container">
-        <div class="cta-card">
-            <h3>❓ Don't see your target school?</h3>
-            <p>We have partnerships with 50+ universities across the UK, US, and Canada. If yours isn't listed, just ask — we can add them.</p>
-            <a href="#" class="cta-chat-btn">💬 Chat with an Agent →</a>
-        </div>
-        <div class="footer-note">
-            *We are official representatives of these institutions. All applications submitted through Hines Education are verified and prioritized by our partner universities.
         </div>
     </div>
 </section>
 
-<!-- ========================================
-     FOOTER (Reusable - Keep as is for all pages)
-     ======================================== -->
+<!-- CTA -->
+<section class="cta-section">
+    <div class="section-container">
+        <div class="cta-card">
+            <div class="cta-card-inner">
+                <h3>Don't see your <em>target school?</em></h3>
+                <p>We have active partnerships with 50+ institutions. If your target university isn't listed, just ask — we can almost always find a route in.</p>
+                <a href="#" class="cta-card-btn" id="ctaChatBtn">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    Chat with an Advisor
+                </a>
+                <p class="cta-disclaimer">We are official representatives of these institutions. All applications submitted through Hines Education are verified and prioritised by our partner universities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-grid">
@@ -1262,18 +650,10 @@
                 </div>
                 <p>Connecting African students to world-class universities since 2015. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1289,10 +669,10 @@
             <div class="footer-col">
                 <h4>Pathways</h4>
                 <ul>
-                    <li><a href="foundation.html">Foundation in UK</a></li>
-                    <li><a href="direct-entry.html">Direct 100 Level</a></li>
-                    <li><a href="masters.html">Masters Programmes</a></li>
-                    <li><a href="phd.html">PhD Placements</a></li>
+                    <li><a href="#">Foundation in UK</a></li>
+                    <li><a href="#">Direct 100 Level</a></li>
+                    <li><a href="#">Masters Programmes</a></li>
+                    <li><a href="#">PhD Placements</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1302,7 +682,7 @@
                     <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
                     <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
                 </ul>
-                <a href="consultation.html" class="footer-cta-btn">Book Free Consultation</a>
+                <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1315,9 +695,7 @@
     </div>
 </footer>
 
-<!-- ========================================
-     CHATBOT WIDGET (Reusable - Keep as is)
-     ======================================== -->
+<!-- CHATBOT -->
 <div class="chat-launcher">
     <div class="chat-widget" id="chatWidget">
         <div class="chat-widget-header">
@@ -1328,7 +706,7 @@
                 <h4>Hines Admissions</h4>
                 <span><span class="chat-online-dot"></span>Online &bull; Replies instantly</span>
             </div>
-            <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
+            <button class="chat-close-btn" id="chatCloseBtn">
                 <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
         </div>
@@ -1348,152 +726,132 @@
     </button>
 </div>
 
-<!-- ========================================
-     MASTER JAVASCRIPT (Navbar + Chatbot)
-     ======================================== -->
 <script>
 (function() {
-    // ========== NAVBAR TOGGLE ==========
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-        document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+    // ——— Data ———
+    const universities = [
+        { name: "Flemming College", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Entrance awards available", link: "#" },
+        { name: "Algoma University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "Chancellor's Award up to $5,000", link: "#" },
+        { name: "University of Cambridge", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – A2" }, { label: "A-Levels", val: "A*AA" }], scholarship: "Limited scholarships available", link: "#" },
+        { name: "University of Oxford", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1" }, { label: "A-Levels", val: "AAA" }], scholarship: "Rhodes Scholarship eligible", link: "#" },
+        { name: "University College London (UCL)", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAB" }], scholarship: "Scholarships up to £5,000", link: "#" },
+        { name: "University of Manchester", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Global Excellence Scholarship", link: "#" },
+        { name: "University of Warwick", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Scholarships available", link: "#" },
+        { name: "University of Edinburgh", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAA – ABB" }], scholarship: "Robertson Scholarship", link: "#" },
+        { name: "Harvard University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1500+" }], scholarship: "Need-based full financial aid", link: "#" },
+        { name: "Stanford University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1480+" }], scholarship: "Full scholarships available", link: "#" },
+        { name: "MIT", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1520+" }], scholarship: "Need-blind admission policy", link: "#" },
+        { name: "New York University (NYU)", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1350+" }], scholarship: "NYU Wagner Scholarship up to $30,000", link: "#" },
+        { name: "University of California, Los Angeles (UCLA)", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1300+" }], scholarship: "Regents Scholarship", link: "#" },
+        { name: "Boston University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "SAT", val: "1250+" }], scholarship: "Presidential Scholarship available", link: "#" },
+        { name: "University of British Columbia (UBC)", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "International Major Scholarship up to CAD $60k", link: "#" },
+        { name: "University of Toronto", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "Lester B. Pearson Scholarship", link: "#" },
+        { name: "McGill University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "IELTS", val: "6.5+" }], scholarship: "Scholarships available", link: "#" },
+        { name: "University of Alberta", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "International Scholarship", link: "#" },
+        { name: "University of Waterloo", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.5+" }], scholarship: "President's Scholarship", link: "#" },
+        { name: "York University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Global Leader Award", link: "#" }
+    ];
+
+    const uniIconSVG = `<svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>`;
+    const countryLabels = { uk: 'United Kingdom', us: 'United States', canada: 'Canada' };
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderGrid() {
+        const grid = document.getElementById('universitiesGrid');
+        let list = universities.filter(u => {
+            const matchFilter = currentFilter === 'all' || u.country === currentFilter;
+            const matchSearch = !currentSearch || u.name.toLowerCase().includes(currentSearch.toLowerCase()) || u.countryName.toLowerCase().includes(currentSearch.toLowerCase());
+            return matchFilter && matchSearch;
+        });
+
+        document.getElementById('resultsCount').textContent = list.length;
+
+        if (!list.length) {
+            grid.innerHTML = `<div class="no-results"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>No universities match your search. Try adjusting your filters.</div>`;
+            return;
+        }
+
+        grid.innerHTML = list.map(u => `
+            <div class="uni-card">
+                <div class="uni-header">
+                    <div class="uni-icon">${uniIconSVG}</div>
+                    <div class="uni-title-wrap">
+                        <h3>${u.name}</h3>
+                        <span class="uni-country-badge ${u.country}">${u.country === 'uk' ? '🇬🇧' : u.country === 'us' ? '🇺🇸' : '🇨🇦'} ${u.countryName}</span>
+                    </div>
+                </div>
+                <a href="${u.link}" class="apply-link">Apply via Hines &rarr;</a>
+            </div>
+        `).join('');
     }
 
-    // ========== CHATBOT LOGIC ==========
+    // Filter buttons (hero)
+    document.querySelectorAll('.hero-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.hero-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            renderGrid();
+        });
+    });
+
+    // Search
+    document.getElementById('universitySearch').addEventListener('input', e => {
+        currentSearch = e.target.value;
+        renderGrid();
+    });
+
+    renderGrid();
+
+    // ——— Nav toggle ———
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+    }
+
+    // ——— Chatbot ———
     const widget = document.getElementById('chatWidget');
     const launchBtn = document.getElementById('chatLauncherBtn');
     const closeBtn = document.getElementById('chatCloseBtn');
     const dot = document.getElementById('chatDot');
-    const openChatBtn = document.getElementById('openChatBtn');
-    const footerChatBtn = document.getElementById('footerChatBtn');
     const messagesWrap = document.getElementById('chatMessages');
     const optionsWrap = document.getElementById('chatOptions');
-
-    // CHANGE THIS TO YOUR WHATSAPP NUMBER (format: countrycode + number, no plus sign)
     const WA_NUMBER = '2348088981691';
-    
-    let step = 0;
-    let userData = { qualification: '', country: '', level: '' };
+    let step = 0, userData = { qualification: '', country: '', level: '' };
 
-    function openChat() {
-        if (!widget) return;
-        widget.style.display = 'flex';
-        requestAnimationFrame(() => widget.classList.add('open'));
-        if (dot) dot.style.display = 'none';
-    }
+    function openChat() { widget.style.display = 'flex'; requestAnimationFrame(() => widget.classList.add('open')); if (dot) dot.style.display = 'none'; }
+    function closeChat() { widget.classList.remove('open'); setTimeout(() => { if (!widget.classList.contains('open')) widget.style.display = 'none'; }, 300); }
 
-    function closeChat() {
-        if (!widget) return;
-        widget.classList.remove('open');
-        setTimeout(() => { if (widget && !widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
-    }
+    launchBtn.addEventListener('click', () => widget.classList.contains('open') ? closeChat() : openChat());
+    closeBtn.addEventListener('click', closeChat);
+    ['ctaChatBtn','footerChatBtn','footerConsultationBtn'].forEach(id => { const el = document.getElementById(id); if (el) el.addEventListener('click', e => { e.preventDefault(); openChat(); }); });
 
-    if (launchBtn) launchBtn.addEventListener('click', () => widget && widget.classList.contains('open') ? closeChat() : openChat());
-    if (closeBtn) closeBtn.addEventListener('click', closeChat);
-    if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
-    if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
-
-    function scrollDown() {
-        if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight;
-    }
-
-    function addMsg(text, isUser) {
-        if (!messagesWrap) return;
-        const div = document.createElement('div');
-        div.className = isUser ? 'user-msg' : 'bot-msg';
-        div.textContent = text;
-        messagesWrap.appendChild(div);
-        scrollDown();
-    }
-
-    function setOptions(opts) {
-        if (!optionsWrap) return;
+    function addMsg(t, isUser) { const d = document.createElement('div'); d.className = isUser ? 'user-msg' : 'bot-msg'; d.textContent = t; messagesWrap.appendChild(d); messagesWrap.scrollTop = messagesWrap.scrollHeight; }
+    function setOpts(opts) {
         optionsWrap.innerHTML = '';
-        opts.forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'chat-opt-btn';
-            btn.textContent = opt;
-            btn.addEventListener('click', () => handleOption(opt));
-            optionsWrap.appendChild(btn);
-        });
+        opts.forEach(o => { const b = document.createElement('button'); b.className = 'chat-opt-btn'; b.textContent = o; b.addEventListener('click', () => handleOption(o)); optionsWrap.appendChild(b); });
     }
-
-    function buildWhatsAppMessage() {
-        const msg = [
-            'Hello Hines Education,',
-            '',
-            'I would like to enquire about university placement.',
-            '',
-            `Qualification: ${userData.qualification}`,
-            `Target Country: ${userData.country}`,
-            `Level of Study: ${userData.level}`,
-            '',
-            'Please get in touch with me. Thank you.'
-        ].join('\n');
-        return encodeURIComponent(msg);
+    function buildWAMsg() {
+        return encodeURIComponent(['Hello Hines Education,','','I would like to enquire about university placement.','',`Qualification: ${userData.qualification}`,`Target Country: ${userData.country}`,`Level of Study: ${userData.level}`,'','Please get in touch. Thank you.'].join('\n'));
     }
-
-    function showWhatsApp() {
-        if (!optionsWrap) return;
+    function showWA() {
         optionsWrap.innerHTML = '';
-        const div = document.createElement('div');
-        div.className = 'wa-msg';
-        div.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
-        div.addEventListener('click', () => {
-            window.open(`https://wa.me/${WA_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
-        });
-        if (messagesWrap) messagesWrap.appendChild(div);
-        scrollDown();
+        const d = document.createElement('div'); d.className = 'wa-msg';
+        d.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
+        d.addEventListener('click', () => window.open(`https://wa.me/${WA_NUMBER}?text=${buildWAMsg()}`, '_blank'));
+        messagesWrap.appendChild(d); messagesWrap.scrollTop = messagesWrap.scrollHeight;
     }
-
     function handleOption(val) {
-        if (step === 0) {
-            userData.qualification = val;
-            addMsg(val, true);
-            setTimeout(() => {
-                addMsg(`Great choice. With ${val}, which country are you targeting?`, false);
-                setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']);
-                step = 1;
-            }, 400);
-        } else if (step === 1) {
-            userData.country = val;
-            addMsg(val, true);
-            setTimeout(() => {
-                addMsg('What level of study are you applying for?', false);
-                if (userData.qualification === "Bachelor's Degree") {
-                    setOptions(['Masters', 'MBA', 'Postgraduate Diploma']);
-                } else if (userData.qualification === "Master's Degree") {
-                    setOptions(['PhD', 'Postdoctoral Research']);
-                } else {
-                    setOptions(['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice']);
-                }
-                step = 2;
-            }, 400);
-        } else if (step === 2) {
-            userData.level = val;
-            addMsg(val, true);
-            setTimeout(() => {
-                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — I have everything I need. Tap below to connect with an advisor on WhatsApp and they will be with you shortly.`, false);
-                showWhatsApp();
-                step = 3;
-            }, 400);
-        }
+        if (step === 0) { userData.qualification = val; addMsg(val, true); setTimeout(() => { addMsg(`With ${val}, which country are you targeting?`, false); setOpts(['United Kingdom','United States','Canada','Not sure yet']); step = 1; }, 400); }
+        else if (step === 1) { userData.country = val; addMsg(val, true); setTimeout(() => { addMsg('What level of study are you applying for?', false); if (userData.qualification === "Bachelor's Degree") setOpts(['Masters','MBA','Postgraduate Diploma']); else if (userData.qualification === "Master's Degree") setOpts(['PhD','Postdoctoral Research']); else setOpts(['Foundation','100 Level (Direct Entry)','Not sure — need advice']); step = 2; }, 400); }
+        else if (step === 2) { userData.level = val; addMsg(val, true); setTimeout(() => { addMsg(`Perfect. I have everything I need. Tap below to connect with an advisor on WhatsApp.`, false); showWA(); step = 3; }, 400); }
     }
-
-    // Wire up initial option buttons
-    document.querySelectorAll('.chat-opt-btn').forEach(btn => {
-        btn.addEventListener('click', () => handleOption(btn.getAttribute('data-val') || btn.textContent));
-    });
-
-    // Auto-show dot notification after delay
-    setTimeout(() => {
-        if (widget && !widget.classList.contains('open') && dot) {
-            dot.style.display = 'block';
-        }
-    }, 4000);
+    document.querySelectorAll('.chat-opt-btn').forEach(btn => btn.addEventListener('click', () => handleOption(btn.dataset.val || btn.textContent)));
+    setTimeout(() => { if (!widget.classList.contains('open') && dot) dot.style.display = 'block'; }, 4000);
 })();
 </script>
 </body>
