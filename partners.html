@@ -37,7 +37,7 @@
         .navbar { background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border-gray); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(16px); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 14px 40px; max-width: 1440px; margin: 0 auto; }
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo-img { width: 38px; height: 38px; object-fit: contain; }
+        .logo-img { width: 120px; height: 80px; object-fit: contain; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; line-height: 1; }
         .logo-text span { color: var(--cyan); }
         .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -235,7 +235,6 @@
         .fair-date .day { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 900; color: var(--navy); display: block; margin-top: 6px; line-height: 1; }
         .fair-info h4 { color: var(--navy); font-size: 15px; font-weight: 700; margin-bottom: 3px; }
         .fair-info p { color: var(--text-muted); font-size: 12px; }
-        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
         .photo-placeholder {
             aspect-ratio: 1;
             background: linear-gradient(135deg, var(--border-gray), var(--light-gray));
@@ -284,7 +283,8 @@
         .benefit-card:hover { transform: translateY(-5px); border-color: var(--cyan); background: var(--white); }
         .benefit-icon { width: 68px; height: 68px; background: linear-gradient(135deg, rgba(0,190,255,0.1), rgba(219,195,104,0.05)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
         .benefit-icon svg { width: 32px; height: 32px; fill: var(--navy); }
-        .benefit-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+        .benefit-card h3 { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+        .benefit-card p { color: var(--navy); font-size: 14px; opacity: 0.8; line-height: 1.6; }
         .benefit-list { list-style: none; text-align: left; }
         .benefit-list li { padding: 9px 0; color: var(--navy); opacity: 0.8; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px dashed var(--border-gray); }
         .benefit-list li:last-child { border-bottom: none; }
@@ -327,8 +327,9 @@
         .inquiry-card > p { color: var(--text-muted); text-align: center; margin-bottom: 32px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; color: var(--navy); font-weight: 600; margin-bottom: 7px; font-size: 13px; }
-        .form-group input, .form-group select { width: 100%; padding: 13px 15px; border: 1.5px solid var(--border-gray); border-radius: 10px; font-size: 15px; font-family: inherit; transition: all 0.25s; background: var(--white); color: var(--navy); }
-        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,190,255,0.1); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 15px; border: 1.5px solid var(--border-gray); border-radius: 10px; font-size: 15px; font-family: inherit; transition: all 0.25s; background: var(--white); color: var(--navy); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,190,255,0.1); }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
         .submit-btn { background: var(--gold); color: var(--navy); width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 14px; font-family: inherit; }
         .submit-btn:hover { background: var(--cyan); color: var(--white); transform: translateY(-2px); }
@@ -425,7 +426,6 @@
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -462,39 +462,8 @@
             </div>
         </div>
         <div class="hero-right">
-            <div class="hero-visual">
-                <div class="hero-visual-inner">
-                    <div class="student-card highlight">
-                        <div class="s-avatar" style="background:linear-gradient(135deg,#00BEFF,#0077aa)">A</div>
-                        <div class="s-name">Amara O.</div>
-                        <div class="s-detail">WAEC — 7 A's &amp; B's<br>Computer Science</div>
-                        <div class="s-tag uk">University of Manchester</div>
-                    </div>
-                    <div class="student-card">
-                        <div class="s-avatar" style="background:linear-gradient(135deg,#DBC368,#a07c00)">K</div>
-                        <div class="s-name">Kwame A.</div>
-                        <div class="s-detail">A-Levels — AAB<br>Business &amp; Finance</div>
-                        <div class="s-tag us">New York University</div>
-                    </div>
-                    <div class="student-card">
-                        <div class="s-avatar" style="background:linear-gradient(135deg,#1C3B7B,#3a6bc9)">C</div>
-                        <div class="s-name">Chisom E.</div>
-                        <div class="s-detail">Bachelor's — First Class<br>Engineering</div>
-                        <div class="s-tag ca">University of Toronto</div>
-                    </div>
-                    <div class="student-card highlight">
-                        <div class="s-avatar" style="background:linear-gradient(135deg,#22c55e,#16a34a)">F</div>
-                        <div class="s-name">Fatima B.</div>
-                        <div class="s-detail">WAEC — 9 subjects<br>Medicine</div>
-                        <div class="s-tag uk">University of Edinburgh</div>
-                    </div>
-                </div>
-                <div class="hero-visual-footer">
-                    <div class="hv-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    </div>
-                    <div class="hv-text"><strong>15+ African countries</strong> represented — from Nigeria and Ghana to Kenya and South Africa.</div>
-                </div>
+            <div class="">
+                <img src="images/expand_market_shares.jpg" alt="" style="width: 100%; border-radius: 10px; object-fit: contain;">
             </div>
         </div>
     </div>
@@ -576,14 +545,14 @@
             <div class="calendar-box">
                 <div class="box-title">
                     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    2025 Event Calendar
+                    2026 Event Calendar
                 </div>
                 <div class="fair-list">
-                    <div class="fair-item">
+                    <!-- <div class="fair-item">
                         <div class="fair-date"><span class="month">MAR</span><span class="day">15</span></div>
                         <div class="fair-info"><h4>Lagos International Education Fair</h4><p>Lagos, Nigeria &mdash; 500+ expected students</p></div>
-                    </div>
-                    <div class="fair-item">
+                    </div> -->
+                    <!-- <div class="fair-item">
                         <div class="fair-date"><span class="month">APR</span><span class="day">22</span></div>
                         <div class="fair-info"><h4>Accra Study Abroad Expo</h4><p>Accra, Ghana &mdash; 300+ expected students</p></div>
                     </div>
@@ -594,37 +563,33 @@
                     <div class="fair-item">
                         <div class="fair-date"><span class="month">SEP</span><span class="day">18</span></div>
                         <div class="fair-info"><h4>Cairo International Student Fair</h4><p>Cairo, Egypt &mdash; 350+ expected students</p></div>
-                    </div>
+                    </div> -->
                     <div class="fair-item">
                         <div class="fair-date"><span class="month">NOV</span><span class="day">5</span></div>
-                        <div class="fair-info"><h4>Johannesburg University Expo</h4><p>Johannesburg, SA &mdash; 450+ expected students</p></div>
+                        <div class="fair-info"><h4>Closed</h4><p>Registration Closed</p></div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date"><span class="month">JAN</span><span class="day">8</span></div>
+                        <div class="fair-info"><h4>Closed</h4><p>Registration Closed</p></div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date"><span class="month">FEB</span><span class="day">14</span></div>
+                        <div class="fair-info"><h4>Closed</h4><p>Registration Closed</p></div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date"><span class="month">NOV</span><span class="day">12</span></div>
+                        <div class="fair-info"><h4>Closed</h4><p>Registration Closed</p></div>
+                    </div>
+                    <div class="fair-item">
+                        <div class="fair-date"><span class="month">APR</span><span class="day">23</span></div>
+                        <div class="fair-info"><h4>Closed</h4><p>Registration Closed</p></div>
                     </div>
                 </div>
             </div>
-            <div class="photos-box">
-                <div class="box-title">
-                    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                    Past Events
-                </div>
-                <div class="photo-grid">
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                    </div>
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <div class="photo-placeholder">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
-                    </div>
+            <div class="">
+                <div class="">
+                    <img src="images/banner.png" alt="" style="width: 100%; border-radius: 10px; object-fit: contain;">
+                    
                 </div>
                 <a href="#partnerForm" class="exhibit-btn">Partner with us to exhibit &rarr;</a>
             </div>
@@ -640,22 +605,13 @@
                 <span class="section-label">Annual Event</span>
                 <h2>Our Public Speaking Competition Brings <span>500+ Students</span></h2>
                 <p>Meet them face-to-face while they showcase their talents. The annual Hines Public Speaking Competition attracts top WAEC and A-Level students from across Africa. It is not just a competition — it is your recruitment pipeline.</p>
-                <div class="comp-stats">
-                    <div class="comp-stat"><div class="number">500+</div><div class="label">Student Participants</div></div>
-                    <div class="comp-stat"><div class="number">50+</div><div class="label">Schools Represented</div></div>
-                    <div class="comp-stat"><div class="number">15+</div><div class="label">Countries</div></div>
-                </div>
                 <a href="competition.html" class="comp-btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
                     Sponsor or Exhibit at Competition
                 </a>
             </div>
             <div class="comp-rec-visual">
-                <div class="comp-trophy-icon">
-                    <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0012 0V2z"/></svg>
-                </div>
-                <h3>Presented by Shell &amp; Partners</h3>
-                <p>Past winners have gone on to study at Cambridge, UBC, and NYU — many with full scholarships. Your institution can be part of this prestigious event.</p>
+                <img src="images/gold_trophy.jpg" alt="Competition Trophy" style="width: 100%; border-radius: 16px; margin-bottom: 20px; object-fit: cover; max-height: 300px;">
                 <div class="sponsor-tag">Sponsorship packages available</div>
             </div>
         </div>
@@ -666,57 +622,73 @@
 <section class="partner-benefits">
     <div class="benefits-container">
         <div class="section-header">
-            <span class="section-label">Why choose us</span>
-            <h2>Why Partner With <span>Hines Education?</span></h2>
-            <p>We make international student recruitment simple, effective, and risk-free</p>
+            <span class="section-label">Partnership Benefits</span>
+            <h2>Reasons to Partner With <span>Hines Education</span></h2>
         </div>
-        <div class="benefits-grid">
+
+        <div class="benefits-grid" style="margin-top: 48px;">
+
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                 </div>
-                <h3>Increased Enrollment</h3>
-                <ul class="benefit-list">
-                    <li>Access to 5,000+ pre-qualified students</li>
-                    <li>Direct pipeline from WAEC/A-Level results</li>
-                    <li>Targeted recruitment across 15+ African countries</li>
-                    <li>Higher conversion rates vs traditional advertising</li>
-                </ul>
+                <h3>Access to Quality Student Markets</h3>
+                <p>We connect institutions with prospective students through targeted outreach, school engagement, recruitment fairs, digital campaigns, and educational events.</p>
             </div>
+
+
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                 </div>
-                <h3>No Upfront Cost</h3>
-                <ul class="benefit-list">
-                    <li>Performance-based model — pay only for enrollments</li>
-                    <li>No booth fees for partner exhibitions</li>
-                    <li>Free inclusion in our digital marketing campaigns</li>
-                    <li>Transparent pricing with no hidden fees</li>
-                </ul>
+                <h3>Brand Visibility & Market Presence</h3>
+                <p>Through our events, campaigns, and online platforms, partner institutions gain increased exposure and stronger brand recognition in competitive education markets.</p>
             </div>
+
+
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
-                <h3>Verified WAEC Results</h3>
-                <ul class="benefit-list">
-                    <li>All results verified before you receive applications</li>
-                    <li>Direct integration with WAEC verification portal</li>
-                    <li>No fake or inflated grades to filter through</li>
-                    <li>Save hundreds of admissions hours annually</li>
-                </ul>
+                <h3>End-to-End Recruitment Support</h3>
+                <p>From student sourcing and counselling to application guidance and conversion support, we assist throughout the recruitment journey to improve enrolment outcomes.</p>
             </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <h3>High-Impact Student Engagement Initiatives</h3>
+                <p>Our public speaking competitions, educational outreach programmes, and youth development initiatives position partners alongside transformative and socially impactful projects.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                </div>
+                <h3>Data-Driven and Strategic Approach</h3>
+                <p>We combine market insight, targeted communication, and strategic implementation to help institutions attract and retain the right students.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Commitment to Long-Term Partnerships</h3>
+                <p>We focus on building sustainable relationships that deliver measurable growth, continuous engagement, and long-term value for our partners.</p>
+            </div>
+
         </div>
     </div>
 </section>
 
+
 <!-- TRUSTED INSTITUTIONS -->
-<section class="trusted-section">
+<!-- <section class="trusted-section">
     <div class="trusted-inner">
         <div class="trusted-label">
             <p>Trusted by institutions worldwide</p>
-            <h3>50+ Partner <span>Universities &amp; Colleges</span></h3>
+            <h3>YOu <span>Partner Universities &amp; Colleges</span></h3>
         </div>
         <div class="inst-logo-grid">
             <div class="inst-logo-card">
@@ -791,7 +763,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- PARTNER INQUIRY FORM -->
 <section class="partner-inquiry" id="partnerForm">
@@ -799,25 +771,25 @@
         <div class="inquiry-card">
             <h2>Ready to Partner With Us?</h2>
             <p>Fill out the form below and we will send you our partnership deck within 24 hours</p>
-            <form onsubmit="event.preventDefault(); alert('Thank you! We will send the partnership deck to your email shortly.');">
+            <form action="https://formspree.io/f/xvzykrzk" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Full Name *</label>
-                        <input type="text" placeholder="Your name" required>
+                        <input type="text" name="name" placeholder="Your name" required>
                     </div>
                     <div class="form-group">
                         <label>Institution Name *</label>
-                        <input type="text" placeholder="University / College name" required>
+                        <input type="text" name="institution" placeholder="University / College name" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Email Address *</label>
-                        <input type="email" placeholder="you@institution.edu" required>
+                        <input type="email" name="email" placeholder="you@institution.edu" required>
                     </div>
                     <div class="form-group">
                         <label>Country *</label>
-                        <select required>
+                        <select name="country" required>
                             <option value="">Select country</option>
                             <option>United Kingdom</option>
                             <option>United States</option>
@@ -829,7 +801,11 @@
                 </div>
                 <div class="form-group">
                     <label>Position / Title</label>
-                    <input type="text" placeholder="e.g., International Admissions Director">
+                    <input type="text" name="title" placeholder="e.g., International Admissions Director">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea placeholder="Message" name="partnerMessage"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Me the Partnership Deck</button>
                 <div class="form-note">We will never share your information. Partnership deck includes pricing, event calendar, and ROI projections.</div>

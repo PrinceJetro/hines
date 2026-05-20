@@ -42,7 +42,7 @@
         .navbar { background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--border-gray); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 40px; max-width: 1440px; margin: 0 auto; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-img { width: 120px; height: 80px; object-fit: contain; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: -.5px; line-height: 1; }
         .logo-text span { color: var(--cyan); }
         .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -490,7 +490,6 @@
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -557,33 +556,6 @@
 
         <!-- Prize summary panel -->
         <div class="comp-hero-right">
-            <div class="prize-podium">
-                <div class="podium-label">Prize Breakdown</div>
-                <div class="podium-row">
-                    <div class="podium-rank gold-rank">1</div>
-                    <div class="podium-info">
-                        <div class="podium-title">Gold Champion</div>
-                        <div class="podium-sub">MacBook Air M2 + Trophy + Scholarship waiver</div>
-                    </div>
-                    <div class="podium-value">&#8358;500k</div>
-                </div>
-                <div class="podium-row">
-                    <div class="podium-rank silver-rank">2</div>
-                    <div class="podium-info">
-                        <div class="podium-title">Silver Runner-Up</div>
-                        <div class="podium-sub">High-performance Laptop + Medal</div>
-                    </div>
-                    <div class="podium-value">&#8358;300k</div>
-                </div>
-                <div class="podium-row">
-                    <div class="podium-rank bronze-rank">3</div>
-                    <div class="podium-info">
-                        <div class="podium-title">Bronze Finalist</div>
-                        <div class="podium-sub">Tablet + Accessories + Medal</div>
-                    </div>
-                    <div class="podium-value">&#8358;150k</div>
-                </div>
-            </div>
             <div class="deadline-card">
                 <div class="deadline-icon">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -598,7 +570,7 @@
 </section>
 
 <!-- SPONSORS BAR -->
-<div class="sponsors-bar">
+<!-- <div class="sponsors-bar">
     <div class="sponsors-inner">
         <span class="sponsors-label">Presented by</span>
         <div class="sponsors-divider"></div>
@@ -617,7 +589,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- WHY COMPETE -->
 <section class="why-section">
@@ -640,14 +612,14 @@
                     <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
                 </div>
                 <h3>Win Life-Changing Prizes</h3>
-                <p>Laptops, cash awards, championship trophies, and scholarship waivers. Every finalist receives recognition — top performers change the trajectory of their education journey.</p>
+                <p>Laptops, cash awards, championship trophies, and scholarship. Every finalist receives recognition — top performers change the trajectory of their education journey.</p>
             </div>
             <div class="why-card">
                 <div class="why-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
                 <h3>Get Noticed by Recruiters</h3>
-                <p>Top performers are flagged directly to our partner institutions. Past competition winners have received direct admission offers and scholarship considerations.</p>
+                <p>Top performers are flagged directly to our partner institutions. Competition winners can receive direct admission offers and scholarship considerations.</p>
             </div>
         </div>
     </div>
@@ -686,7 +658,7 @@
             <div class="step-card">
                 <div class="step-circle">4</div>
                 <div class="step-content">
-                    <h3>Grand Finals</h3>
+                    <h3>Grand Finale</h3>
                     <p>Championship stage at the International Education Fair. Meet university reps and win.</p>
                 </div>
             </div>
@@ -715,7 +687,7 @@
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Silver Championship Medal</li>
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Certificate of Merit</li>
                 </ul>
-                <div class="prize-total">&#8358;1.2M+ total value</div>
+                <div class="prize-total">&#8358;500K total value</div>
             </div>
             <!-- Gold (center, elevated) -->
             <div class="prize-card gold-prize">
@@ -724,13 +696,12 @@
                 </div>
                 <h3>Gold Champion</h3>
                 <ul class="prize-items">
-                    <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>MacBook Air M2</li>
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>&#8358;500,000 Cash Prize</li>
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Championship Trophy</li>
-                    <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship Waiver (Partial)</li>
+                    <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Scholarship (Partial)</li>
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Certificate of Excellence</li>
                 </ul>
-                <div class="prize-total">&#8358;2.5M+ total value</div>
+                <div class="prize-total">&#8358;1M total value</div>
             </div>
             <!-- Bronze -->
             <div class="prize-card bronze-prize">
@@ -744,7 +715,7 @@
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Bronze Championship Medal</li>
                     <li><span class="prize-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Certificate of Participation</li>
                 </ul>
-                <div class="prize-total">&#8358;500K+ total value</div>
+                <div class="prize-total">&#8358;250+ total value</div>
             </div>
         </div>
     </div>
@@ -775,6 +746,7 @@
             <div class="sponsor-row">
                 <div class="sp-td">Exhibition booth at the grand finals</div>
                 <div class="sp-td"><span class="check-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text" style="margin-left:6px">Premium</span></div>
+                <div class="sp-td"><span class="check-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text" style="margin-left:6px">Medium</span></div>
                 <div class="sp-td"><span class="check-icon yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="check-text" style="margin-left:6px">Standard</span></div>
                 <div class="sp-td"><span class="check-icon no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></div>
             </div>
@@ -809,7 +781,7 @@
                 <div class="sp-td"><span class="check-icon no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></div>
             </div>
             <div class="sp-sponsor-cta-wrap">
-                <a href="mailto:hello@hineseducation.com?subject=Competition Sponsorship Enquiry" class="sp-sponsor-btn">
+                <a href="#comp-registration" class="sp-sponsor-btn">
                     <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     Enquire about Sponsorship
                 </a>

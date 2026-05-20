@@ -65,14 +65,14 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 120px;
+            height: 80px;
             object-fit: contain;
         }
 
         .logo-text {
             font-family: 'Fraunces', serif;
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 900;
             color: var(--navy);
             letter-spacing: -0.5px;
@@ -130,7 +130,7 @@
         /* ========== HERO ========== */
         .hero {
             background: linear-gradient(160deg, #f0f4ff 0%, var(--white) 60%);
-            padding: 72px 0 0;
+            padding: 0 0 0;
             position: relative;
             overflow: hidden;
             min-height: 88vh;
@@ -352,7 +352,6 @@
             bottom: 0;
             border-radius: 20px;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--navy) 0%, #1a5276 50%, #00BEFF 100%);
         }
 
         .hero-visual-main::after {
@@ -360,14 +359,24 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to bottom, transparent 40%, rgba(10,35,81,0.7) 100%);
+            z-index: 2;
         }
 
         .hero-img-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.35;
+            opacity: 0;
             mix-blend-mode: luminosity;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .hero-img-bg.active {
+            opacity: 1;
         }
 
         .hero-visual-overlay {
@@ -376,7 +385,7 @@
             left: 0;
             right: 0;
             padding: 32px;
-            z-index: 2;
+            z-index: 3;
             color: white;
         }
 
@@ -1518,7 +1527,6 @@
     <div class="nav-container">
         <a href="#" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -1586,8 +1594,9 @@
         <!-- Hero Visual -->
         <div class="hero-right">
             <div class="hero-visual-main">
-                <!-- Replace src below with a real student photo for best effect -->
-                <img src="images/students-studying-abroad.png" alt="Students studying abroad" class="hero-img-bg" onerror="this.style.display='none'">
+                <img src="images/students-studying-abroad.png" alt="Students studying abroad" class="hero-img-bg active" onerror="this.style.display='none'">
+                <img src="images/hero-image1.png" alt="Students studying abroad" class="hero-img-bg" onerror="this.style.display='none'">
+                <img src="images/hero-image2.png" alt="Students studying abroad" class="hero-img-bg" onerror="this.style.display='none'">
                 <div class="hero-visual-overlay">
                     <div class="hero-visual-label">Student placements</div>
                     <div class="hero-visual-stat">2,500+</div>
@@ -1739,12 +1748,9 @@
                 <div class="hiw-icon-wrap">
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/></svg>
                 </div>
-                <h3>Submit Your Results</h3>
-                <ul>
-                    <li>Foundation: WAEC / IGCSE</li>
-                    <li>Undergraduate: A Levels / IB / Foundation</li>
-                    <li>Masters: First Degree Certificate and Transcript</li>
-                </ul>
+                <h3 style="margin-bottom: 2px;">Submit Your Results</h3>
+                <em>Based on School Requirements</em>
+                
                 <p>Send your documents via email highlighting your course of interest, location and budget. Our team conducts a free eligibility assessment within 24 hours.</p>
             </div>
             <div class="hiw-card">
@@ -2140,6 +2146,17 @@
             dot.style.display = 'block';
         }
     }, 4000);
+
+    // ——— Hero Image Slider ———
+    const heroImages = document.querySelectorAll('.hero-img-bg');
+    if (heroImages.length > 1) {
+        let currentImgIdx = 0;
+        setInterval(() => {
+            heroImages[currentImgIdx].classList.remove('active');
+            currentImgIdx = (currentImgIdx + 1) % heroImages.length;
+            heroImages[currentImgIdx].classList.add('active');
+        }, 5000);
+    }
 })();
 </script>
 </body>

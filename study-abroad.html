@@ -50,7 +50,7 @@
             padding: 16px 40px; max-width: 1440px; margin: 0 auto;
         }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-img { width: 120px; height: 80px; object-fit: contain; }
         .logo-text {
             font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900;
             color: var(--navy); letter-spacing: -.5px; line-height: 1;
@@ -608,7 +608,6 @@
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -645,7 +644,7 @@
                 <em>Global Degree</em> Starts<br>
                 <span class="gold">Right Here</span>
             </h1>
-            <p class="sa-hero-sub">Choose your destination country and programme level. We match your WAEC, A-Levels, or degree to the right university — and handle everything from application to arrival.</p>
+            <p class="sa-hero-sub">Choose your destination country and programme level. We match your qualification to the right university — and handle everything from application to arrival.</p>
 
             <!-- Destination tab selector -->
             <div class="dest-tabs" id="destTabsHero">
@@ -653,7 +652,7 @@
                     <span class="flag">🇬🇧</span> United Kingdom
                 </button>
                 <button class="dest-tab" data-target="us">
-                    <span class="flag">🇺🇸</span> US (Unavailable)
+                    <span class="flag">🇺🇸</span> US
                 </button>
                 <button class="dest-tab" data-target="canada">
                     <span class="flag">🇨🇦</span> Canada
@@ -731,7 +730,7 @@
             <span class="tab-flag">🇬🇧</span> United Kingdom
         </button>
         <button class="country-nav-tab" data-panel="us">
-            <span class="tab-flag">🇺🇸</span> US (Unavailable)
+            <span class="tab-flag">🇺🇸</span> US
         </button>
         <button class="country-nav-tab" data-panel="canada">
             <span class="tab-flag">🇨🇦</span> Canada
@@ -797,125 +796,69 @@
 
 <!-- ========== US PANEL ========== -->
 <div class="country-panel" id="panel-us">
-    <div style="background: #fffbeb; color: #92400e; padding: 12px; text-align: center; font-size: 14px; font-weight: 700; border-bottom: 1px solid #fef3c7;">
-        ⚠️ The United States pathway is currently unavailable for new applications.
-    </div>
+    <style>
+        .unavailable-card .alternatives-grid > div {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .unavailable-card .alternatives-grid > div:hover {
+            transform: translateY(-4px);
+            border-color: var(--cyan) !important;
+            box-shadow: 0 12px 28px rgba(0,190,255,0.08);
+        }
+        @media (max-width: 600px) {
+            .unavailable-card .alternatives-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .unavailable-card {
+                padding: 32px 20px !important;
+            }
+        }
+    </style>
 
-    <section class="country-intro">
-        <div class="section-container">
-            <div class="country-intro-grid">
-                <div class="country-intro-text">
-                    <h2>Study in the<br><em>United States</em></h2>
-                    <p style="color: #ef4444; font-weight: 800; margin-bottom: 12px;">(Unavailable for now)</p>
-                    <p>American universities offer a liberal arts education that develops critical thinking across disciplines, vibrant campus culture, and access to one of the world's largest job markets. Many programmes include Optional Practical Training (OPT) — up to 3 years for STEM fields.</p>
-                    <ul class="intro-bullets">
-                        <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>We process college applications on your behalf</li>
-                        <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Many universities are now SAT/ACT optional</li>
-                        <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>OPT allows up to 3 years of work after graduation (STEM)</li>
-                        <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Merit-based scholarships widely available</li>
-                    </ul>
+    <section style="background: var(--white); padding: 60px 0 80px;">
+        <div class="section-container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="unavailable-card" style="background: var(--light-gray); border: 1.5px solid var(--border-gray); border-radius: 24px; padding: 48px 40px; box-shadow: 0 16px 40px rgba(28,59,123,0.04); position: relative; overflow: hidden;">
+                <!-- Subtle warning background pattern -->
+                <div style="position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(219,195,104,0.12) 0%, transparent 70%); pointer-events: none;"></div>
+                
+                <div class="unavailable-icon" style="width: 72px; height: 72px; background: rgba(219,195,104,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                    <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; stroke: var(--gold-dark); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
                 </div>
-                <div class="country-highlight-card">
-                    <span class="highlight-card-flag">🇺🇸</span>
-                    <div class="highlight-card-title">USA at a Glance</div>
-                    <div class="highlight-stats">
-                        <div class="highlight-stat"><span class="highlight-stat-label">Bachelor's Duration</span><span class="highlight-stat-value">4 Years</span></div>
-                        <div class="highlight-stat"><span class="highlight-stat-label">Master's Duration</span><span class="highlight-stat-value">1.5 – 2 Years</span></div>
-                        <div class="highlight-stat"><span class="highlight-stat-label">Post-Study Work (STEM OPT)</span><span class="highlight-stat-value">Up to 3 Years</span></div>
-                        <div class="highlight-stat"><span class="highlight-stat-label">SAT Requirement</span><span class="highlight-stat-value">Often Optional</span></div>
-                        <div class="highlight-stat"><span class="highlight-stat-label">Applications We Submit</span><span class="highlight-stat-value">Up to 3</span></div>
+                
+                <h2 style="font-family: 'Fraunces', serif; font-size: 32px; font-weight: 900; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.5px;">US Pathway Unavailable</h2>
+                <p style="font-size: 16px; color: var(--text-muted); line-height: 1.65; max-width: 580px; margin: 0 auto 32px;">
+                    Please note that the United States pathway is currently closed for new applications. 
+                    Hines Education is prioritising applications for our active partner institutions in the <strong>United Kingdom</strong> and <strong>Canada</strong>.
+                </p>
+
+                <!-- Active alternatives -->
+                <div class="alternatives-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; margin-bottom: 36px;">
+                    <div style="background: var(--white); border: 1.5px solid var(--border-gray); border-radius: 16px; padding: 20px 22px; cursor: pointer;" onclick="document.querySelector('[data-panel=uk]').click(); document.getElementById('countryNavBar').scrollIntoView({behavior: 'smooth'});">
+                        <span style="font-size: 24px; display: block; margin-bottom: 12px;">🇬🇧</span>
+                        <h4 style="font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Study in the UK</h4>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">Accelerated degrees (3-year Bachelor's, 1-year Master's) and 2-year Graduate Route work visa.</p>
+                        <span style="font-size: 12px; font-weight: 700; color: var(--cyan-dark); display: inline-flex; align-items: center; gap: 4px;">Explore UK Pathways &rarr;</span>
+                    </div>
+                    <div style="background: var(--white); border: 1.5px solid var(--border-gray); border-radius: 16px; padding: 20px 22px; cursor: pointer;" onclick="document.querySelector('[data-panel=canada]').click(); document.getElementById('countryNavBar').scrollIntoView({behavior: 'smooth'});">
+                        <span style="font-size: 24px; display: block; margin-bottom: 12px;">🇨🇦</span>
+                        <h4 style="font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Study in Canada</h4>
+                        <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">Generous PGWP post-graduation work permit (up to 3 years) and direct permanent residence pathways.</p>
+                        <span style="font-size: 12px; font-weight: 700; color: var(--cyan-dark); display: inline-flex; align-items: center; gap: 4px;">Explore Canada Pathways &rarr;</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section style="background: var(--white); padding: 0 0 48px;">
-        <div class="section-container">
-            <div class="feature-callout">
-                <div class="callout-text">
-                    <div class="callout-tag">Exclusive Advantage</div>
-                    <h3>We Submit 6 College Forms For You</h3>
-                    <p>Most students apply to 1 university and limit their options. We collect and submit up to 3 complete applications — maximising your chances of admission and financial aid across state universities, liberal arts colleges, and research institutions.</p>
-                </div>
-                <div class="callout-badge">
-                    <div class="callout-badge-num">3</div>
-                    <div class="callout-badge-label">Applications<br>submitted</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="timeline-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-eyebrow">US Applications</span>
-                <h2>Application Timeline</h2>
-                <p>A typical US application cycle from start to departure</p>
-            </div>
-            <div class="timeline-track">
-                <div class="timeline-step">
-                    <div class="tl-circle">1</div>
-                    <div class="tl-period">Aug – Oct</div>
-                    <div class="tl-label">Research &amp; shortlist 6 universities</div>
-                </div>
-                <div class="timeline-step">
-                    <div class="tl-circle">2</div>
-                    <div class="tl-period">Oct – Nov</div>
-                    <div class="tl-label">SAT/ACT (if required) &amp; personal essays</div>
-                </div>
-                <div class="timeline-step">
-                    <div class="tl-circle">3</div>
-                    <div class="tl-period">Nov – Jan</div>
-                    <div class="tl-label">Submit all 6 applications</div>
-                </div>
-                <div class="timeline-step">
-                    <div class="tl-circle">4</div>
-                    <div class="tl-period">Mar – Apr</div>
-                    <div class="tl-label">Decisions &amp; scholarship offers</div>
-                </div>
-                <div class="timeline-step">
-                    <div class="tl-circle">5</div>
-                    <div class="tl-period">May – Jul</div>
-                    <div class="tl-label">Visa application &amp; pre-departure</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pathways-section">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-eyebrow">US Programmes</span>
-                <h2>Available Pathways</h2>
-                <p>Undergraduate and postgraduate options across all disciplines</p>
-            </div>
-            <div class="pathways-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="pathway-card">
-                    <div class="pathway-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-                    <span class="pathway-duration">4 Year Degree</span>
-                    <h3>Undergraduate (Bachelor's)</h3>
-                    <p>4-year degrees with broad exposure across disciplines. Optional Practical Training (OPT) after graduation allows you to work in the US while pursuing career goals.</p>
-                    <div class="requirements-block">
-                        <h4>Entry Requirements</h4>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">WAEC: 5 credits (A1–C6)</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">SAT: Optional (1100+ recommended)</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">TOEFL 80+ / IELTS 6.5+</span></div>
-                    </div>
-                    <a href="#" class="path-link" style="opacity: 0.5; cursor: default; pointer-events: none;">Apply (Unavailable) &rarr;</a>
-                </div>
-                <div class="pathway-card">
-                    <div class="pathway-card-icon"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg></div>
-                    <span class="pathway-duration">1 – 2 Years</span>
-                    <h3>Masters Degree</h3>
-                    <p>Specialised postgraduate study with STEM OPT extensions available for up to 3 years of post-graduation work authorisation in the United States.</p>
-                    <div class="requirements-block">
-                        <h4>Entry Requirements</h4>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">Bachelor's degree: 3.0 GPA equivalent</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">GRE/GMAT: Programme dependent</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">TOEFL 90+ / IELTS 7.0+</span></div>
-                    </div>
-                    <a href="#" class="path-link" style="opacity: 0.5; cursor: default; pointer-events: none;">Apply (Unavailable) &rarr;</a>
+                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" onclick="event.preventDefault(); openChat();" class="btn-primary" style="background: var(--navy); color: white; padding: 12px 28px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        Talk to an Advisor
+                    </a>
+                    <a href="#" onclick="event.preventDefault(); openChat();" class="btn-outline" style="border: 2px solid var(--border-gray); color: var(--navy); padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Get Pathway Guidance
+                    </a>
                 </div>
             </div>
         </div>
@@ -997,38 +940,18 @@
                     <span class="pathway-duration">1 yr + Degree</span>
                     <h3>Foundation / Pathway</h3>
                     <p>Guaranteed admission to partner universities after completion. Designed for students who need academic or English language preparation before their degree.</p>
-                    <div class="requirements-block">
-                        <h4>Entry Requirements</h4>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">WAEC: 5 credits (C6 minimum)</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">A-Levels: DDD minimum</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">IELTS: 5.5 – 6.0</span></div>
-                    </div>
-                    <a href="#" class="path-link">Apply for Foundation &rarr;</a>
                 </div>
                 <div class="pathway-card">
                     <div class="pathway-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
                     <span class="pathway-duration">4 Year Degree</span>
                     <h3>Direct Entry (Bachelor's)</h3>
                     <p>Direct admission into first year of undergraduate study. Co-op programmes available at many universities, integrating paid work experience during your degree.</p>
-                    <div class="requirements-block">
-                        <h4>Entry Requirements</h4>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">WAEC: A1–B3 in 5 subjects</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">A-Levels: CCD minimum</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">IELTS: 6.5 (min 6.0 each)</span></div>
-                    </div>
-                    <a href="#" class="path-link">Apply for Direct Entry &rarr;</a>
                 </div>
                 <div class="pathway-card">
                     <div class="pathway-card-icon"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg></div>
                     <span class="pathway-duration">1 – 2 Years</span>
                     <h3>Masters Degree</h3>
                     <p>Thesis and course-based options available. PGWP eligible, leading to up to 3 years of post-graduation work authorisation and a direct path to permanent residence.</p>
-                    <div class="requirements-block">
-                        <h4>Entry Requirements</h4>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">Bachelor's degree: 2:2 or higher / 3.0 GPA</span></div>
-                        <div class="req-row"><span class="req-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="req-text">IELTS: 6.5 – 7.0</span></div>
-                    </div>
-                    <a href="#" class="path-link">Apply for Masters &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1052,13 +975,13 @@
                     <h3>Application Checklist</h3>
                 </div>
                 <div class="checklist">
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="checklist-body"><h4>Academic Transcripts</h4><p>Official transcripts from all institutions attended</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg></div><div class="checklist-body"><h4>Degree Certificate</h4><p>Original Bachelor's Certificate</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="checklist-body"><h4>Statement of Purpose</h4><p>1–2 pages outlining your academic and career goals</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="checklist-body"><h4>Recommendation Letters</h4><p>1-2 letters from professors or employers</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div class="checklist-body"><h4>English Proficiency</h4><p>IELTS / WAEC / NECO</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="checklist-body"><h4>CV / Résumé</h4><p>Academic achievements and professional experience</p></div></div>
-                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="checklist-body"><h4>Passport Copy</h4><p>Valid at least 6 months beyond your programme end date</p></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="checklist-body"><h4>Academic Transcripts</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg></div><div class="checklist-body"><h4>Degree Certificate</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div><div class="checklist-body"><h4>Statement of Purpose</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="checklist-body"><h4>Recommendation Letters</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div class="checklist-body"><h4>English Proficiency</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><div class="checklist-body"><h4>CV / Résumé</h4></div></div>
+                    <div class="checklist-item"><div class="checklist-dot"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="checklist-body"><h4>Passport Copy</h4></div></div>
                 </div>
             </div>
         </div>

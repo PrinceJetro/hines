@@ -50,7 +50,7 @@
             padding: 16px 40px; max-width: 1440px; margin: 0 auto;
         }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .logo-img { width: 120px; height: 80px; object-fit: contain; }
         .logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; color: var(--navy); letter-spacing: -.5px; line-height: 1; }
         .logo-text span { color: var(--cyan); }
         .nav-links { display: flex; gap: 28px; align-items: center; }
@@ -466,7 +466,6 @@
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -502,33 +501,36 @@
                 Where Our Students<br>
                 Have Been <em>Placed</em>
             </h1>
-            <p class="ps-hero-sub">We partner with 50+ universities across the UK, US, and Canada. Browse our full network, filter by country, and find the institution where you belong.</p>
+            <p class="ps-hero-sub">We partner with 60+ universities across the UK, US, and Canada and Australia. Browse our full network, filter by country, and find the institution where you belong.</p>
 
             <div class="hero-filters" id="heroFilters">
                 <button class="hero-filter-btn active" data-filter="all">All Countries</button>
                 <button class="hero-filter-btn" data-filter="uk">
-                    <span>🇬🇧</span> United Kingdom
+                    United Kingdom
                 </button>
                 <button class="hero-filter-btn" data-filter="us">
-                    <span>🇺🇸</span> United States
+                    United States
                 </button>
                 <button class="hero-filter-btn" data-filter="canada">
-                    <span>🇨🇦</span> Canada
+                    Canada
+                </button>
+                <button class="hero-filter-btn" data-filter="canada">
+                    Australia
                 </button>
             </div>
 
             <div class="ps-hero-search">
-                <svg class="ps-hero-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                <input type="text" id="universitySearch" placeholder="Search by university name...">
+                <!-- <svg class="ps-hero-search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> -->
+                <input type="text" id="universitySearch" placeholder="Search by university name..." hidden>
             </div>
         </div>
 
         <!-- Right: Country breakdown stats -->
         <div class="ps-hero-right">
-            <div class="country-stat-card full-width">
+            <div class="country-stat-card full-width" data-stat-filter="all">
                 <div>
                     <div class="csc-flag">🌍</div>
-                    <div class="csc-count">50+</div>
+                    <div class="csc-count">60+</div>
                     <div class="csc-label">Total partner universities</div>
                     <div class="results-badge" style="margin-top:10px;">
                         <span class="results-badge-dot"></span>
@@ -536,23 +538,23 @@
                     </div>
                 </div>
             </div>
-            <div class="country-stat-card">
+            <div class="country-stat-card" data-stat-filter="uk">
                 <div class="csc-flag">🇬🇧</div>
-                <div class="csc-count">6</div>
+                <div class="csc-count">8</div>
                 <div class="csc-label">UK universities listed</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:100%"></div></div>
             </div>
-            <div class="country-stat-card">
+            <div class="country-stat-card" data-stat-filter="us">
                 <div class="csc-flag">🇺🇸</div>
-                <div class="csc-count">6</div>
-                <div class="csc-label">US universities listed</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+                <div class="csc-count">3</div>
+                <div class="csc-label">US (Closed for now)</div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:37.5%; background: var(--gold-dark);"></div></div>
             </div>
-            <div class="country-stat-card">
+            <div class="country-stat-card" data-stat-filter="canada">
                 <div class="csc-flag">🇨🇦</div>
-                <div class="csc-count">6</div>
-                <div class="csc-label">Canadian universities listed</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:60%"></div></div>
+                <div class="csc-count">8</div>
+                <div class="csc-label">Canadian colleges listed</div>
+                <div class="csc-bar"><div class="csc-bar-fill" style="width:100%; background: #dc2626;"></div></div>
             </div>
         </div>
     </div>
@@ -627,13 +629,12 @@
     <div class="section-container">
         <div class="cta-card">
             <div class="cta-card-inner">
-                <h3>Don't see your <em>target school?</em></h3>
-                <p>We have active partnerships with 50+ institutions. If your target university isn't listed, just ask — we can almost always find a route in.</p>
+                <h3>Can't find your <em>target school?</em></h3>
+                <p>We have active partnerships with 60+ institutions. If your target university isn't listed, just ask — we can almost always find a route in.</p>
                 <a href="#" class="cta-card-btn" id="ctaChatBtn">
                     <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                     Chat with an Advisor
                 </a>
-                <p class="cta-disclaimer">We are official representatives of these institutions. All applications submitted through Hines Education are verified and prioritised by our partner universities.</p>
             </div>
         </div>
     </div>
@@ -730,29 +731,27 @@
 (function() {
     // ——— Data ———
     const universities = [
-        { name: "Flemming College", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Entrance awards available", link: "#" },
-        { name: "Algoma University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "Chancellor's Award up to $5,000", link: "#" },
-        { name: "University of Cambridge", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – A2" }, { label: "A-Levels", val: "A*AA" }], scholarship: "Limited scholarships available", link: "#" },
-        { name: "University of Oxford", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1" }, { label: "A-Levels", val: "AAA" }], scholarship: "Rhodes Scholarship eligible", link: "#" },
-        { name: "University College London (UCL)", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAB" }], scholarship: "Scholarships up to £5,000", link: "#" },
-        { name: "University of Manchester", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Global Excellence Scholarship", link: "#" },
-        { name: "University of Warwick", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Scholarships available", link: "#" },
-        { name: "University of Edinburgh", country: "uk", countryName: "United Kingdom", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAA – ABB" }], scholarship: "Robertson Scholarship", link: "#" },
-        { name: "Harvard University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1500+" }], scholarship: "Need-based full financial aid", link: "#" },
-        { name: "Stanford University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1480+" }], scholarship: "Full scholarships available", link: "#" },
-        { name: "MIT", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1" }, { label: "SAT", val: "1520+" }], scholarship: "Need-blind admission policy", link: "#" },
-        { name: "New York University (NYU)", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1350+" }], scholarship: "NYU Wagner Scholarship up to $30,000", link: "#" },
-        { name: "University of California, Los Angeles (UCLA)", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1300+" }], scholarship: "Regents Scholarship", link: "#" },
-        { name: "Boston University", country: "us", countryName: "United States", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "SAT", val: "1250+" }], scholarship: "Presidential Scholarship available", link: "#" },
-        { name: "University of British Columbia (UBC)", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "International Major Scholarship up to CAD $60k", link: "#" },
-        { name: "University of Toronto", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "Lester B. Pearson Scholarship", link: "#" },
-        { name: "McGill University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "IELTS", val: "6.5+" }], scholarship: "Scholarships available", link: "#" },
-        { name: "University of Alberta", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "International Scholarship", link: "#" },
-        { name: "University of Waterloo", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.5+" }], scholarship: "President's Scholarship", link: "#" },
-        { name: "York University", country: "canada", countryName: "Canada", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Global Leader Award", link: "#" }
+        { name: "Fleming College", country: "canada", countryName: "Canada", slug: "flemming", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Entrance awards available", link: "#" },
+        { name: "Algoma University", country: "canada", countryName: "Canada", slug: "algoma", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "Chancellor's Award up to $5,000", link: "#" },
+        { name: "University of Manchester", country: "uk", countryName: "United Kingdom", slug: "manchester", requirements: [{ label: "WAEC", val: "B2 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Global Excellence Scholarship up to £5,000", link: "#" },
+        { name: "University of Warwick", country: "uk", countryName: "United Kingdom", slug: "warwick", requirements: [{ label: "WAEC", val: "B2 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Undergraduate Global Excellence Award", link: "#" },
+        { name: "University of Edinburgh", country: "uk", countryName: "United Kingdom", slug: "edinburgh", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAA – ABB" }], scholarship: "Edinburgh Global Scholarships", link: "#" },
+        { name: "University of Birmingham", country: "uk", countryName: "United Kingdom", slug: "birmingham", requirements: [{ label: "WAEC", val: "B3 – C4" }, { label: "A-Levels", val: "BBB" }], scholarship: "Outstanding Achievement Scholarships", link: "#" },
+        { name: "University of Leeds", country: "uk", countryName: "United Kingdom", slug: "leeds", requirements: [{ label: "WAEC", val: "B3 – C4" }, { label: "A-Levels", val: "BBB" }], scholarship: "Leeds International Excellence Scholarship", link: "#" },
+        { name: "University of Glasgow", country: "uk", countryName: "United Kingdom", slug: "glasgow", requirements: [{ label: "WAEC", val: "B2 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Glasgow International Leadership Scholarship", link: "#" },
+        { name: "University of Toronto", country: "canada", countryName: "Canada", slug: "toronto", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "Lester B. Pearson International Scholarship", link: "#" },
+        { name: "McGill University", country: "canada", countryName: "Canada", slug: "mcgill", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "McGill Entrance Scholarships available", link: "#" },
+        { name: "University of British Columbia (UBC)", country: "canada", countryName: "Canada", slug: "ubc", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "IELTS", val: "6.5+" }], scholarship: "International Major Entrance Scholarship", link: "#" },
+        { name: "University of Alberta", country: "canada", countryName: "Canada", slug: "alberta", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "International Student Scholarship up to $9,000", link: "#" },
+        { name: "University of Waterloo", country: "canada", countryName: "Canada", slug: "waterloo", requirements: [{ label: "WAEC", val: "A1 – B3" }, { label: "IELTS", val: "6.5+" }], scholarship: "Waterloo President's Scholarships", link: "#" },
+        { name: "York University", country: "canada", countryName: "Canada", slug: "york", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Global Leader of Tomorrow Award", link: "#" },
+        { name: "Seneca College", country: "canada", countryName: "Canada", slug: "seneca", requirements: [{ label: "WAEC", val: "C5 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Seneca Entrance Awards", link: "#" },
+        { name: "Centennial College", country: "canada", countryName: "Canada", slug: "centennial", requirements: [{ label: "WAEC", val: "C5 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Centennial International Student Merit Award", link: "#" },
+        { name: "New York University (NYU)", country: "us", countryName: "United States (Pathway Closed)", slug: "nyu", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1350+" }], scholarship: "NYU Promise Scholarship (Unavailable)", link: "#", unavailable: true },
+        { name: "University of California, Los Angeles (UCLA)", country: "us", countryName: "United States (Pathway Closed)", slug: "ucla", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "SAT", val: "1300+" }], scholarship: "UCLA Regents Scholarship (Unavailable)", link: "#", unavailable: true },
+        { name: "Boston University", country: "us", countryName: "United States (Pathway Closed)", slug: "boston", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "SAT", val: "1250+" }], scholarship: "BU Trustee Scholarship (Unavailable)", link: "#", unavailable: true }
     ];
 
-    const uniIconSVG = `<svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>`;
     const countryLabels = { uk: 'United Kingdom', us: 'United States', canada: 'Canada' };
 
     let currentFilter = 'all';
@@ -773,18 +772,60 @@
             return;
         }
 
-        grid.innerHTML = list.map(u => `
-            <div class="uni-card">
-                <div class="uni-header">
-                    <div class="uni-icon">${uniIconSVG}</div>
-                    <div class="uni-title-wrap">
-                        <h3>${u.name}</h3>
-                        <span class="uni-country-badge ${u.country}">${u.country === 'uk' ? '🇬🇧' : u.country === 'us' ? '🇺🇸' : '🇨🇦'} ${u.countryName}</span>
+        grid.innerHTML = list.map(u => {
+            // Get initials
+            const initials = u.name.replace(/University of |University College | College| University/g, '').split(' ').map(w => w[0]).join('').substring(0, 3).toUpperCase();
+            
+            // Set dynamic gradient start and end based on country
+            let gStart = '#00BEFF', gEnd = '#1C3B7B'; // UK
+            if (u.country === 'us') {
+                gStart = '#DBC368';
+                gEnd = '#1C3B7B';
+            } else if (u.country === 'canada') {
+                gStart = '#ef4444';
+                gEnd = '#7f1d1d';
+            }
+
+
+            // Scholarship block HTML
+            const scholarshipHtml = u.scholarship ? `
+                <div class="uni-scholarship">
+                    <div class="uni-scholarship-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.42a12.08 12.08 0 010 8.84L12 22l-6.16-3.58a12.08 12.08 0 010-8.84L12 14z"/></svg>
                     </div>
+                    <span>${u.scholarship}</span>
                 </div>
-                <a href="${u.link}" class="apply-link">Apply via Hines &rarr;</a>
-            </div>
-        `).join('');
+            ` : '';
+
+            // Apply link class and behavior if unavailable
+            const applyLinkClass = u.unavailable ? 'apply-link unavailable' : 'apply-link';
+            const applyLinkText = u.unavailable ? 'Pathway Closed &bull; Chat with Advisor' : 'Apply via Hines &rarr;';
+            const applyHref = u.unavailable ? '#' : u.link;
+            const clickHandler = u.unavailable ? `onclick="event.preventDefault(); openChat();"` : '';
+            const cardOpacityStyle = u.unavailable ? 'style="opacity: 0.85;"' : '';
+            const badgeLabel = u.unavailable ? 'Unavailable' : (u.country === 'uk' ? '🇬🇧 UK' : u.country === 'us' ? '🇺🇸 USA' : '🇨🇦 Canada');
+
+            return `
+                <div class="uni-card" ${cardOpacityStyle}>
+                    <div class="uni-header">
+                        <div class="uni-icon-logo-wrap" style="width: 52px; height: 52px; border-radius: 12px; overflow: hidden; flex-shrink: 0; position: relative; border: 1.5px solid var(--border-gray);">
+                            <img src="images/partners/${u.slug}.png" alt="${u.name} Logo" style="width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0; z-index: 2;" onerror="this.style.display='none';">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, ${gStart}, ${gEnd}); color: white; font-weight: 800; font-size: 15px; font-family: 'DM Sans', sans-serif; display: flex; align-items: center; justify-content: center; z-index: 1;">
+                                ${initials}
+                            </div>
+                        </div>
+                        <div class="uni-title-wrap">
+                            <h3>${u.name}</h3>
+                            <span class="uni-country-badge ${u.country}">${badgeLabel}</span>
+                        </div>
+                    </div>
+                    
+                    ${scholarshipHtml}
+
+                    <a href="${applyHref}" ${clickHandler} class="${applyLinkClass}">${applyLinkText}</a>
+                </div>
+            `;
+        }).join('');
     }
 
     // Filter buttons (hero)
@@ -794,6 +835,32 @@
             btn.classList.add('active');
             currentFilter = btn.dataset.filter;
             renderGrid();
+        });
+    });
+
+    // Stat cards filtering
+    document.querySelectorAll('.country-stat-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const filterVal = card.getAttribute('data-stat-filter');
+            if (!filterVal) return;
+            currentFilter = filterVal;
+            
+            // Update active filter button
+            document.querySelectorAll('.hero-filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-filter') === filterVal) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            renderGrid();
+            
+            // Scroll down to the results bar/grid
+            const resultsBar = document.querySelector('.results-bar');
+            if (resultsBar) {
+                resultsBar.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 

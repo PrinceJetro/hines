@@ -76,8 +76,8 @@
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
+            width: 120px;
+            height: 80px;
             object-fit: contain;
         }
 
@@ -611,7 +611,6 @@
     <div class="nav-container">
         <a href="index.html" class="logo">
             <img src="images/logo.png" alt="Hines Education" class="logo-img" onerror="this.style.display='none'">
-            <span class="logo-text">Hines<span>Education</span></span>
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -713,7 +712,7 @@
                     <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
                     <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
                 </ul>
-                <a href="consultation.html" class="footer-cta-btn">Book Free Consultation</a>
+                <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -780,6 +779,7 @@
     const dot = document.getElementById('chatDot');
     const openChatBtn = document.getElementById('openChatBtn');
     const footerChatBtn = document.getElementById('footerChatBtn');
+    const footerConsultationBtn = document.getElementById('footerConsultationBtn');
     const messagesWrap = document.getElementById('chatMessages');
     const optionsWrap = document.getElementById('chatOptions');
 
@@ -806,6 +806,7 @@
     if (closeBtn) closeBtn.addEventListener('click', closeChat);
     if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
     if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    if (footerConsultationBtn) footerConsultationBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
 
     function scrollDown() {
         if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight;
