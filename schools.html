@@ -502,7 +502,7 @@
                 Where Our Students<br>
                 Have Been <em>Placed</em>
             </h1>
-            <p class="ps-hero-sub">We partner with 60+ universities across the UK, US, and Canada and Australia. Browse our full network, filter by country, and find the institution where you belong.</p>
+            <p class="ps-hero-sub">We partner with 60+ universities through Apply Board across the UK, US, and Canada and Australia. Browse our full network, filter by country, and find the institution where you belong.</p>
 
             <div class="hero-filters" id="heroFilters">
                 <button class="hero-filter-btn active" data-filter="all">All Countries</button>
@@ -538,25 +538,7 @@
                         <span class="results-badge-text">Accepting applications</span>
                     </div>
                 </div>
-            </div>
-            <div class="country-stat-card" data-stat-filter="uk">
-                <div class="csc-flag">🇬🇧</div>
-                <div class="csc-count">8</div>
-                <div class="csc-label">UK universities listed</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:100%"></div></div>
-            </div>
-            <div class="country-stat-card" data-stat-filter="us">
-                <div class="csc-flag">🇺🇸</div>
-                <div class="csc-count">3</div>
-                <div class="csc-label">US (Closed for now)</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:37.5%; background: var(--gold-dark);"></div></div>
-            </div>
-            <div class="country-stat-card" data-stat-filter="canada">
-                <div class="csc-flag">🇨🇦</div>
-                <div class="csc-count">8</div>
-                <div class="csc-label">Canadian colleges listed</div>
-                <div class="csc-bar"><div class="csc-bar-fill" style="width:100%; background: #dc2626;"></div></div>
-            </div>
+            </div>>
         </div>
     </div>
 </section>
@@ -564,7 +546,7 @@
 <!-- RESULTS BAR -->
 <div class="results-bar">
     <div class="results-bar-inner">
-        <span class="results-count-text">Showing <span id="resultsCount">18</span> partner universities</span>
+        <span class="results-count-text"> <span id="resultsCount"></span></span>
     </div>
 </div>
 
@@ -672,16 +654,16 @@
                 <h4>Pathways</h4>
                 <ul>
                     <li><a href="#">Foundation in UK</a></li>
-                    <li><a href="#">Direct 100 Level</a></li>
+                    <li><a href="#">Undergraduate Programmes</a></li>
                     <li><a href="#">Masters Programmes</a></li>
-                    <li><a href="#">PhD Placements</a></li>
+                    <li><a href="#">PhD Programmes</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Get Started</h4>
                 <ul>
-                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
-                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
+                    <li><a href="tel:+2349134496620">   +234 913 449 6620</a></li>
+                    <li><a href="mailto:hineseducation@gmail.com">hineseducation@gmail.com</a></li>
                     <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
                 </ul>
                 <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
@@ -734,7 +716,6 @@
     const universities = [
         { name: "Fleming College", country: "canada", countryName: "Canada", slug: "flemming", requirements: [{ label: "WAEC", val: "C4 – C6" }, { label: "IELTS", val: "6.0+" }], scholarship: "Entrance awards available", link: "#" },
         { name: "Algoma University", country: "canada", countryName: "Canada", slug: "algoma", requirements: [{ label: "WAEC", val: "B2 – C4" }, { label: "IELTS", val: "6.0+" }], scholarship: "Chancellor's Award up to $5,000", link: "#" },
-        { name: "University of Manchester", country: "uk", countryName: "United Kingdom", slug: "manchester", requirements: [{ label: "WAEC", val: "B2 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Global Excellence Scholarship up to £5,000", link: "#" },
         { name: "University of Warwick", country: "uk", countryName: "United Kingdom", slug: "warwick", requirements: [{ label: "WAEC", val: "B2 – B3" }, { label: "A-Levels", val: "ABB" }], scholarship: "Undergraduate Global Excellence Award", link: "#" },
         { name: "University of Edinburgh", country: "uk", countryName: "United Kingdom", slug: "edinburgh", requirements: [{ label: "WAEC", val: "A1 – B2" }, { label: "A-Levels", val: "AAA – ABB" }], scholarship: "Edinburgh Global Scholarships", link: "#" },
         { name: "University of Birmingham", country: "uk", countryName: "United Kingdom", slug: "birmingham", requirements: [{ label: "WAEC", val: "B3 – C4" }, { label: "A-Levels", val: "BBB" }], scholarship: "Outstanding Achievement Scholarships", link: "#" },
@@ -765,13 +746,6 @@
             const matchSearch = !currentSearch || u.name.toLowerCase().includes(currentSearch.toLowerCase()) || u.countryName.toLowerCase().includes(currentSearch.toLowerCase());
             return matchFilter && matchSearch;
         });
-
-        document.getElementById('resultsCount').textContent = list.length;
-
-        if (!list.length) {
-            grid.innerHTML = `<div class="no-results"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>No universities match your search. Try adjusting your filters.</div>`;
-            return;
-        }
 
         grid.innerHTML = list.map(u => {
             // Get initials

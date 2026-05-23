@@ -1449,9 +1449,15 @@
                 gap: 40px;
             }
 
-            .hero-right { display: none; }
+            .hero-right {
+                display: block;
+                height: 480px;
+                width: 100%;
+                max-width: 520px;
+                margin: 0 auto;
+            }
 
-            .hero-left { padding-bottom: 40px; }
+            .hero-left { padding-bottom: 20px; }
 
             .hiw-grid {
                 grid-template-columns: 1fr;
@@ -1511,6 +1517,19 @@
             }
 
             .chat-widget { width: calc(100vw - 40px); right: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-right {
+                height: 380px;
+            }
+            .hero-float-card {
+                display: none;
+            }
+            .hero-destinations {
+                bottom: -16px;
+                padding: 10px 12px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1600,7 +1619,7 @@
                 <img src="images/hero-image2.png" alt="Students studying abroad" class="hero-img-bg" onerror="this.style.display='none'">
                 <div class="hero-visual-overlay">
                     <div class="hero-visual-label">Student placements</div>
-                    <div class="hero-visual-stat">2,500+</div>
+                    <div class="hero-visual-stat">1,500+</div>
                     <div class="hero-visual-caption">Students placed across 3 continents</div>
                 </div>
             </div>
@@ -1647,8 +1666,8 @@
 <section class="trust-bar">
     <div class="trust-bar-container">
         <div class="trust-header">
-            <h3>Partner Universities</h3>
-            <p>Trusted by 50+ institutions worldwide</p>
+            <h3>Partner Universities through Apply Board</h3>
+            <p>Trusted by 60+ institutions worldwide</p>
         </div>
         <div class="logo-scroll">
             <div class="logo-track">
@@ -1669,12 +1688,6 @@
                         <span class="logo-placeholder-text">Algoma University</span>
                     </div>
                     <span class="logo-country">Canada</span>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">
-                        <span class="logo-placeholder-text">University of Manchester</span>
-                    </div>
-                    <span class="logo-country">UK</span>
                 </div>
                 <div class="logo-item">
                     <div class="logo-placeholder">
@@ -1867,12 +1880,12 @@
                 <div class="quote-mark">
                     <svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
                 </div>
-                <p class="testimonial-text">Hines Education helped me go from my WAEC results to studying Computer Science at the University of Manchester. The advisor answered my questions instantly and handled everything from application to visa.</p>
+                <p class="testimonial-text">Hines Education helped me go from my WAEC results to studying Computer Science at the University of Warwick. The advisor answered my questions instantly and handled everything from application to visa.</p>
                 <div class="student-info">
                     <div class="student-avatar">A</div>
                     <div class="student-details">
                         <h4>Adaeze O.</h4>
-                        <p>University of Manchester</p>
+                        <p>University of Warwick</p>
                         <span>BSc Computer Science &bull; UK</span>
                     </div>
                 </div>

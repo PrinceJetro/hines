@@ -1,25 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hines Education Consulting | Global University Placement</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* ========================================
-           COMPLETE MASTER STYLESHEET
-           Reusable for all pages
-        ======================================== */
-        
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Hines Education Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#221b00",
+                    "primary": "#002460",
+                    "status-success": "#DBC368",
+                    "secondary-fixed-dim": "#7cd0ff",
+                    "secondary": "#00668a",
+                    "surface-container-highest": "#e0e3e6",
+                    "surface-container": "#eceef1",
+                    "tertiary-fixed-dim": "#dec66a",
+                    "surface-dim": "#d8dadd",
+                    "on-error": "#ffffff",
+                    "action-cyan": "#00BEFF",
+                    "surface-variant": "#e0e3e6",
+                    "outline": "#747781",
+                    "on-surface-variant": "#444650",
+                    "text-navy": "#1C3B7B",
+                    "inverse-on-surface": "#eff1f4",
+                    "tertiary-container": "#c1ab53",
+                    "on-tertiary-container": "#4c3f00",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-high": "#e6e8eb",
+                    "on-background": "#191c1e",
+                    "primary-container": "#1c3b7b",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b1c5ff",
+                    "surface-bright": "#f7f9fc",
+                    "on-surface": "#191c1e",
+                    "on-primary-fixed": "#001946",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#6f5d07",
+                    "on-primary-container": "#8da8ef",
+                    "secondary-container": "#00bdfe",
+                    "surface": "#f7f9fc",
+                    "surface-tint": "#405c9e",
+                    "primary-fixed": "#dae2ff",
+                    "secondary-fixed": "#c4e7ff",
+                    "tertiary-fixed": "#fbe283",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "on-error-container": "#93000a",
+                    "background": "#f7f9fc",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#274484",
+                    "surface-white": "#FFFFFF",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "surface-container-low": "#f2f4f7",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#004964",
+                    "outline-variant": "#c4c6d2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "section-gap": "80px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Literata"],
+                    "label-lg": ["DM Sans"],
+                    "label-md": ["DM Sans"],
+                    "body-md": ["DM Sans"],
+                    "headline-md": ["Literata"],
+                    "headline-xl": ["Literata"],
+                    "headline-xl-mobile": ["Literata"],
+                    "body-lg": ["DM Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["36px", {"lineHeight": "44px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
         :root {
             --cyan: #00BEFF;
             --cyan-dark: #009ACD;
@@ -33,580 +118,126 @@
             --text-muted: rgba(28, 59, 123, 0.6);
         }
 
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'DM Sans', -apple-system, sans-serif;
-            background-color: var(--white);
-            color: var(--navy);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-
-        /* ========== ANIMATIONS ========== */
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
 
         /* ========== NAVBAR ========== */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.96);
+            background: rgba(255,255,255,0.96);
             border-bottom: 1px solid var(--border-gray);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
             backdrop-filter: blur(12px);
         }
-
         .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 40px;
-            max-width: 1440px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 40px; max-width: 1440px; margin: 0 auto;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 120px;
-            height: 80px;
-            object-fit: contain;
-        }
-
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 120px; height: 80px; object-fit: contain; }
         .logo-text {
-            font-family: 'Fraunces', serif;
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -0.5px;
-            line-height: 1;
+            font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900;
+            color: var(--navy); letter-spacing: -.5px; line-height: 1;
         }
-
-        .logo-text span {
-            color: var(--cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.2s ease;
-            letter-spacing: -0.1px;
-        }
-
-        .nav-links a:hover { color: var(--cyan); }
-
+        .logo-text span { color: var(--cyan); }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 15px; transition: color .2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
         .nav-cta {
-            background-color: var(--navy);
-            color: var(--white) !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-            transition: all 0.2s ease !important;
-            letter-spacing: 0.2px;
+            background: var(--navy); color: var(--white) !important; padding: 10px 22px;
+            border-radius: 6px; font-weight: 600 !important; font-size: 14px !important; transition: all .2s !important;
         }
-
-        .nav-cta:hover {
-            background-color: var(--cyan) !important;
-            color: var(--white) !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--navy);
-            padding: 4px;
-        }
-
+        .nav-cta:hover { background: var(--cyan) !important; }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--navy); padding: 4px; }
         .menu-toggle svg { display: block; }
 
-        /* ========== PAGE CONTAINER (for main content) ========== */
-        .page-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            min-height: 60vh;
-        }
-
-        /* Page Header Styles */
-        .page-header {
-            margin-bottom: 48px;
-        }
-
-        .page-header h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--navy);
-            letter-spacing: -1.5px;
-            margin-bottom: 16px;
-        }
-
-        .page-header p {
-            font-size: 18px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            max-width: 700px;
-        }
-
-        /* Section Container (reusable) */
-        .section-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
         /* ========== FOOTER ========== */
-        .footer {
-            background: var(--navy-deep);
-            padding: 64px 0 32px;
-            color: white;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 48px;
-            margin-bottom: 52px;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .footer-logo-img {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-        }
-
-        .footer-brand-text {
-            font-family: 'Fraunces', serif;
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--white);
-        }
-
+        .footer { background: var(--navy-deep); padding: 64px 0 32px; color: white; }
+        .footer-container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 52px; }
+        .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .footer-logo-img { width: 36px; height: 36px; object-fit: contain; filter: brightness(0) invert(1); opacity: .9; }
+        .footer-brand-text { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 900; color: var(--white); }
         .footer-brand-text span { color: var(--cyan); }
-
-        .footer-about p {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            text-decoration: none;
-        }
-
+        .footer-about p { color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 10px; }
+        .social-link { width: 36px; height: 36px; background: rgba(255,255,255,.08); border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: background .2s; text-decoration: none; }
         .social-link:hover { background: var(--cyan); }
-
-        .social-link svg {
-            width: 16px;
-            height: 16px;
-            fill: rgba(255,255,255,0.7);
-        }
-
+        .social-link svg { width: 16px; height: 16px; fill: rgba(255,255,255,.7); }
         .social-link:hover svg { fill: white; }
-
-        .footer-col h4 {
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.5);
-        }
-
+        .footer-col h4 { font-size: 13px; font-weight: 700; margin-bottom: 20px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); }
         .footer-col ul { list-style: none; }
-
         .footer-col ul li { margin-bottom: 10px; }
-
-        .footer-col ul li a {
-            color: rgba(255,255,255,0.65);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
+        .footer-col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 14px; transition: color .2s; }
         .footer-col ul li a:hover { color: var(--cyan); }
-
-        .footer-cta-btn {
-            display: inline-block;
-            background: var(--cyan);
-            color: var(--navy-deep);
-            padding: 11px 22px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            text-decoration: none;
-            margin-top: 8px;
-            transition: background 0.2s;
-        }
-
+        .footer-cta-btn { display: inline-block; background: var(--cyan); color: var(--navy-deep); padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; margin-top: 8px; transition: background .2s; }
         .footer-cta-btn:hover { background: var(--gold); }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding-top: 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-bottom p {
-            font-size: 13px;
-            color: rgba(255,255,255,0.4);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-bottom-links a {
-            font-size: 12px;
-            color: rgba(255,255,255,0.35);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 13px; color: rgba(255,255,255,.4); }
+        .footer-bottom-links { display: flex; gap: 20px; }
+        .footer-bottom-links a { font-size: 12px; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
         .footer-bottom-links a:hover { color: var(--cyan); }
 
         /* ========== CHATBOT ========== */
-        .chat-launcher {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 9000;
-        }
-
-        .chat-launcher-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--navy);
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 24px rgba(28,59,123,0.4);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .chat-launcher-btn:hover {
-            background: var(--cyan);
-            transform: scale(1.08);
-        }
-
-        .chat-launcher-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-        }
-
-        .chat-unread-dot {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            width: 14px;
-            height: 14px;
-            background: #ef4444;
-            border-radius: 50%;
-            border: 2px solid white;
-            animation: blink 2s infinite;
-        }
-
-        .chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 28px;
-            width: 360px;
-            max-height: 540px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
-            z-index: 9000;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid var(--border-gray);
-            transform: translateY(20px) scale(0.95);
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .chat-widget.open {
-            display: flex;
-            transform: translateY(0) scale(1);
-            opacity: 1;
-        }
-
-        .chat-widget-header {
-            background: var(--navy);
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .chat-bot-avatar {
-            width: 38px;
-            height: 38px;
-            background: var(--cyan);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .chat-bot-avatar svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-
+        .chat-launcher { position: fixed; bottom: 28px; right: 28px; z-index: 9000; }
+        .chat-launcher-btn { width: 60px; height: 60px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(28,59,123,.4); transition: all .3s; position: relative; }
+        .chat-launcher-btn:hover { background: var(--cyan); transform: scale(1.08); }
+        .chat-launcher-btn svg { width: 26px; height: 26px; fill: white; }
+        .chat-unread-dot { position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ef4444; border-radius: 50%; border: 2px solid white; animation: blink 2s infinite; display: none; }
+        .chat-widget { position: fixed; bottom: 100px; right: 28px; width: 360px; max-height: 540px; background: var(--white); border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.2); z-index: 9000; display: none; flex-direction: column; overflow: hidden; border: 1px solid var(--border-gray); transform: translateY(20px) scale(.95); opacity: 0; transition: all .3s cubic-bezier(.34,1.56,.64,1); }
+        .chat-widget.open { display: flex; transform: translateY(0) scale(1); opacity: 1; }
+        .chat-widget-header { background: var(--navy); padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+        .chat-bot-avatar { width: 38px; height: 38px; background: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .chat-bot-avatar svg { width: 20px; height: 20px; fill: white; }
         .chat-header-info { flex: 1; }
-
-        .chat-header-info h4 {
-            color: white;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-
-        .chat-header-info span {
-            color: rgba(255,255,255,0.6);
-            font-size: 12px;
-        }
-
-        .chat-online-dot {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background: #22c55e;
-            border-radius: 50%;
-            margin-right: 5px;
-            animation: blink 2s infinite;
-        }
-
-        .chat-close-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: rgba(255,255,255,0.6);
-            display: flex;
-            padding: 4px;
-            transition: color 0.2s;
-        }
-
+        .chat-header-info h4 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .chat-header-info span { color: rgba(255,255,255,.6); font-size: 12px; }
+        .chat-online-dot { display: inline-block; width: 7px; height: 7px; background: #22c55e; border-radius: 50%; margin-right: 5px; animation: blink 2s infinite; }
+        .chat-close-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,.6); display: flex; padding: 4px; transition: color .2s; }
         .chat-close-btn:hover { color: white; }
-
-        .chat-close-btn svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .chat-messages-wrap {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            background: #f8fafc;
-        }
-
+        .chat-close-btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .chat-messages-wrap { flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
         .chat-messages-wrap::-webkit-scrollbar { width: 4px; }
-        .chat-messages-wrap::-webkit-scrollbar-track { background: transparent; }
         .chat-messages-wrap::-webkit-scrollbar-thumb { background: var(--border-gray); border-radius: 10px; }
-
-        .bot-msg {
-            background: var(--white);
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-left-radius: 4px;
-            max-width: 82%;
-            color: var(--navy);
-            font-size: 14px;
-            line-height: 1.5;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-gray);
-            align-self: flex-start;
-        }
-
-        .user-msg {
-            background: var(--navy);
-            color: white;
-            padding: 11px 14px;
-            border-radius: 14px;
-            border-top-right-radius: 4px;
-            max-width: 82%;
-            font-size: 14px;
-            line-height: 1.5;
-            align-self: flex-end;
-        }
-
-        .wa-msg {
-            background: #22c55e;
-            color: white;
-            padding: 14px 16px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-            align-self: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
+        .bot-msg { background: var(--white); padding: 11px 14px; border-radius: 14px; border-top-left-radius: 4px; max-width: 82%; color: var(--navy); font-size: 14px; line-height: 1.5; box-shadow: 0 1px 4px rgba(0,0,0,.06); border: 1px solid var(--border-gray); align-self: flex-start; }
+        .user-msg { background: var(--navy); color: white; padding: 11px 14px; border-radius: 14px; border-top-right-radius: 4px; max-width: 82%; font-size: 14px; align-self: flex-end; }
+        .wa-msg { background: #22c55e; color: white; padding: 14px 16px; border-radius: 12px; text-align: center; font-weight: 700; font-size: 14px; cursor: pointer; transition: background .2s; align-self: center; display: flex; align-items: center; gap: 8px; }
         .wa-msg:hover { background: #16a34a; }
-
         .wa-msg svg { width: 20px; height: 20px; fill: white; }
-
-        .chat-options-wrap {
-            padding: 12px 16px 16px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            background: var(--white);
-            border-top: 1px solid var(--border-gray);
-        }
-
-        .chat-opt-btn {
-            background: var(--white);
-            border: 1.5px solid var(--border-gray);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--navy);
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-        }
-
-        .chat-opt-btn:hover {
-            border-color: var(--navy);
-            background: var(--light-gray);
-        }
+        .chat-options-wrap { padding: 12px 16px 16px; display: flex; flex-wrap: wrap; gap: 8px; background: var(--white); border-top: 1px solid var(--border-gray); }
+        .chat-opt-btn { background: var(--white); border: 1.5px solid var(--border-gray); padding: 8px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all .2s; color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 500; }
+        .chat-opt-btn:hover { border-color: var(--navy); background: var(--light-gray); }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 900px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 68px;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 20px 24px;
-                gap: 16px;
-                border-bottom: 1px solid var(--border-gray);
-                box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            }
-
+            .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border-gray); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
             .nav-links.active { display: flex; }
             .nav-container { padding: 14px 24px; }
-
-            .page-container {
-                padding: 40px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 32px;
-            }
-
-            .section-container, .footer-container {
-                padding: 0 20px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .chat-widget {
-                width: calc(100vw - 40px);
-                right: 20px;
-            }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .chat-widget { width: calc(100vw - 40px); right: 20px; }
         }
 
-        @media (max-width: 480px) {
-            .page-header h1 {
-                font-size: 28px;
-            }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft {
+            shadow-[0_4px_20px_rgba(28,59,123,0.08)];
+        }
+        .shadow-hover {
+            box-shadow: 0 12px 32px rgba(28, 59, 123, 0.12);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(25,28,30,0.85) 0%, rgba(28,59,123,0.6) 100%);
+        }
+        .card-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
-<body>
-
-<!-- ========================================
-     NAVBAR (Reusable - Keep as is for all pages)
-     ======================================== -->
+<body class="bg-surface font-body-md text-on-surface">
+<!-- ========== NAVBAR ========== -->
 <nav class="navbar">
     <div class="nav-container">
         <a href="index.html" class="logo">
@@ -614,12 +245,11 @@
         </a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <line x1="3" y1="12" x2="21" y2="12"/>
-                <line x1="3" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
             </svg>
         </button>
         <div class="nav-links" id="navLinks">
+            <a href="about.html" class="active">About</a>
             <a href="study-abroad.html">Study Abroad</a>
             <a href="partners.html">For Partners</a>
             <a href="competition.html">Competition</a>
@@ -629,39 +259,138 @@
         </div>
     </div>
 </nav>
-
-<!-- ========================================
-     PAGE MAIN CONTENT
-     ⚠️ REPLACE EVERYTHING BETWEEN HERE ⚠️
-     with your specific page content
-     ======================================== -->
 <main>
-    <div class="page-container">
-        <div class="page-header">
-            <h1>Page Title Here</h1>
-            <p>This is a reusable template. Replace this section with your actual page content — about us, contact form, services list, etc.</p>
-        </div>
-        
-        <!-- Your custom page content goes here -->
-        <div style="margin-top: 32px;">
-            <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p style="color: var(--text-muted); line-height: 1.7;">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover" data-alt="A cinematic, sun-drenched shot of diverse students walking across a prestigious historic university campus with Gothic architecture and manicured green lawns. The lighting is warm and golden, evoking an optimistic and academic atmosphere. The composition uses a shallow depth of field to focus on the ambition of the students, maintaining a clean and professional aesthetic with tones of deep navy and bright white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByMeOvgbZpanE89HxhYRM2MBDlmxWAaOKktZ4KqAmtIzO5qJ4WSr4oB-YjRfc5t4L09s8fHKo85VfZAmJjdxKF3ZrFFyF0K46SBJQN61Xq_c2FgiKuph3Pgkacr2Pr7J8DzDEya2eugAxfL-oJzgdUQ2D3SO6ePu6PxU4q8z4mIY5axcndre7WOvC3S3kGB7dS3EDDDr0iXLZfd-xoW2KZHaYSieX0M04U41o9FB2ezEWJj2wBsCaMbYnEQ0LcZl9Su4mqn4GeeUE"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-surface-white mb-6">Connecting students with global study opportunities</h1>
+<p class="font-body-lg text-body-lg text-surface-container-low mb-8 leading-relaxed">Hines collaborates with institutions to establish sustainable student recruitment frameworks, strengthen student engagement initiatives, and expand institutional visibility across emerging international education markets.</p>
+<div class="flex gap-4">
+<button class="bg-action-cyan text-white px-8 py-4 rounded-xl font-label-lg text-label-lg shadow-lg hover:shadow-cyan-500/20 transition-all" onclick="window.location.href='contact.html'">Book Free Consultation</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision (Bento-style Split) -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-white p-12 rounded-[2rem] shadow-[0_4px_20px_rgba(28,59,123,0.08)] border-l-4 border-action-cyan">
+<span class="text-action-cyan font-label-lg uppercase tracking-widest mb-4 block">Purpose</span>
+<h2 class="font-headline-lg text-headline-lg text-text-navy mb-6">Our Mission</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">To empower students and educational institutions through expert guidance, strategic partnerships, and innovative recruitment solutions that create access to quality global education opportunities.</p>
+</div>
+<div class="bg-primary p-12 rounded-[2rem] shadow-[0_4px_20px_rgba(28,59,123,0.08)] text-white">
+<span class="text-status-success font-label-lg uppercase tracking-widest mb-4 block">Aspiration</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Our Vision</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low leading-relaxed">To become a leading international education and recruitment partner, connecting students with life-changing academic opportunities while helping institutions build sustainable global engagement and enrolment growth.</p>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+    <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg text-text-navy mb-4">Our Core Values</h2>
+        <p class="max-w-2xl mx-auto text-on-surface-variant font-body-lg">
+            The principles that guide our mission, partnerships, and commitment to student success.
+        </p>
     </div>
-</main>
-<!-- ========================================
-     END OF REPLACEABLE CONTENT AREA
-     ======================================== -->
 
-<!-- ========================================
-     FOOTER (Reusable - Keep as is for all pages)
-     ======================================== -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+        <!-- Value Card 1 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Integrity</h3>
+            <p class="text-on-surface-variant">
+                We uphold honesty, transparency, and professionalism in every engagement.
+            </p>
+        </div>
+
+        <!-- Value Card 2 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="school">school</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Excellence</h3>
+            <p class="text-on-surface-variant">
+                We are committed to delivering high-quality guidance, services, and outcomes for students and partner institutions.
+            </p>
+        </div>
+
+        <!-- Value Card 3 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="workspace_premium">workspace_premium</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Student Success</h3>
+            <p class="text-on-surface-variant">
+                We place students at the centre of our work, helping them access opportunities that support their academic and career aspirations.
+            </p>
+        </div>
+
+        <!-- Value Card 4 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="lightbulb">lightbulb</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Innovation</h3>
+            <p class="text-on-surface-variant">
+                We embrace strategic and forward-thinking approaches to international education and student recruitment.
+            </p>
+        </div>
+
+        <!-- Value Card 5 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="handshake">handshake</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Partnership</h3>
+            <p class="text-on-surface-variant">
+                We build strong and sustainable relationships with institutions, schools, and stakeholders based on trust and shared growth.
+            </p>
+        </div>
+
+        <!-- Value Card 6 -->
+        <div class="group bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(28,59,123,0.08)] hover:shadow-hover card-transition border-b-4 border-transparent hover:border-action-cyan">
+            <div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-action-cyan group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl" data-icon="public">public</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Global Impact</h3>
+            <p class="text-on-surface-variant">
+                We are dedicated to expanding access to international education and creating meaningful opportunities across diverse communities.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-section-gap px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary rounded-[2.5rem] p-12 md:p-24 relative overflow-hidden text-center md:text-left">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-action-cyan via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 items-center gap-12">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6">Ready to start your journey?</h2>
+<p class="font-body-lg text-body-lg text-surface-container-low mb-0">Join thousands of students who have unlocked their potential with Hines Education.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-end">
+<a href="contact.html" class="bg-action-cyan text-white px-10 py-5 rounded-xl font-label-lg text-label-lg hover:shadow-xl hover:shadow-action-cyan/20 active:scale-95 transition-all">Get Started</a>
+<a href="contact.html" class="border-2 border-white/30 text-white px-10 py-5 rounded-xl font-label-lg text-label-lg hover:bg-white/10 active:scale-95 transition-all">Book Free Consultation</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-grid">
@@ -672,23 +401,16 @@
                 </div>
                 <p>Connecting African students to world-class universities since 2015. WAEC, A-Levels, Masters, PhD — we place you where you belong.</p>
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter/X">
-                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="study-abroad.html">Study Abroad</a></li>
                     <li><a href="partners.html">For Partners</a></li>
                     <li><a href="competition.html">Competition</a></li>
@@ -699,17 +421,17 @@
             <div class="footer-col">
                 <h4>Pathways</h4>
                 <ul>
-                    <li><a href="foundation.html">Foundation in UK</a></li>
-                    <li><a href="direct-entry.html">Direct 100 Level</a></li>
-                    <li><a href="masters.html">Masters Programmes</a></li>
-                    <li><a href="phd.html">PhD Placements</a></li>
+                    <li><a href="#">Foundation in UK</a></li>
+                    <li><a href="#">Undergraduate Programmes</a></li>
+                    <li><a href="#">Masters Programmes</a></li>
+                    <li><a href="#">PhD Programmes</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Get Started</h4>
                 <ul>
-                    <li><a href="tel:+2348001234567">+234 800 123 4567</a></li>
-                    <li><a href="mailto:hello@hineseducation.com">hello@hineseducation.com</a></li>
+                    <li><a href="tel:+2349134496620">   +234 913 449 6620</a></li>
+                    <li><a href="mailto:hineseducation@gmail.com">hineseducation@gmail.com</a></li>
                     <li><a href="#" id="footerChatBtn">Chat with an Advisor</a></li>
                 </ul>
                 <a href="#" class="footer-cta-btn" id="footerConsultationBtn">Book Free Consultation</a>
@@ -725,9 +447,7 @@
     </div>
 </footer>
 
-<!-- ========================================
-     CHATBOT WIDGET (Reusable - Keep as is)
-     ======================================== -->
+<!-- ========== CHATBOT ========== -->
 <div class="chat-launcher">
     <div class="chat-widget" id="chatWidget">
         <div class="chat-widget-header">
@@ -738,7 +458,7 @@
                 <h4>Hines Admissions</h4>
                 <span><span class="chat-online-dot"></span>Online &bull; Replies instantly</span>
             </div>
-            <button class="chat-close-btn" id="chatCloseBtn" aria-label="Close chat">
+            <button class="chat-close-btn" id="chatCloseBtn">
                 <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
         </div>
@@ -758,83 +478,65 @@
     </button>
 </div>
 
-<!-- ========================================
-     MASTER JAVASCRIPT (Navbar + Chatbot)
-     ======================================== -->
 <script>
 (function() {
-    // ========== NAVBAR TOGGLE ==========
+    // ——— Nav toggle ———
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-        document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
     }
 
-    // ========== CHATBOT LOGIC ==========
+    const footerConsultationBtn = document.getElementById('footerConsultationBtn');
+    if (footerConsultationBtn) footerConsultationBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+
+    // ——— Chatbot ———
     const widget = document.getElementById('chatWidget');
     const launchBtn = document.getElementById('chatLauncherBtn');
     const closeBtn = document.getElementById('chatCloseBtn');
     const dot = document.getElementById('chatDot');
-    const openChatBtn = document.getElementById('openChatBtn');
-    const footerChatBtn = document.getElementById('footerChatBtn');
-    const footerConsultationBtn = document.getElementById('footerConsultationBtn');
     const messagesWrap = document.getElementById('chatMessages');
     const optionsWrap = document.getElementById('chatOptions');
-
-    // CHANGE THIS TO YOUR WHATSAPP NUMBER (format: countrycode + number, no plus sign)
     const WA_NUMBER = '2348088981691';
-    
     let step = 0;
     let userData = { qualification: '', country: '', level: '' };
 
     function openChat() {
-        if (!widget) return;
         widget.style.display = 'flex';
         requestAnimationFrame(() => widget.classList.add('open'));
         if (dot) dot.style.display = 'none';
     }
-
     function closeChat() {
-        if (!widget) return;
         widget.classList.remove('open');
-        setTimeout(() => { if (widget && !widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
+        setTimeout(() => { if (!widget.classList.contains('open')) widget.style.display = 'none'; }, 300);
     }
 
-    if (launchBtn) launchBtn.addEventListener('click', () => widget && widget.classList.contains('open') ? closeChat() : openChat());
-    if (closeBtn) closeBtn.addEventListener('click', closeChat);
-    if (openChatBtn) openChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
-    if (footerChatBtn) footerChatBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
-    if (footerConsultationBtn) footerConsultationBtn.addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+    launchBtn.addEventListener('click', () => widget.classList.contains('open') ? closeChat() : openChat());
+    closeBtn.addEventListener('click', closeChat);
+    ['openChatBtn','ctaChatBtn','footerChatBtn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', e => { e.preventDefault(); openChat(); });
+    });
 
-    function scrollDown() {
-        if (messagesWrap) messagesWrap.scrollTop = messagesWrap.scrollHeight;
-    }
-
+    function scrollDown() { messagesWrap.scrollTop = messagesWrap.scrollHeight; }
     function addMsg(text, isUser) {
-        if (!messagesWrap) return;
-        const div = document.createElement('div');
-        div.className = isUser ? 'user-msg' : 'bot-msg';
-        div.textContent = text;
-        messagesWrap.appendChild(div);
-        scrollDown();
+        const d = document.createElement('div');
+        d.className = isUser ? 'user-msg' : 'bot-msg';
+        d.textContent = text;
+        messagesWrap.appendChild(d); scrollDown();
     }
-
     function setOptions(opts) {
-        if (!optionsWrap) return;
         optionsWrap.innerHTML = '';
         opts.forEach(opt => {
             const btn = document.createElement('button');
-            btn.className = 'chat-opt-btn';
-            btn.textContent = opt;
+            btn.className = 'chat-opt-btn'; btn.textContent = opt;
             btn.addEventListener('click', () => handleOption(opt));
             optionsWrap.appendChild(btn);
         });
     }
-
-    function buildWhatsAppMessage() {
-        const msg = [
+    function buildWAMessage() {
+        return encodeURIComponent([
             'Hello Hines Education,',
             '',
             'I would like to enquire about university placement.',
@@ -843,70 +545,42 @@
             `Target Country: ${userData.country}`,
             `Level of Study: ${userData.level}`,
             '',
-            'Please get in touch with me. Thank you.'
-        ].join('\n');
-        return encodeURIComponent(msg);
+            'Please get in touch. Thank you.'
+        ].join('\n'));
     }
-
     function showWhatsApp() {
-        if (!optionsWrap) return;
         optionsWrap.innerHTML = '';
-        const div = document.createElement('div');
-        div.className = 'wa-msg';
-        div.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
-        div.addEventListener('click', () => {
-            window.open(`https://wa.me/${WA_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
-        });
-        if (messagesWrap) messagesWrap.appendChild(div);
-        scrollDown();
+        const d = document.createElement('div');
+        d.className = 'wa-msg';
+        d.innerHTML = `<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Continue on WhatsApp`;
+        d.addEventListener('click', () => window.open(`https://wa.me/${WA_NUMBER}?text=${buildWAMessage()}`, '_blank'));
+        messagesWrap.appendChild(d); scrollDown();
     }
-
     function handleOption(val) {
         if (step === 0) {
-            userData.qualification = val;
-            addMsg(val, true);
-            setTimeout(() => {
-                addMsg(`Great choice. With ${val}, which country are you targeting?`, false);
-                setOptions(['United Kingdom', 'United States', 'Canada', 'Not sure yet']);
-                step = 1;
-            }, 400);
+            userData.qualification = val; addMsg(val, true);
+            setTimeout(() => { addMsg(`Great. With ${val}, which country are you targeting?`, false); setOptions(['United Kingdom','United States','Canada','Not sure yet']); step = 1; }, 400);
         } else if (step === 1) {
-            userData.country = val;
-            addMsg(val, true);
+            userData.country = val; addMsg(val, true);
             setTimeout(() => {
                 addMsg('What level of study are you applying for?', false);
-                if (userData.qualification === "Bachelor's Degree") {
-                    setOptions(['Masters', 'MBA', 'Postgraduate Diploma']);
-                } else if (userData.qualification === "Master's Degree") {
-                    setOptions(['PhD', 'Postdoctoral Research']);
-                } else {
-                    setOptions(['Foundation', '100 Level (Direct Entry)', 'Not sure — need advice']);
-                }
+                if (userData.qualification === "Bachelor's Degree") setOptions(['Masters','MBA','Postgraduate Diploma']);
+                else if (userData.qualification === "Master's Degree") setOptions(['PhD','Postdoctoral Research']);
+                else setOptions(['Foundation','100 Level (Direct Entry)','Not sure — need advice']);
                 step = 2;
             }, 400);
         } else if (step === 2) {
-            userData.level = val;
-            addMsg(val, true);
+            userData.level = val; addMsg(val, true);
             setTimeout(() => {
-                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — I have everything I need. Tap below to connect with an advisor on WhatsApp and they will be with you shortly.`, false);
-                showWhatsApp();
-                step = 3;
+                addMsg(`Perfect. Based on your ${userData.qualification}, targeting ${userData.country} for ${userData.level} — tap below to connect with an advisor on WhatsApp.`, false);
+                showWhatsApp(); step = 3;
             }, 400);
         }
     }
-
-    // Wire up initial option buttons
     document.querySelectorAll('.chat-opt-btn').forEach(btn => {
-        btn.addEventListener('click', () => handleOption(btn.getAttribute('data-val') || btn.textContent));
+        btn.addEventListener('click', () => handleOption(btn.dataset.val || btn.textContent));
     });
-
-    // Auto-show dot notification after delay
-    setTimeout(() => {
-        if (widget && !widget.classList.contains('open') && dot) {
-            dot.style.display = 'block';
-        }
-    }, 4000);
+    setTimeout(() => { if (!widget.classList.contains('open') && dot) dot.style.display = 'block'; }, 4000);
 })();
 </script>
-</body>
-</html>
+</body></html>
